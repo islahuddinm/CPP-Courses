@@ -35,14 +35,22 @@ private:
 int main() {
     std::deque<MyClass> myDeque;
 
-    // Using push_back
+    // assignment Using push_back
     std::cout << "Using push_back:" << std::endl;
     myDeque.push_back(MyClass(1));
-    myDeque.push_back(MyClass(4));    
+    myDeque.push_back(MyClass(4));   
+    myDeque.push_back(MyClass(6)); 
 
     // Call printClass for the first object in myDeque
     if (!myDeque.empty()) {
         myDeque.front().printClass();
+    }
+    // Call printClass for the last object in myDeque
+    if (!myDeque.empty()) {
+        myDeque.back().printClass();
+    }
+    if (!myDeque.empty()) {
+        myDeque.at(myDeque.size() - 1).printClass();
     }
     // Call printClass for the second object in myDeque
     if (myDeque.size() > 1) {
@@ -53,14 +61,23 @@ int main() {
         obj.printClass();
     }
 
-    // Using emplace_back
+    // assignment Using emplace_back
     std::cout << "\nUsing emplace_back:" << std::endl;
-    myDeque.emplace_back(10);
-    // change value
-    myDeque.at(2).setClass(20);
+    myDeque.emplace_back(10); // we can use 'myDeque.insert(myDeque.begin(), {1});' to add value in front of vector
+    //myDeque.insert(myDeque.begin(), {1});
+    
+    // assign value in setClass and call
+    myDeque.at(0).setClass(40);
+    myDeque.at(1).setClass(20);
 
+    // Call printClass for the first object in myDeque
+    myDeque.at(0).printClass();
     // Call printClass for the second object in myDeque
+    myDeque.at(1).printClass();
+    // Call printClass for the third object in myDeque
     myDeque.at(2).printClass();
+    // Call printClass for the third object in myDeque
+    myDeque.at(3).printClass();
 
     return 0;
 }

@@ -84,6 +84,14 @@ int main() {
     cout << "Price: $" << bugatti.getPrice() << endl;
     cout << endl;
 
+    Cars bugatti2("Bugatti", "Ceiron", 2024, 20000);
+
+    cout << "Make: " << bugatti2.make << endl;
+    cout << "Model: " << bugatti2.model << endl;
+    cout << "Year: " << bugatti2.year << endl;
+    cout << "Price: $" << bugatti2.getPrice() << endl;
+    cout << endl;
+
     // this is how to call defautl constructor.
     //Cars ferarri;
 

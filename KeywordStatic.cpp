@@ -19,6 +19,33 @@ void demo()
 }
  
 int main() {
+
+    //while(int a = 0 < 2) {
+
+        int i = 0;
+        
+        while(i < 5) {
+            
+            int count = 0;
+            count += 1;
+            
+            std::cout << "count : " << count << '\n';            
+            i++;
+        }
+
+        int ii = 0;
+
+        while(ii < 5) {
+            
+            static int count = 0;
+            count += 1;
+            
+            std::cout << "count2 : " << count << '\n';            
+            ii++;
+        }
+
+        //break;
+    //}
         
     demo();
     demo();

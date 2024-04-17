@@ -71,3 +71,65 @@ These are just a few examples of the many flags available in GCC. You can find a
 GCC options and flags in the GCC documentation.
 
 */
+
+/*
+Exploring Ubuntu can be a fun way to learn about the Linux operating system. Here are some basic commands
+you can use in the terminal to navigate and explore your Ubuntu system:
+
+Navigating the File System:
+
+ls: List files and directories in the current directory.
+cd: Change directory. Use cd <directory> to move to a specific directory.
+
+Viewing Files:
+
+cat: Display the contents of a file.
+less or more: Display the contents of a file one page at a time. Use arrow keys to navigate.
+
+Creating and Managing Files and Directories:
+
+mkdir: Create a new directory. Use mkdir <directory_name> to create a directory.
+touch: Create a new empty file or update the timestamp of an existing file. Use touch <filename> to
+create a file.
+cp: Copy files and directories. Use cp <source> <destination> to copy a file/directory to a new location.
+mv: Move or rename files and directories. Use mv <source> <destination> to move a file/directory.
+
+Removing Files and Directories:
+
+rm: Remove files or directories. Use rm <filename> to remove a file. Use rm -r <directory> to remove
+a directory and its contents (be careful with this command as it is irreversible).
+
+Viewing System Information:
+
+uname -a: Display information about the system kernel.
+lsb_release -a: Display information about the Ubuntu release.
+df -h: Display disk space usage.
+
+Managing Packages:
+
+apt update: Update the package index.
+apt upgrade: Upgrade all upgradable packages.
+apt install <package>: Install a new package.
+apt remove <package>: Remove a package.
+apt search <keyword>: Search for a package.
+
+These are just a few basic commands to get you started. Ubuntu provides a vast array of tools and
+commands for exploring and managing the system. As you become more comfortable with the terminal,
+you can explore more advanced commands and utilities.
+*/
+
+/*
+what is '|' command?
+
+The '|' symbol in a command is called a pipe. It is used to connect the standard output (stdout) of
+one command to the standard input (stdin) of another command. This allows you to chain multiple commands
+together, creating a pipeline where the output of one command is passed as input to the next command.
+
+For example, in the command cat file.txt | grep "pattern", the cat file.txt command reads the contents of
+file.txt and outputs them to stdout. The | (pipe) then takes this output and passes it as input to
+the grep "pattern" command, which searches for the specified pattern in the input and outputs
+the matching lines to stdout.
+
+Pipes are a powerful feature of Unix-like operating systems, allowing you to combine simple commands to
+perform complex tasks efficiently.
+*/

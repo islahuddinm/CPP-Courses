@@ -26,6 +26,7 @@ public:
     int speed;
     int brake;
     int handling;
+    bool power;
 
 };
 
@@ -48,6 +49,26 @@ int main() {
     mclaren.brake = 86;
     mclaren.handling = 73;
 
+    // we can access something like this
+    cars mclaren2 = {
+        .name = "Spider2 720",
+        .acceleration = 5,
+        .speed = 340,
+        .brake = 86,
+        .handling = 73,
+        .power = false
+    };
+
+    // also we can access something like this
+    class cars mclaren3 = {
+        .name = "Spider3 720",
+        .acceleration = 5,
+        .speed = 340,
+        .brake = 86,
+        .handling = 73,
+        .power = false
+    };
+
     mclaren.behavior();
     std::cout << '\n';
 
@@ -55,7 +76,13 @@ int main() {
     std::cout << "Acceleration : " << mclaren.acceleration << '\n';
     std::cout << "Speed : " << mclaren.speed << '\n';
     std::cout << "Brake : " << mclaren.brake << '\n';
-    std::cout << "Handling : " << mclaren.handling << '\n';
+    std::cout << "Handling : " << mclaren.handling << '\n' << '\n';
+
+    std::cout << "Name : " << mclaren2.name << '\n';
+    std::cout << "Acceleration : " << mclaren2.acceleration << '\n';
+    std::cout << "Speed : " << mclaren2.speed << '\n';
+    std::cout << "Brake : " << mclaren2.brake << '\n';
+    std::cout << "Handling : " << mclaren2.handling << '\n';
 
     return 0;
 }
