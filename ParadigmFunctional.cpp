@@ -10,8 +10,9 @@ to execute.
 - procedural programming paradigm is paradigm type that exrends the imprerative paradigm by orginizing
 code into reusable block called procedures or functions.
 
-- functional programming paradigm is paradigm type that treats computation as the evaluation of
-mathematical functions and avoids changing-state and mutable data. it focuses on mathematical functions.
+- functional programming paradigm is paradigm type that 'treats computation as the evaluation of
+mathematical functions' (This means that functions behave similarly to mathematical functions) and
+avoids changing-state and mutable data. it focuses on mathematical functions.
 
 - Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects,"
 which can contain data in the form of fields (often known as attributes or properties) and code,

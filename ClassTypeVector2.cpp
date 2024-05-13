@@ -3,6 +3,7 @@
 
 int main() {
     std::vector<int> numbers = {1, 2, 3, 4, 10};
+    std::vector<int> numbers2{1, 2, 3, 4, 10};
 
     // Iterate over the vector using iterators
     for (auto it = numbers.begin(); it < numbers.end(); ++it) {

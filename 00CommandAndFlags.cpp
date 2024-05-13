@@ -106,12 +106,18 @@ lsb_release -a: Display information about the Ubuntu release.
 df -h: Display disk space usage.
 
 Managing Packages:
+apt (Advanced Package Tool) is a package manager used in Debian-based Linux distributions such as Ubuntu.
+It is used to install, update, upgrade, and manage software packages.
 
 apt update: Update the package index.
 apt upgrade: Upgrade all upgradable packages.
 apt install <package>: Install a new package.
 apt remove <package>: Remove a package.
 apt search <keyword>: Search for a package.
+
+sudo: commonly used to perform administrative tasks that require root (administrator) permissions,
+such as installing or removing software, modifying system configurations, or accessing files and
+directories that are restricted to the root user.
 
 These are just a few basic commands to get you started. Ubuntu provides a vast array of tools and
 commands for exploring and managing the system. As you become more comfortable with the terminal,
