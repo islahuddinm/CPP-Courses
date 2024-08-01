@@ -7,8 +7,17 @@ library is a storage which it provides tools so if we dont have tool we cant do 
 
 /////////////////////////////////////// library contents ///////////////////////////////////////
 
+- data and class type =
+  data types are specific and are used to hold one particular kind of data, while
+  class types are more flexible and can be designed to hold multiple kinds of data or work with various types.
+  
+- data type = int(integer), float, double, char(character), bolean.
+- keyword which used to create "custom data types" (class types) = class, struct, union, enum, typedef, template.
+- class type = custom data types (we can name data type as we like), predefined class types
+  "custom data types (we can name data type as we like)" = horse, yellow, car.
+  "predefined class types" = std::string, std::vector, "std::numeric_limits"(template class type)
+
 - library functions
-- predefined classes
 - generators
 - keywords
 - manipulators
@@ -20,9 +29,6 @@ library is a storage which it provides tools so if we dont have tool we cant do 
 - library functions = standalone or independent function that perform specific tasks or operations without
 being associated with any other library functions and data structures.
 
-- predefined classes = part of c++ element can have library functions specially designed to manipulate or
-interact with data encapsulated or contained within class.
-
 - generators = a construct or function that produces a sequence of values or objects.
 
 - keywords = reserved words that have predefined meanings and cannot be used as identifiers.
@@ -31,6 +37,7 @@ interact with data encapsulated or contained within class.
 
 - operators = symbols that perform operations on variables and values.
 
-- type traits = a template class used to query or introspect properties of types at compile time.
+- type traits = a template class used to check if a given type is integral, meaning it's
+a built-in integer type like int, long, short, char, etc at compile time.
 
 */

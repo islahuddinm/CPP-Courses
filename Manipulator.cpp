@@ -1,8 +1,10 @@
 #include <iostream>
 #include <iomanip>
 
-//manipulator (functions or objects that can modify the output behavior of standard stream objects)
-//manipulator is including std::hex, std::oct, std::dec, std::showbase, std::uppercase
+// manipulator (functions or objects that can modify the output behavior of standard stream objects)
+// manipulator is including std::hex, std::oct, std::dec, std::showbase, std::uppercase, std::endl, std::flush
+// std::right, std::showpoint, std::boolalpha, std::setfill(), std::left, std::internal, std::setw(),
+// std::fixed, std::setprecision, std::scientific, std::showpost.
 
 int main() {
 
