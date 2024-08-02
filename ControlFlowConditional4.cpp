@@ -58,6 +58,10 @@ void function4() { //ternary initialization
     bool fast = false;
 
     int speed = fast ? 100 : 150 ; //conditional is fast, "if"(in left) is 100, "else"(in right) is 150.  'if'(true), 'else'(false)
+    std::string speed2 = fast ? "fast" : "slow" ;
+    // std::string speed2 {fast ? "fast" : "slow"};
+    // std::string speed2 (fast ? "fast" : "slow");
 
     std::cout << "Speed of Ternary : " << speed << '\n';
+    std::cout << "Speed of Ternary : " << speed2 << '\n';
 }

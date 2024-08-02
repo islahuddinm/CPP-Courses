@@ -1,6 +1,11 @@
 #include <iostream>
 #include <array>
 
+/* iterator is an object that allows you to traverse a container (like an array, vector, list, etc.) and
+access its elements. It acts like a pointer, enabling you to iterate through the elements of a container.
+for example, for (it = numbers.begin(); it != numbers.end(); ++it). "numbers.begin()" and "numbers.end()"
+we can also use "library function" to help making an iterator. */
+
 //types of loops
 
 int main2();
