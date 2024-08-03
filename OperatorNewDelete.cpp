@@ -24,6 +24,7 @@ int main() {
     // variable(x) stores value(32), so it has same memory address.
 
     // this is assignment using 'new'.
+    int* pp = new int{20};
     int* p = new int; // Allocate memory for an integer on the heap(memory stock have not been used).   
     *p = 42; // Assigning a value to the allocated memory by 'new int;' then the value(42) is placed to the allocated memory.
     // we can also assign like this 'int* p = new int(42);' instead of above.

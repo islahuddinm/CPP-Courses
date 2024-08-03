@@ -21,9 +21,9 @@ int main() {
 
     pointerTo_a = &b;
 
-    std::cout << "the value of a is " << pointerTo_a << '\n';
-    std::cout << "the value of a is " << *pointerTo_a << '\n'; //when we want to value result of "a" we have to give "*" in the baginning because we use pointer variable
-    std::cout << "the memory address of a variable is " << pointerTo_a << '\n'; //pointerTo_a is variable stored memory address of a
+    std::cout << "the value of b is " << pointerTo_a << '\n';
+    std::cout << "the value of b is " << *pointerTo_a << '\n'; //when we want to value result of "a" we have to give "*" in the baginning because we use pointer variable
+    std::cout << "the memory address of b variable is " << pointerTo_a << '\n'; //pointerTo_a is variable stored memory address of a
     std::cout << '\n';
 
     /*int *pointerValue = 15; //this is not working/ the result is wrong because its value is not variable
