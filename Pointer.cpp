@@ -26,6 +26,11 @@ int main() {
     std::cout << "the memory address of b variable is " << pointerTo_a << '\n'; //pointerTo_a is variable stored memory address of a
     std::cout << '\n';
 
+    *pointerTo_a = 9;
+
+    std::cout << "the value of b is " << pointerTo_a << '\n';
+    std::cout << "the value of b is " << *pointerTo_a << '\n';
+
     /*int *pointerValue = 15; //this is not working/ the result is wrong because its value is not variable
 
     std::cout << "the value of a is " << pointerValue << '\n';

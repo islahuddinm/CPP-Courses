@@ -52,6 +52,9 @@ double increment_multiply(double a, double b) {
     return result;
 }
 
+// this is declaration function
+void a();
+
 int main() {
 
     enter_bar(20); //funtion argument
@@ -97,4 +100,10 @@ int main() {
     std::cout << '\n';
     
     return 0;
+}
+
+// this is definition/implementation frunction
+void a() {
+    
+    return;
 }

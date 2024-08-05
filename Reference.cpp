@@ -20,13 +20,18 @@ int main() {
 
     refTo_a = b;
 
-    std::cout << "the value of a is " << a << '\n'; //why i give "a" in output but the result is "b"? because "reTo_a" is actually "a" i have changed variable "a" to "refTo_a"
-    std::cout << "the value of ref_to a is " << refTo_a << '\n';
+    std::cout << "the value of b is " << a << '\n'; //why i give "a" in output but the result is "b"? because "reTo_a" is actually "a" i have changed variable "a" to "refTo_a"
+    std::cout << "the value of ref_to b is " << refTo_a << '\n';
     std::cout << '\n';
 
     // output below have same address memory "refTo_a" is actually "a" variable
     std::cout << "the memory address of a is " << &a << '\n';
     std::cout << "the memory address of refTo_a is " << &refTo_a << '\n';
+    std::cout << '\n';
+
+    refTo_a = 100;
+
+    std::cout << a << '\n';
     std::cout << '\n';
 
     main2();

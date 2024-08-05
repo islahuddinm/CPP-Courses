@@ -33,7 +33,7 @@ int main() {
     // variable(p) stores allocated memory of the heap, so it has no same memory address.
 
     // 'delete operator' in below just deallocate memory this assignment, dont deallocate assignment above.
-    p = new int;   
+    //p = new int;   
     *p = 10;    
     std::cout << "Memory address of 'p' : " << &p << '\n';    
     std::cout << "Memory address of 'new int;' and '10' : " << p << '\n';

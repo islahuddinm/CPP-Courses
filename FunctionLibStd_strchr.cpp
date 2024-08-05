@@ -17,6 +17,9 @@ int main() {
 
     const char *result = std::strchr(str, target);
 
+    // also we can declare like this
+    std::strchr(str, 'good');
+
     std::cout << "std::strchr result : " << result << '\n'; //result is found "world"(1)
     std::cout << "std::strchr result : " << !result << '\n'; //result is found "zero"(0) because reverted with !
 
