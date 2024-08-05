@@ -2,7 +2,7 @@
 
 //void is return type
 
-//function that take a single parameter, and doen't gave back the result explicitly.
+//function that take a single parameter/argument, and doen't gave back the result explicitly.
 void enter_bar(size_t age) { //"unsigned int age" is function parameter
 
     if (age > 18) {
@@ -16,7 +16,7 @@ void enter_bar(size_t age) { //"unsigned int age" is function parameter
     }
 }
 
-//function that takes multiple parameters and returns the result of the computation
+//function that takes multiple parameters/arguments and returns the result of the computation
 int max(int a, int b) {
 
     if (a > b) {
@@ -30,7 +30,7 @@ int max(int a, int b) {
     }
 }
 
-//function that dose not take parameters and results nothing
+//function that dose not take parameters/arguments and results nothing
 void sayHello() {
 
     std::cout << "Hello\n";
@@ -57,7 +57,7 @@ void a();
 
 int main() {
 
-    enter_bar(20); //funtion argument
+    enter_bar(20); //funtion argument or funtion call
     enter_bar(25);
     enter_bar(16);
 
