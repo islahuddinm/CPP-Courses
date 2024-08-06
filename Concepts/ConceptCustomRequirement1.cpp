@@ -8,13 +8,13 @@ using them in template constraints, you use the concept keyword to declare a cus
 template <typename T>
 concept MyConcept = std::is_integral_v<T>; // "concept" is a keyword to built concept. "MyConcept" is specified concept name. "std::is_integral_v<T>" is requierment which required be concept or aim is became to be concept.
 
-// just enable multipliable value
+// just enable multipliable value is to passed. for example, if we pass "string", we would get compiler error because "string" is impossible to be multipliable.
 template <typename T>
 concept Multipliable = requires(T a, T b) { // "concept" is a keyword to built concept. "Multipliable" is specified concept name. "requires and body" is requierment which required be concept or aim is became to be concept.
     a * b;
 };
 
-// just enable incrementable value
+// just enable incrementable value is to passed. for example, if we pass "string", we would get compiler error because "string" is impossible to be incrementable.
 template <typename T>
 concept Incrementable = requires(T a, T b) { // // "concept" is a keyword to built concept. "Incrementable" is specified concept name. "requires and body" is requierment which required be concept or aim is became to be concept.
     a+=1;

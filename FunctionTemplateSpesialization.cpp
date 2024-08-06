@@ -17,7 +17,7 @@ void printValue(const T& value) {
 
 // Function template specialization for std::string
 template<>
-void printValue<std::string>(const std::string& value) {
+void printValue<std::string>(const std::string& value) { // this "<std::string>" to make explicit / convert other data types into string.
     std::cout << "Specialized: [" << value << "]" << std::endl;
 }
 
@@ -25,7 +25,7 @@ int main() {
     int intValue = 42;
     double doubleValue = 3.14;
     std::string stringValue = "Hello, world!";
-    std::string stringValue2 = "Hello";
+    char* stringValue2 = "Hello";
     
     // Using the generic printValue function template
     printValue(intValue); // Output: Generic: 42

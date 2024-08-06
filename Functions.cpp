@@ -17,11 +17,16 @@ void enter_bar(size_t age) { //"unsigned int age" is function parameter
 }
 
 //function that takes multiple parameters/arguments and returns the result of the computation
-int max(int a, int b) {
+int max(int c, int b) {
 
-    if (a > b) {
+    // a++; would be error because it cannot reach out in main function
 
-        return a;
+    if (c > b) {
+
+        // a++; would be error because it cannot reach out in main function
+        c++;
+
+        return c;
     }
 
     else {

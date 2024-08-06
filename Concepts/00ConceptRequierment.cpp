@@ -46,7 +46,7 @@ int main() {
     float a = 5.5; // it cant pass in function template because they just allow integer data type.
     int b = 5;
 
-    std::cout << "syntax1 result : " << add(b) << '\n';
+    std::cout << "syntax1 result : " << add(a) << '\n'; // this is error because "add()" require 'integer'.
     std::cout << "syntax result : " << addd(b) << '\n';
     std::cout << "syntax2 result : " << add2(b) << '\n';
     std::cout << "syntax3 result : " << add3(b) << '\n';

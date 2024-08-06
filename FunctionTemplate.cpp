@@ -22,7 +22,7 @@ int main() {
     double sum2 = add(3.5, 4.7);
     std::string combined = add2("Hello", "World");
 
-    std::cout << "Sum1: " << add(a, b) << std::endl; // i have not found a way to execution different data types in function parameters implicitly
+    std::cout << "Sum1: " << add(a, b) << std::endl; // if we use different data type we would get compiler error, i have not found a way to execution different data types in function parameters implicitly
     std::cout << "Sum1: " << sum1 << std::endl; // Output: Sum1: 7
     std::cout << "Sum2: " << sum2 << std::endl; // Output: Sum2: 8
     std::cout << "Combined: " << combined << std::endl; // Output: Combined: Hello World

@@ -49,7 +49,7 @@ int main() {
     // this lambda function that returns something.
     auto result = [](double a, double b){
         return a + b;
-    }(10.0, 5.5);
+    }(10.0, 5.5); // "(10.0, 5.5);" is function parameter assignment
     std::cout << "a + b : " << result << " (return)" << '\n';
 
 
