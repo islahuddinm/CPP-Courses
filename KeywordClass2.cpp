@@ -18,7 +18,7 @@ private: // it means only can use/access in local.
 public:
     // Constructor (constructor is allow creat an object) is a special member function of a class that is automatically called when an object of that class is created in main function.
     // Constructor name has to same with class name.
-    Cars() {
+    Cars() { // this is default constructor.
         // access member variable or attribute.
         make = "Mclarent";
         model = "720 Spider";
@@ -39,7 +39,7 @@ public:
     }
 
     // another way to creat constructure.
-    Cars(std::string a, std::string b, int c, double d) {
+    Cars(std::string a, std::string b, int c, double d) { // this is Parameterized Constructor
         // access member variable or attribute.
         make = a;
         model = b;
@@ -75,6 +75,10 @@ int main() {
     cout << "Price: $" << mclarent.getPrice() << endl;
     cout << endl;
 
+    // this is creating object by Using the default constructor
+    Cars bugg;
+
+    // this is creating object by Using the parameterized constructor
     // we can do like this instead of 'Cars mclarent = Cars("Bugatti", "720", 2024, 20000);'.
     Cars bugatti ("Bugatti", "Ceiron", 2024, 20000);
 

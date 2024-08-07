@@ -23,6 +23,13 @@ T intfloat2(T a) {
     return a;
 }
 
+// syntax 2
+template <typename T>
+T func(T a) requires std::integral<T> && requires (T a) {requires sizeof(T) <=4;} {
+    
+    // body
+}
+
 int main() {
 
     double x = 50;

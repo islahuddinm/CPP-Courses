@@ -10,13 +10,21 @@ each with its own unique set of data and behaviors.*/
 //car class has some attribute (name, prize, speed, color, etc.) and has some behaviour (drive, brake, change color, etc.) as well
 //class is used as a template or blueprint for creating objects.
 
+int topSpeed;
+
 class cars {
     
 public : // it means only can use/access in another function.
     /* member function are used to implement the behavior of the class and can access the
     class's member variables and other member functions.*/
-    void behavior() {
+    void behavior() {         
         std::cout << "Mclaren is running" << '\n';
+    }
+
+    int behavior2() {
+
+        return topSpeed;
+        return speed + power;
     }
 
 public:
@@ -29,6 +37,9 @@ public:
     bool power;
 
 };
+
+//cars::acceleration = 100; error
+//acceleration = 100; error
 
 int main() {
     // this is how to create object. or how to call default constructor.

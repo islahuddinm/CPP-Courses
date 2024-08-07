@@ -10,9 +10,9 @@ concept TinyType = requires (T a) {
 // built combination requirement custom concept
 template <typename T>
 concept Addable = requires (T a, T b) {
-    {a + b} noexcept-> std::convertible_to<int>; // "noexcept" is a keyword used as a specifier to declare that a function does not throw exceptions.  
-    // "std::convertible_to<int>" is concept introduced in C++20 as part of the Concepts library. It ensures that a type can be converted to another type using implicit conversions. However, if we use string type, it would result in a compilation error because a string is not convertible to an integer.
-    // "{a + b} noexcept-> std::convertible_to<int>" it's requirement. type is must addable, does not throw exception, and the result is convertible to "int".
+    {a + b} noexcept-> std::convertible_to<int>; // "noexcept"(optional, we can do without using this) is a keyword used as a specifier to declare that a function does not throw exceptions.  
+    // "std::convertible_to<int>" is concept introduced in C++20 as part of the Concepts library. It ensures that a data type can be converted to 'int' data type. However, if we use string type, it would result a compilation error because a string is not convertible to an integer.
+    // "{a + b} noexcept-> std::convertible_to<int>" it's requirement. type is must addable, does not throw exception, and convertible to "int".
 };
 
 //////////////////////////////////////////////////////////////////////////////////// border

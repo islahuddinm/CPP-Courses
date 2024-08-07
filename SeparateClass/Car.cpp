@@ -1,14 +1,8 @@
 #include "car.h"
 #include <iostream>
 #include <string>
-#ifndef CAR_CPP
-#define CAR_CPP
-/* #ifndef, #define, #endif (Header guards): These directives are used to prevent a header file from
-being included multiple times in the same translation unit, which can lead to redefinition errors.
-
-#ifndef (if not defined): Checks if a macro has not been defined. If the macro has not been defined, the code between #ifndef and #endif is processed.
-#define: Defines a macro, usually used to define the macro checked by #ifndef.
-#endif: Ends the conditional block.*/
+//#ifndef CAR_CPP
+//#define CAR_CPP
 
 //car.cpp file is to implement variables and fuctions in car.h file
 
@@ -45,4 +39,4 @@ car::car(int a, int b) // another way to creat constructure.
 	brake = b;
 }
 
-#endif
+//#endif

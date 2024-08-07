@@ -1,4 +1,9 @@
 #include <string>
+#ifndef CAR_H // stand for "if not defined (code file)"
+#define CAR_H // stand for "define(code file)"
+
+/* #ifndef, #define those are directive(yg menginstruksikan) check to ensure that the file's contents are
+not included multiple times. This practice is known as an include guard. */
 
 //reminder class and constructor name have to same
 //car.h file is to declare the variable and fuctions we are going to use
@@ -39,3 +44,5 @@ public:
 	int brake;
 	int handling;
 };
+
+#endif // This marks the end of the conditional directive started by #ifndef.

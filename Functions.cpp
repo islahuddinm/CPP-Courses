@@ -35,9 +35,12 @@ int max(int c, int b) {
     }
 }
 
+int x = 9;
+
 //function that dose not take parameters/arguments and results nothing
 void sayHello() {
 
+    int xx = x;
     std::cout << "Hello\n";
 }
 
