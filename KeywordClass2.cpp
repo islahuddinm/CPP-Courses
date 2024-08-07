@@ -13,7 +13,8 @@ public: // it means only can use/access in another function.
 
 private: // it means only can use/access in local.
     // member variable is variables that are associated with a specific instance of a class (object) and hold the state or data for that object or frist declaration.
-        double price;
+    double price;
+    double price2;
 
 public:
     // Constructor (constructor is allow creat an object) is a special member function of a class that is automatically called when an object of that class is created in main function.
@@ -24,6 +25,11 @@ public:
         model = "720 Spider";
         year = 2023;
         price = 1000;
+        //price2 = 2000;
+    }
+
+    void run() {
+        price2 = 2000; // we can still access even though it is private because it is in same class.
     }
 
     // Getter function is an accessor method that is used to retrieve the value of a private.
