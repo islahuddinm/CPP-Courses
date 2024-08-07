@@ -10,7 +10,7 @@ you need to differentiate between the two.*/
 class cars {
 public:
     cars(std::string brandParam, std::string typeParam, int yearsParam, double priceParam);
-    ~cars();
+    ~cars(); // destructor function
     
     void setCars() {
         std::cout << brand << " " << type << " " << *years << " " << std::fixed << std::setprecision(0) << *price << " ////// This object is at " << this << '\n';
