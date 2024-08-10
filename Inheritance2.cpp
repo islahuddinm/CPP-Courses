@@ -56,7 +56,8 @@ public:
         company = companyParam;
         age = ageParam;
     }
-    // this is how to copy constructor.
+    // this is how to "copy constructor". A copy constructor in C++ is a special constructor used to create
+    // a new object as a copy of an existing object.
     employee(employee& source)
     : name(source.name), company(source.company), age(source.age) /* this is another way initialize instead of in function body.*/
     {
@@ -88,7 +89,10 @@ public:
     void fixBug() {
         std::cout << getName() << " fix bug using " << favProgrammingLanguage << '\n';
     }
-};
+
+protected:
+    int coba;
+}; //int developer::coba = 10;
 
 
 
@@ -166,8 +170,8 @@ public:
     {
         std::cout << "Costum copy constructor Civil Engineer" << '\n';
     }*/
-    // this is how to copy constructor in inheritance hierarchy. this is correct way then we get 'copy employee constructor' as well even though we dont call it.
-    civilEngineer(civilEngineer& source)
+    // this is how to copy "constructor" in inheritance hierarchy. this is another way which is correct way.
+    civilEngineer(civilEngineer& source) // this is "copy constructor"
     : engineer(source), contract(source.contract) // 'engineer(source)' call all its data for '(civilEngineer& source)'
     {
         std::cout << "Costum copy constructor Civil Engineer" << '\n';
@@ -202,6 +206,7 @@ int main() {
     developer employee3("MI", "MI Company", 25, "C++");
     employee3.introduceYourself();   
     employee3.fixBug();
+    //employee3.coba = 100; // we can not access this because it is protected.
 
     std::cout << '\n';
 
@@ -220,8 +225,38 @@ int main() {
 
     std::cout << '\n';       
 
-    civilEngineer employee55 = employee5; // copy constructor in inheritance hierarchy. so we can get 'copy employee constructor' as well even though we dont call it.
-    std::cout << "Employe4 : " << employee55 << '\n';    
+    /* this is how to copy a 'object'(employee5) by storing "employee5" in "employee55"
+    then we print "employee55" and then we would get same data result /print. */
+    civilEngineer employee55 = employee5;
+    std::cout << "Employe4 : " << employee55 << '\n'; // when we are printing this, we also can get employee's 'copy constructor' as well even though we dont call it.
+
+    
 
     return 0;
 }
+
+/* we can copy object without having copy constructor you know.
+
+Yes, in C++, you can indeed copy an object without explicitly defining a copy constructor.
+However, there are important considerations to be aware of, particularly when dealing with
+dynamically allocated memory or other resources.
+
+What Happens When You Don't Define a Copy Constructor?
+When you don't provide a custom copy constructor for a class, the C++ compiler generates
+a default copy constructor for you. This default copy constructor performs a shallow copy of
+the object's members.
+
+Shallow Copy vs. Deep Copy:
+
+Shallow Copy:
+The default copy constructor performs a bitwise copy of the object. This means it copies the values of
+all the member variables from one object to another.
+If your class contains pointers, the shallow copy will copy the pointer values (addresses), not
+the actual data they point to.
+As a result, both objects (the original and the copy) will point to the same memory location.
+
+Deep Copy:
+A deep copy, on the other hand, creates a new memory allocation for the copied data. 
+This ensures that the original and the copied objects are completely independent of each other.
+To achieve a deep copy, you must define a custom copy constructor that handles the copying of
+the data pointed to by any pointers in the class. */

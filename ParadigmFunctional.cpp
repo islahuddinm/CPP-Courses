@@ -1,5 +1,5 @@
 /*
-a programming paradigm is refer to style ore patern of how code should be structured, organized, and
+a programming paradigm is refer to style or patern of how code should be structured, organized, and
 how algorithms should be designed. it defines the structure, oraginization, and flow of code.
 
 here are some key programming paradigms:

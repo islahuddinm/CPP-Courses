@@ -3,7 +3,8 @@
 /* Function template is a feature in languages like C++ that allows you to define a function once and
 use it with different data types.
 
-purpose is to avoid overload functions.*/
+purpose is to avoid "overload functions" (C++ lets you specify more than one function of the same name in
+the same scope.).*/
 
 
 // Generic add function template

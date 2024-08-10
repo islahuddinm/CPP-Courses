@@ -31,7 +31,7 @@ class Person
 public:
     Person(){}
     Person(std::string& first_name_param, std::string& last_name_param)
-    //: first_name(first_name_param), last_name(last_name_param)
+    //: first_name(first_name_param), last_name(last_name_param) // to use this we have to remove "&" at constractor parameter. because it just stores variables
     {
     }
 
@@ -94,6 +94,8 @@ private :
 
 
 int main(){
+
+    //Person p1("Mikel", "Jordan"); // to use this we have to remove "&" at constractor parameter
 
     Player p1("Basketball");
     p1.set_first_name("John");

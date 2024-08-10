@@ -49,3 +49,26 @@ int main() { // "int"(data type) for main function's "return 0". "main"(function
     
     return 0;
 }
+
+/* Function Overloading
+Function overloading allows multiple functions to have the same name but with different parameters
+(different number, type, or order of parameters). 
+
+Function Overriding
+Function overriding occurs when a derived (child) class has a definition for one of the member functions of
+the base (parent) class. The function in the derived class "overrides"(menggantikan) the function in
+the base class.
+
+Key Differences:
+Overloading: Same function name with different parameters (within the same scope).
+Overriding: Same function name, same parameters, but the function is defined in both base and
+derived classes (inherited classes). */
+
+/* Binding in programming, specifically in C++, is the process of linking a function call to
+its corresponding function definition. there are 2 binding types "Static Binding" and "Dynamic Binding"
+
+Static binding happens at compile time. it means when we call generally other functions in main function.
+dynamic binding happens at runtime. it means when we only call "deriverd class's" function then automatically
+also call "base class's" function.
+
+https://youtu.be/5FmszF_Tb2A?si=GzShzuEJebtgEOth */

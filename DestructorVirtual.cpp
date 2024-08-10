@@ -58,7 +58,14 @@ int main(){
 
    // Dog dog1;
 
-    Animal * p_animal = new Dog;
+    // this is not Polymorphism
+    Dog * no_animal = new Dog; /* This is specific to the Dog class and does not provide the flexibility of
+    handling other derived classes. The pointer can only point to Dog objects. */
+    
+    // this is Polymorphism
+    Animal * p_animal = new Dog; /* This allows the pointer to Animal to point to any derived class object
+    (e.g., Dog, Cat, etc.). It provides flexibility because you can write functions that work with
+    the base class (Animal) but accept any derived class object. */
 
     delete p_animal;
   

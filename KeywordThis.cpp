@@ -16,6 +16,12 @@ public:
         std::cout << brand << " " << type << " " << *years << " " << std::fixed << std::setprecision(0) << *price << " ////// This object is at " << this << '\n';
     }
 
+    void printCarAddress() {
+        /* Pointer to Current Object: The this keyword is a pointer to the current object,
+        meaning it holds the address of the object on which the member function is invoked. */
+        std::cout << "Car Address: " << this << '\n';
+    }
+
     // Setter function is a method that is used to modify the value of a private or protected data member of a class.
     void setMclarenBrandYears(std::string brand, int years) {
         this->brand = brand; // this time 'this' keyword is used to avoid error of same name.
@@ -84,6 +90,8 @@ int main() {
     cars lamborgini("Lamborgini", "Aventado", 2020, 3000000);
     
     std::cout << "Done" << '\n';
+
+    lamborgini.printCarAddress();
 
     return 0;
 }
