@@ -161,7 +161,7 @@ int main(){
     Dog dog2("dark gray","dog2");
     Cat cat2("black stripes","cat2");
     Pigeon pigeon2("white","pigeon2");//Putting pigeon in felines will result in compiler error
-                                        // pigeon is and Animal,a but is not a feline.
+                                        // pigeon is a bird, but is not a feline.
     Animal animal1("some animal");
     
     Feline* felines[] {&dog2,&cat2};

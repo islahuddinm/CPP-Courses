@@ -102,6 +102,9 @@ public:
     void working() {
         std::cout << getName() << " is teaching " << subject << '\n';
     }
+    void working(int amount, std::string school) {
+        std::cout << getName() << " is teaching " << amount << school << '\n';
+    }
 
 };
 
@@ -157,9 +160,13 @@ int main() {
     std::cout << '\n';
 
     employee2.working();
-    employee2.working(44); // we cant put value in 'working fonction parameter' because there is 'overload function'. if we want to solve that we have to hide employee's 'working function' or we can put 'overload function' in derived class as well.
+    employee2.working(44); // we cant put value in 'working fonction parameter' because there is 'overload function'. if we want to solve that we have to hide employee's 'working function' in object has error or we can put 'overload function' in derived class as well.
     employee3.working();
     employee3.working(44);
+
+    //teacher* tryOverload = new teacher("john", "school", 23, "indo"); // we can create object like this to make this "tryOverload->working(12, "smp")" works
+    employee* tryOverload = new teacher("john", "school", 23, "indo");
+    tryOverload->working(12, "smp"); // it actually works if there is this "tryOverload.working(12, "smp")" function in base class
 
     return 0;
 }
