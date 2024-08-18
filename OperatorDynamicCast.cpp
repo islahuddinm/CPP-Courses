@@ -4,6 +4,8 @@
 references of derived class at runtime. It's primarily used in situations where you have a base class pointer
 or reference pointing to a derived class object, and you want to safely downcast it to the derived class type.*/
 
+// "dynamic_cast" only can be used for polymorphism
+
 class Base {
 public:
     virtual ~Base() {}

@@ -50,7 +50,10 @@ int main() { // "int"(data type) for main function's "return 0". "main"(function
     return 0;
 }
 
-/* Function Overloading
+/*
+virtual function is polymorphic function.
+
+Function Overloading
 Function overloading allows multiple functions to have the same name but with different parameters
 (different number, type, or order of parameters). 
 
@@ -71,4 +74,5 @@ Static binding happens at compile time. it means when we call generally other fu
 dynamic binding happens at runtime. it means when we only call "deriverd class's" function then automatically
 also call "base class's" function.
 
-https://youtu.be/5FmszF_Tb2A?si=GzShzuEJebtgEOth */
+https://youtu.be/5FmszF_Tb2A?si=GzShzuEJebtgEOth
+*/

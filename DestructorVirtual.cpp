@@ -1,6 +1,8 @@
 #include <iostream>
 
-// this is how to destruct virtual destructor. when we want to destruct virtual function we have to give virtual keyword in destructor.
+// this is how to destruct automatically a destruction function when we create object kind of
+// this "Animal * p_animal = new Dog;". so we have to give 'virtual' keyword every destruction function
+// but if we create object like this "Dog * no_animal = new Dog;" we dont need to give 'virtual' keyword every destruction function
 
 class Animal
 {
@@ -61,6 +63,8 @@ int main(){
     // this is not Polymorphism
     Dog * no_animal = new Dog; /* This is specific to the Dog class and does not provide the flexibility of
     handling other derived classes. The pointer can only point to Dog objects. */
+
+    delete no_animal;
     
     // this is Polymorphism
     Animal * p_animal = new Dog; /* This allows the pointer to Animal to point to any derived class object
