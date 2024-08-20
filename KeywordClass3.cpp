@@ -3,10 +3,10 @@
 
 class cars {
 public:
-    cars() {
+    cars() { // default constructor
         std::cout << "Default costructor is called.\n";
     }
-    cars(std::string brandParam, std::string typeParam, int yearsParam, double priceParam);
+    cars(std::string brandParam, std::string typeParam, int yearsParam, double priceParam); // custom constructor
     ~cars();
 
     void run() {
@@ -21,7 +21,7 @@ private:
     double *price;
 };
 
-cars::cars(std::string brandParam, std::string typeParam, int yearsParam, double priceParam) { // Constructo
+cars::cars(std::string brandParam, std::string typeParam, int yearsParam, double priceParam) { // custom Constructor
 
     brand = brandParam;
     type = typeParam;
@@ -79,7 +79,7 @@ int main() {
     function3(pagani); // this is how to put 'pagani' to function3 by parameter and the destructor will execute in function3.
     function4();
 
-   // cars ferrari; // this create object and call default constructor.
+   cars ferrari; // this create object and call default constructor.
     
     std::cout << "Done" << '\n';
 

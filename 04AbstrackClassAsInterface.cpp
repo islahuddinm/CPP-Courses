@@ -11,6 +11,9 @@ inherited from another class). it contains one or more pure virtual functions.
 implementation provided in the base class.
 pure virtual function have to implement in derived class.*/
 
+/////////**notation**///////// "if we already made 'abstrack class' as a base case, we have to inherit
+////////////////////////////// pure function in derived class, if we dont do that we would get error."
+
 class StreamInsertable{ // this is abstrack class.
     /* operator<< function that allows you to output a object directly to an output stream (std::ostream).
     or // this functin can be called to output by just using 'object name' in main function.*/

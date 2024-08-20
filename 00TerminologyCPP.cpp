@@ -9,6 +9,7 @@
 - function = a reusable block of code that performs a specific task or set of tasks.
 - data types = int(integer), float, double, char(character), bolean. used to define the type of
 data that a variable can store.
+- pre-defined class types = std::srting, std::vector<T>, std::deque<T>, std::list<T>, and so on.
 - keyword which used to create custom data types / class types = class, struct, union, enum, typedef, template.
 
 - variable = symbolic name assigned to store data and value.

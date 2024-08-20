@@ -26,6 +26,8 @@ public:
         year = 2023;
         price = 1000;
         //price2 = 2000;
+
+        std::cout << "default called" << '\n';
     }
 
     void run() {
