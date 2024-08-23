@@ -69,6 +69,9 @@ to achieve polymorphism, check at "Polymorphism.cpp".
 - there is object slicing, check at "PolymorphismSlicing.cpp," "SizeofPolymorphism.cpp" and "BindingStatic.cpp".
 how to avoid "object slicing"? Mark functions as virtual in the base class when they need to be overridden in
 derived classes & use pointer for implementation, check at "PolymorphismSlicing.cpp," "SizeofPolymorphism.cpp" and "BindingStatic.cpp".
+- there is "override" keyword that is used to check if the function name is same with function name in
+base class, check at "Polymorphism.cpp".
+- there is overload function, check at "PolymorphismOverload.cpp," "PolymorphismOverload2.cpp," "PolymorphismOverload3.cpp"
 
 create object on the heap and how to call its function, check at "KeywordClass3.cpp," "DefaultConstructor.cpp,"
 "Destructor3.cpp," "Destructor4.cpp".

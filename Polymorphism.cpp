@@ -101,7 +101,7 @@ public:
     }
 
     // this is a implementation in a class can be considered its behavior.
-    void working() override{ // 'override' is a keyword to used to check 'override function name' that is not proper with 'override function name' in base class.
+    void working() override{ // 'override' is a keyword to used to check if 'override function name' is proper with 'override function name' in base class. if it is not proper, would get error.
         std::cout << getName() << " fix bug using " << favProgrammingLanguage << '\n';
     }
 };

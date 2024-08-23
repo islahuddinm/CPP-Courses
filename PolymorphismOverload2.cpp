@@ -20,9 +20,9 @@ class Circle : public Shape {
     std::string name;
 public:
     Circle(float r, std::string n) : radius(r), name(n) {}
-    void draw() const override {
+    /* void draw() const override {
         std::cout << "Drawing Circle: " << name << " with radius " << radius << std::endl;
-    }
+    } */
 };
 
 class Oval : public Shape {

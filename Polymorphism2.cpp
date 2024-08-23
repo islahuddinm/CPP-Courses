@@ -12,6 +12,11 @@ public:
     virtual void breathe()const{
         std::cout << "Animal::breathe called for : " << m_description << std::endl;
     }
+
+    virtual void breathe( std::string desc)const{
+        std::string description = desc;
+        std::cout << "description : " << description << std::endl;
+    }
     
 protected: 
     std::string m_description;

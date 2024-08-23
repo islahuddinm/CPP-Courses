@@ -23,6 +23,12 @@ public:
     void draw() const override {
         std::cout << "Drawing Circle: " << name << " with radius " << radius << std::endl;
     }
+
+    // this is function overloading (Same function name with different parameters (within the same scope).)
+    virtual void draw( std::string def) const {
+        std::string definition = def;
+        std::cout << "Definition Shape: " << definition << std::endl;
+    }
 };
 
 class Oval : public Shape {
@@ -43,7 +49,7 @@ int main() {
     circle1.draw();
     circle1.draw("overload"); // we cannot access "overload function". how to access the function?
     // to access the function we have to hide "virtual" draw() function in "Circle class" or add "overide" 'draw(std::string def)' function.
-    // check at "PolymorphismOverload2.cpp" "PolymorphismOverload3.cpp"
+    // check at "PolymorphismOverload2.cpp," "PolymorphismOverload3.cpp"
     
     return 0;
 }
