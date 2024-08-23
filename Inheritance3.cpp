@@ -40,6 +40,13 @@ public:
         std::cout << "Company : " << company << '\n';
         std::cout << "Age : " << age << '\n' << '\n';
     }    
+
+    //employee::going;
+//private:
+    int going() {
+        std::cout << "-------------Go------------\n";
+        return 0;        
+    }
 };
 
 
@@ -63,15 +70,21 @@ public:
 class engineer : public employee {
 public:  
 
-    engineer() {
-        std::cout << "Default consturctor for Engineer called......\n";
-    }
-    engineer(std::string nameParam, std::string companyParam, int ageParam) : employee(nameParam, companyParam, ageParam) { // default constructor        
-    }   
+    using employee::employee; // this is how to inherit default and custom constructor from base class.
+    // **notation** copy constructor is not inheritable.
+
+    // this is custom constructor
+    /* engineer(std::string nameParam, std::string companyParam, int ageParam) : employee(nameParam, companyParam, ageParam) { // default constructor        
+    } */   
     
     void work() {
-        std::cout << employee::getName() << " is working " << '\n';
-    }    
+        std::cout << getName() << " is working " << '\n';
+    }
+
+//private:
+    void go() {
+        std::cout << "-------------Go------------\n";
+    }
 };
 
 
@@ -85,14 +98,25 @@ public:
     }   
     
     void work() {
-        std::cout << engineer::getName() << " is working in " << getCompany() <<'\n';
+        std::cout << going() << " is working in " << getCompany() <<'\n';
     }
 };
 
 
 int main() {
 
+    engineer A1; // create object of engineer class by inherit default and custom constructor from base class.
+
+    //employee B2("Engineer", "Google", 40);
+
+    civilEngineer employee5("Civil Engineer", "Starlink", 40);
+    employee5.work();
+
+    std::cout << "----------------------------------\n";
+
     civilEngineer C3; // this calls 'most special(derived class)'.
+
+    //std::cout << C3.engineer::go() << '\n'; // error
 
     return 0;
 }

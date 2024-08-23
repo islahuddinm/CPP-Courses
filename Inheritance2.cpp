@@ -58,7 +58,7 @@ public:
     }
     // this is how to "copy constructor". A copy constructor in C++ is a special constructor used to create
     // a new object as a copy of an existing object.
-    employee(employee& source)
+    employee(employee& source) // this "(employee& source)" is create object in parameter
     : name(source.name), company(source.company), age(source.age) /* this is another way initialize instead of in function body.*/
     {
         std::cout << "Costum copy constructor Employee" << '\n';
@@ -90,7 +90,9 @@ public:
         std::cout << getName() << " fix bug using " << favProgrammingLanguage << '\n';
     }
 
-protected:
+// protected only can be accessed by derived class that inherit a base class has protected member.
+// when we try to access through main function we cannot, only derived class inherit that can do.
+protected: 
     int coba;
 }; //int developer::coba = 10;
 
@@ -111,6 +113,9 @@ public:
     
     // this function allow to be printed out by using 'object name' in main function.
     // detail explanation about this function is in 'inheritance folder'.
+    /* 'friend' keyword is used to give a non-member function access to private and protected members of
+    a class. it means that a function that is not part of the class itself can still access the private and
+    protected data of the class.*/
     friend std::ostream& operator<<(std::ostream& out, engineer& engineerParam) {
         out << "Name : " << engineerParam.employee::getName() << ", "
             << " Company : " << engineerParam.getCompany() << ", "
@@ -171,7 +176,7 @@ public:
         std::cout << "Costum copy constructor Civil Engineer" << '\n';
     }*/
     // this is how to copy "constructor" in inheritance hierarchy. this is another way which is correct way.
-    civilEngineer(civilEngineer& source) // this is "copy constructor"
+    civilEngineer(civilEngineer& source) // this is "copy constructor" // this "(civilEngineer& source)" is create object in parameter
     : engineer(source), contract(source.contract) // 'engineer(source)' call all its data for '(civilEngineer& source)'
     {
         std::cout << "Costum copy constructor Civil Engineer" << '\n';
@@ -211,7 +216,7 @@ int main() {
     std::cout << '\n';
 
     engineer employee4("Engineer", "Starlink", 40, 2024);
-    std::cout << employee4 << '\n';
+    std::cout << employee4 << '\n'; // this is how to call "operator<<" function.
     employee4.introduceYourselfFromEngineer();
     employee4.work();
     
@@ -227,7 +232,7 @@ int main() {
 
     /* this is how to copy a 'object'(employee5) by storing "employee5" in "employee55"
     then we print "employee55" and then we would get same data result /print. */
-    civilEngineer employee55 = employee5;
+    civilEngineer employee55 = employee5; // this is copy constructor
     std::cout << "Employe4 : " << employee55 << '\n'; // when we are printing this, we also can get employee's 'copy constructor' as well even though we dont call it.
 
     
@@ -249,14 +254,14 @@ the object's members.
 Shallow Copy vs. Deep Copy:
 
 Shallow Copy:
-The default copy constructor performs a bitwise copy of the object. This means it copies the values of
-all the member variables from one object to another.
-If your class contains pointers, the shallow copy will copy the pointer values (addresses), not
-the actual data they point to.
-As a result, both objects (the original and the copy) will point to the same memory location.
+When we say a shallow copy is an "exact bitwise copy," it means that the new object is created by
+copying each bit from the original object to the new one. Essentially, this means copying all the data
+from one object to another in the simplest way possible. A shallow copy copies the values of the data members
+(variables) from one object to another and the actual memory addresses are copied. Both objects point to
+the same memory locations.
 
 Deep Copy:
-A deep copy, on the other hand, creates a new memory allocation for the copied data. 
-This ensures that the original and the copied objects are completely independent of each other.
-To achieve a deep copy, you must define a custom copy constructor that handles the copying of
-the data pointed to by any pointers in the class. */
+A deep copy, on the other hand, create new same object of another object and creates a new memory allocation
+for the copied data. This ensures that the original and the copied objects are completely independent of
+each other. To achieve a deep copy, you must define a custom copy constructor in class that handles the
+copying of the data pointed to by any pointers in the class. */

@@ -74,5 +74,10 @@ int main() {
         s->draw();  // Correctly calls the derived class's draw() method
     }
 
+    ///**notation** object slicing is affected by 2 things is no virtual keyword and no pointer implementation.
+    /* To avoid both slicing and incorrect function calls, you should:
+    - Use pointers or references to base class types when working with derived objects.
+    - Mark functions as virtual in the base class when they need to be overridden in derived classes. */
+    
     return 0;
 }

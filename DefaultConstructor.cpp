@@ -68,7 +68,7 @@ int main(){
 
     std::cout << "------------------------- 2" << std::endl;
 
-    Animal dog3; // this is how to create object on heap memory
+    Animal dog3; // this is how to create object on stack memory
 
     std::cout << "------------------------- 3" << std::endl;
 

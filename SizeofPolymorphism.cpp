@@ -1,6 +1,17 @@
 #include <iostream>
 
-/* Inheritance is a fundamental concept in OOP. Creating new classes based on existing classes,
+/* Polymorphism(many forms) or concpept or method in C++ allows us to reuse code by creating one function
+that's usable for multiple uses in different scenarios. In simple terms, polymorphism enables one interface to
+be used for a general class of actions. There are two main types of polymorphism:
+- Compile-Time Polymorphism (Static Binding):
+Achieved through method overloading and operator overloading.
+example, check at "BindingStatic.cpp" and "BindingDynamic.cpp"
+- Run-Time Polymorphism (Dynamic Binding):
+Achieved through inheritance and function overriding.
+example, check at "BindingStatic.cpp" and "BindingDynamic.cpp"
+
+
+Inheritance is a fundamental concept in OOP. Creating new classes based on existing classes,
 inheriting their attributes and methods of existing classes while also allowing for customization and
 extension.
 
@@ -12,13 +23,20 @@ This enables code reuse and the creation of a hierarchy of classes.*/
 
 // so if we create the derived class we will inherit properties, attribute and behavior from base class.
 
-/* virtual keyword is used to a base class's member function that you can redefine/overriden in
+/* virtual keyword is used to a base class's member function that you can redefine in
 a derived class to achieve polymorphism. you can use a pointer or reference to call the virtual function in
 base class and it will automatically execute its actual function(you have redifined function) in
 the derived class.FOR EXAMPLE IN MAIN FUNCTION BELOW.*/
 
+/* Interface: A special kind of abstract class that typically only contains pure virtual functions and
+no data members or implemented functions.
+Abstract Class: A class that contains at least one pure virtual function.
+an interface is indeed a type of abstract class, but not all abstract classes are interfaces. */
+
+
+// abstract class / interface is a class contains at least one pure virtual function
 class abstrackEmployee { // base/parent class.
-    virtual void askForPromotion() = 0; // Pure virtual function or abstrack function.
+    virtual void askForPromotion() = 0; // Pure virtual function (virtual functions with no implementation) or abstrack function
 };
 
 
@@ -125,20 +143,28 @@ int main() {
    
     std::cout << '\n'; //////////////////////////////////////////////////////////////////////////////////////
 
+    // ***notation*** if we comment "virtual" keyword on function we could get different size
     std::cout << "//////////////////////////////////////// OBJECT SIZES with VIRTUAL(size + 8)" << '\n';
-    std::cout << "Size of (employee1) : " << sizeof(employee1) << " bytes" << '\n';
-    std::cout << "Size of (employee2) : " << sizeof(employee2) << " bytes" << '\n';
+    std::cout << "Size of (employee1) : " << sizeof(employee1) << " bytes" << '\n';  // size of 'employee1' is 80
+    std::cout << "Size of (employee2) : " << sizeof(employee2) << " bytes" << '\n'; // size of 'employee2' and 'employee1'. compiler will count 2 object beause 'employee2 'inherit 'employee1'.
     std::cout << "Size of (employee3) : " << sizeof(employee3) << " bytes" << '\n'; // size of 'employee3' and 'employee1'. compiler will count 2 object beause 'employee3 'inherit 'employee1'.
     std::cout << "//////////////////////////////////////// CLASS SIZES with VIRTUAL(size + 8)" << '\n';
     std::cout << "Size of (employee) : " << sizeof(employee) << " bytes" << '\n';
     std::cout << "Size of (developer) : " << sizeof(developer) << " bytes" << '\n';
     std::cout << "Size of (teacher) : " << sizeof(teacher) << " bytes" << '\n';
 
-    // this method how to get size of 'employee3' only. that is by using 'Base Class's' class type, not using 'Derived Class' class type itself.
-    employee employee = employee3; // size of 'employee3' only. this method how to get size of 'employee3' only. compiler will not count 2 object are 'employee3 'and 'employee1' anymore.
+    // this would get "slicing". it means "employee" class only be able to hold its capacity, wherease
+    // employee3 object of "developer" class has bigger size than "employee" class. so it would get slicing.
+    // so how to avoid "slicing"? give "virtual" keyword at functions or other attributes. check at "BindingStatic.cpp" and "BindingDynamic.cpp" 
+    employee employee = employee3;
     std::cout << "//////////////////////////////////////// OBJECT SIZES with VIRTUAL(size + 8)" << '\n';
     std::cout << "Size of (employee3) ONLY : " << sizeof(employee) << " bytes" << '\n';
 
+    ///**notation** object slicing is affected by 2 things is no virtual keyword and no pointer implementation.
+    /* To avoid both slicing and incorrect function calls, you should:
+    - Use pointers or references to base class types when working with derived objects.
+    - Mark functions as virtual in the base class when they need to be overridden in derived classes. */
+    
     return 0;
 }
 

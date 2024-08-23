@@ -1,44 +1,117 @@
 #include <iostream>
 
-/* Before getting to static binding & dynamic binding, we need to understand the concept of binding.
-When we create a function, we have two crucial things:-
+/*    
+binding is link a function call with/to its function definition.
+there are types of binding, that is static binding & dynamic binding.
+Static Binding is binding occurs at Compile time.
+Dynamic Binding is binding occurs at Runtime.
 
-A function definition - defines a procedure to execute.
-A function call - invokes the respective function for implementation.
-    
-Now both the function definition and function calls are stored in the memory at separate addresses. And our
-program can have more than one function for its smooth operation. Hence, we need a technique to match the
-appropriate function call with its definition.
+you know that dynamic and static binding are written at compile time. so what is differences?
+dynamic binding is set up during compilation, but actual function to be called is decided during runtime.
+static binding is set up and fixed during compilation. There is no further decision-making needed at runtime.
+*/
 
-The process of matching a specific function call to its respective function definition is known as binding.
-But why is this of such interest? A lot can be utilized using the two kinds of binding: static binding & dynamic binding.
-    
-binding is needed to link a function call with its function definition accurately.
-When this binding occurs at Compile time, we call it a Static Binding, and
-when this binding occurs at Runtime, we call it a Dynamic Binding.*/
-
-class Base {
+class Shape
+{
 public:
-    void display() {
-        std::cout << "Base class display() called." << std::endl;
+    Shape(): Shape("NoDescription") {
+    }    
+    Shape(std::string_view description): m_description(description) {
+        
+    }    
+    ~Shape(){
+        
     }
+    
+    void draw( )const{
+        std::cout << "Shape::draw() called for : " << m_description << std::endl;
+    }
+    
+protected:
+    std::string m_description;
+
 };
 
-class Derived : public Base {
+
+class Ellipse : public Shape
+{
 public:
-    void display() {
-        std::cout << "Derived class display() called." << std::endl;
+    Ellipse(): Ellipse(0.0,0.0,"NoDescription") {        
     }
+    Ellipse(double x_radius, double y_radius, std::string_view description)
+    : Shape(description), m_x_radius(x_radius), m_y_radius(y_radius) {
+        
+    }
+    ~Ellipse(){
+        
+    }
+
+    void draw( )const{
+        std::cout << "Ellipse::draw() called for : " << m_description << std::endl;
+    }
+	
+//private : 
+    double m_x_radius;
+    double m_y_radius;
 };
 
-int main() {
-    Base baseObj;
-    Derived derivedObj;
 
-    Base *ptr = &derivedObj; // Pointer of Base type pointing to Derived object
+class Oval : public Ellipse
+{
+public:
+    Oval(): Oval(0.0,0.0,"NoDescription") {        
+    }
+    Oval(double x_radius, double y_radius, std::string_view description):
+    Ellipse(x_radius, y_radius, description) {
 
-    // Static binding: Resolved at compile time based on the pointer type (Base)
-    ptr->display(); // This will call Base::display(), not Derived::display()
+    }
+    ~Oval() {
 
+    }
+
+    void draw( )const{
+        std::cout << "Oval::draw() called for : " << m_description << std::endl;
+    }
+
+};
+
+
+int main(){
+
+    Shape shape1("Shape1");
+    Ellipse ellipse1(1, 1, "Ellipse1");
+	Oval oval1(2, 2, "Oval1");
+
+    shape1.draw();
+    ellipse1.draw();
+    oval1.draw();
+
+    std::cout << "\n";
+    std::cout << "Calling methods through pointers : static binding\n";
+
+    Shape* shapePtr = &shape1;
+    shapePtr->draw(); // this is static binding, static binding will call "Shape::draw()"
+
+    // this gets "slicing"
+    shapePtr = &ellipse1;
+    shapePtr->draw(); /* this is static binding, this static binding will call "Shape::draw()" even though
+    i create "ellipse1 object" at "Ellipse class". but i want to call "Ellipse::draw()", to call
+    this "Ellipse::draw()" we have to use dynamic binding, this time is not dynamic binding.
+    to use dynamic binding, check at "BindingDynamic.cpp". */
+
+    // this gets "slicing"
+    shapePtr = &oval1;
+    shapePtr->draw(); /* this is static binding, this static binding will call "Shape::draw()" even though
+    i create "oval1 object" at "Oval class". but i want to call "Oval::draw()", to call
+    this "Oval::draw()" we have to use dynamic binding, this time is not dynamic binding.
+    to use dynamic binding, check at "BindingDynamic.cpp". */
+   
     return 0;
 }
+
+/* Static Binding: The method call is determined at compile time, used for non-virtual functions, and is faster.
+Static Binding: Used in non-polymorphic scenarios, such as calling non-virtual functions or method overloading.
+
+Dynamic Binding: The method call is determined at runtime, used for virtual functions, and supports
+polymorphism, though with a slight performance cost.
+Dynamic Binding: Used in polymorphic scenarios, especially when working with virtual functions and inheritance. */

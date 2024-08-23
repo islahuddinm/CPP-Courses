@@ -1,7 +1,18 @@
 #include <iostream>
 #include <memory>
 
-/* Inheritance is a fundamental concept in OOP. Creating new classes based on existing classes,
+/* Polymorphism(many forms) or concpept or method in C++ allows us to reuse code by creating one function
+that's usable for multiple uses in different scenarios. In simple terms, polymorphism enables one interface to
+be used for a general class of actions. There are two main types of polymorphism:
+- Compile-Time Polymorphism (Static Binding):
+Achieved through method overloading and operator overloading.
+example, check at "BindingStatic.cpp" and "BindingDynamic.cpp"
+- Run-Time Polymorphism (Dynamic Binding):
+Achieved through inheritance and function overriding.
+example, check at "BindingStatic.cpp" and "BindingDynamic.cpp"
+
+
+Inheritance is a fundamental concept in OOP. Creating new classes based on existing classes,
 inheriting their attributes and methods of existing classes while also allowing for customization and
 extension.
 
@@ -18,8 +29,15 @@ a derived class to achieve polymorphism. you can use a pointer or reference to c
 base class and it will automatically execute its actual function(you have redifined function) in
 the derived class.FOR EXAMPLE IN MAIN FUNCTION BELOW.*/
 
+/* Interface: A special kind of abstract class that typically only contains pure virtual functions and
+no data members or implemented functions.
+Abstract Class: A class that contains at least one pure virtual function.
+an interface is indeed a type of abstract class, but not all abstract classes are interfaces. */
+
+
+// abstract class / interface is a class contains at least one pure virtual function
 class abstrackEmployee { // base/parent class.
-    virtual void askForPromotion() = 0; // Pure virtual function or abstrack function.
+    virtual void askForPromotion() = 0; // Pure virtual function (virtual functions with no implementation) or abstrack function
 };
 
 
@@ -49,7 +67,7 @@ public:
         age = ageParam;
     }
 
-    virtual void working() { // this is virtual function ///////////////////////////////////////////////
+    virtual void working() { // this is virtual(polymorphism) function ///////////////////////////////////////
         std::cout << name << " is working in " << '\n';
     }      
     
@@ -118,23 +136,24 @@ int main() {
 
     std::cout << '\n';
 
-    /* Before getting to static binding & dynamic binding, we need to understand the concept of binding.
-    When we create a function, we have two crucial things:-
+    /*    
+    binding is link a function call with/to its function definition.
+    there are types of binding, that is static binding & dynamic binding.
+    Static Binding is binding occurs at Compile time.
+    Dynamic Binding is binding occurs at Runtime.
 
-    A function definition - defines a procedure to execute.
-    A function call - invokes the respective function for implementation.
+    you know that dynamic and static binding are written at compile time. so what is differences?
+    dynamic binding is set up during compilation, but actual function to be called is decided during runtime.
+    static binding is set up and fixed during compilation. There is no further decision-making needed at runtime.
     
-    Now both the function definition and function calls are stored in the memory at separate addresses. And our
-    program can have more than one function for its smooth operation. Hence, we need a technique to match the
-    appropriate function call with its definition.
-
-    The process of matching a specific function call to its respective function definition is known as binding.
-    But why is this of such interest? A lot can be utilized using the two kinds of binding: static binding & dynamic binding.
+    how to achieve dynamic binding?
+    Derived obj; creates an object of Derived on the stack.
+    Base& ref = obj; creates a reference of type Base that refers to the Derived object.
+    When ref.display(); is called, the program uses dynamic binding. but function is called has to
+    virtual function to achieve dynamic. Dynamic Binding only occurs with virtual functions.
+    */
     
-    binding is needed to link a function call with its function definition accurately.
-    When this binding occurs at Compile time, we call it a Static Binding, and
-    when this binding occurs at Runtime, we call it a Dynamic Binding.*/
-    
+    // this is static binding
     employee2.working(); // function call.
     employee3.working();
 
@@ -143,9 +162,10 @@ int main() {
     // Polymorphism(many forms) or concpept or method in C++ allows us to reuse code by creating one function that's usable for multiple uses in different scenarios.
     // we can call polymorphism is method to make values of other class types to be part of current class type.
     
+    // this is dynamic binding
     employee &E1 = employee2; // E1 refer to employee2 as a reference. or employee2 is E1.
     employee *E2 = &employee3; // pointer in this case just hold values of developer class type.
-    // this is static binding.
+    
     E1.working(); // this '.' to access a value of object that is refered.
     E2->working(); // this '->' to access a value of object that is pointed.
 

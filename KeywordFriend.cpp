@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string_view>
 
-/* 'friend' keyword is used to enables any class to access private and protected members of other classes and
-functions of other classes. The friend keyword allows you to designate a function or another class
-as a friend of your class.
+/* 'friend' keyword is used to give a non-member function access to private and protected members of a class.
+it means that a function that is not part of the class itself can still access the private and protected data
+of the class.
 
 'std::ostream' is a class type in C++ that enables to output stream with data in class scope with
 different data types. It's often used in combination with the insertion operator << to output data to
@@ -23,7 +23,7 @@ class Person
     // 'out' is a variable that hold output operations.
     // 'player' is a class type that determine value type(object class).
     // 'playerParam' is a variable that hold class object.
-    friend std::ostream& operator<<(std::ostream& out, const Person& person){
+    friend std::ostream& operator<<(std::ostream& out, const Person& person){ // this "(std::ostream& out, const Person& person)" is create object in parameter
         // this functin can be called to output by just using 'object name' in main function.
         out << "Person [" << person.first_name << " " << person.last_name << "]";
         return out;

@@ -5,7 +5,7 @@
 class Animal
 {
 public:
-    Animal() = default;
+    Animal() {std::cout << "Animal::constructor\n";}
     Animal(std::string_view description)
     : m_description(description) {
     }
@@ -41,7 +41,7 @@ public:
 class Dog : public Feline
 {
 public:
-    Dog() = default;
+    Dog() {std::cout << "Dog::constructor\n";}
     Dog(std::string_view fur_style, std::string_view description)
     : Feline(fur_style,description) {
     }

@@ -15,8 +15,8 @@ mathematical functions' (This means that functions behave similarly to mathemati
 avoids changing-state and mutable data. it focuses on mathematical functions.
 
 - Object-oriented programming (OOP) is a programming paradigm based on the concept of "objects,"
-which can contain data in the form of fields (often known as attributes or properties) and code,
-in the form of procedures (often known as methods).
+which can contain data within the form of fields (often known as attributes or properties) and code,
+within the form of procedures (often known as methods).
 
 there are the core principles of OOP: abstraction, encapsulation, inheritance, and polymorphism.
 Object-oriented programming languages, such as C++, Java, and Python, support these concepts and

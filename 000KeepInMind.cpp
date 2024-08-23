@@ -30,8 +30,46 @@ we cannot create object without parameter like this "cars toyota;". we can see e
 - when we create private attributes and then we want to get it to make public, we have to use 'return function'
 to retrieve the value of a private, check at "KeywordCalss2". we can still access even though the
 attributes is private because it is in same class.
-- there is destructor function (special function is used to destroy objects). check at "DefaultConstructor.ccp
-," "Destructor3.cpp," "Destructor4.cpp" to know how they behave.
+- there is destructor function (special function is used to destroy objects). check at "DefaultConstructor.ccp,"
+"Destructor3.cpp," "Destructor4.cpp" to know how they behave.
+- there is "this" keyword is used to point current object address. check at "KeywordThis.cpp".
+- there is how to call attibutes of objects that is created on heap memory, check at "KeywordCalss3.cpp".
 
-create object on the heap and how to call its function, check at "KeywordClass3.cpp".
+programming paradigm is refer to style or patern of how code should be structured, organized, and
+how algorithms should be designed. there is Object-oriented programming (OOP) is a type of programming paradigm
+based on the concept of "objects," which can contain data within the form of fields (often known as attributes
+or properties) and code, within the form of procedures (often known as methods). there are the core principles
+of OOP: abstraction, encapsulation, inheritance, and polymorphism. those principles to achieve OOP.
+
+inheritance (a fundamental concept in OOP. Creating new classes based on existing classes,
+inheriting their attributes and methods of existing classes while also allowing for customization and
+extension) check at "Inheritance.cpp".
+- there are "protected" member, friend keyword, copy constructor and how to access private members,
+check at "Inheritance2.cpp".
+- there is how to inherit default constructor, check at "Inheritance3.cpp".
+
+polymorphism (a fundamental concept in OOP / method in C++ allows us to reuse code by creating one function
+that's usable for multiple uses in different scenarios). In simple terms, polymorphism enables one interface to
+be used for a general class of actions. There are two main types of polymorphism:
+- Compile-Time Polymorphism (Static Binding):
+Achieved through method overloading and operator overloading.
+example, check at "BindingStatic.cpp" and "BindingDynamic.cpp"
+- Run-Time Polymorphism (Dynamic Binding):
+Achieved through inheritance and function overriding.
+example, check at "BindingStatic.cpp" and "BindingDynamic.cpp"
+
+before understand polymorphism we have to understand
+how create object on the heap and how to call its function, check at "KeywordClass3.cpp," "DefaultConstructor.cpp,"
+"Destructor3.cpp," "Destructor4.cpp" and how they behave and also understand static and dynamic binding, check
+at "BindingStatic.cpp," "BindingDynamic.cpp".
+- there is vistual keyword is used to a base class's member function that you can redefine in a derived class
+to achieve polymorphism, check at "Polymorphism.cpp".
+- there is static and dynamic binding check at "BindingStatic.cpp," "BindingDynamic.cpp," "Polymorphism.cpp".
+- there is pholymorphism size, check at "SizeofPolymorphism.cpp".
+- there is object slicing, check at "PolymorphismSlicing.cpp," "SizeofPolymorphism.cpp" and "BindingStatic.cpp".
+how to avoid "object slicing"? Mark functions as virtual in the base class when they need to be overridden in
+derived classes & use pointer for implementation, check at "PolymorphismSlicing.cpp," "SizeofPolymorphism.cpp" and "BindingStatic.cpp".
+
+create object on the heap and how to call its function, check at "KeywordClass3.cpp," "DefaultConstructor.cpp,"
+"Destructor3.cpp," "Destructor4.cpp".
 */
