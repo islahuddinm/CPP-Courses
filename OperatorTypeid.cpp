@@ -6,6 +6,8 @@ It returns a reference to a type_info object, which contains information about t
 This operator is often used in conjunction with polymorphism to check the actual type of an object when
 working with base class pointers.*/
 
+/* typeid() is operator used toretrieve the actual derived type of the object referred to by a pointer. */
+
 class Base {
 public:
     virtual ~Base() {}

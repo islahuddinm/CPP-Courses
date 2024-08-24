@@ -1,6 +1,8 @@
 #include <iostream>
 #include <typeinfo>
 
+/* typeid() is operator used toretrieve the actual derived type of the object referred to by a pointer. */
+
 // Base class Shape with a pure virtual function draw
 class Shape {
 public:

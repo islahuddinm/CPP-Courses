@@ -30,8 +30,10 @@ base class and it will automatically execute its actual function(you have redifi
 the derived class.FOR EXAMPLE IN MAIN FUNCTION BELOW.*/
 
 /* Interface: A special kind of abstract class that typically only contains pure virtual functions and
-no data members or implemented functions.
-Abstract Class: A class that contains at least one pure virtual function.
+no data members or implemented functions. Interface cannot be used to create object.
+Abstract Class: A class that contains at least one pure virtual function. in abstract there can be data members
+but in interface is nothing. abstract class cannot be used to create object.
+
 an interface is indeed a type of abstract class, but not all abstract classes are interfaces. */
 
 
