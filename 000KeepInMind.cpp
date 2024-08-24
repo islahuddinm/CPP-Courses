@@ -72,6 +72,12 @@ derived classes & use pointer for implementation, check at "PolymorphismSlicing.
 - there is "override" keyword that is used to check if the function name is same with function name in
 base class, check at "Polymorphism.cpp".
 - there is overload function, check at "PolymorphismOverload.cpp," "PolymorphismOverload2.cpp," "PolymorphismOverload3.cpp"
+- there is static keyword, check at "Polymorphism3.cpp"
+- there is final keyword, check at "Polymorphism4.cpp"
+- compiler always use default function arguments/parameter of base class and function body of derived class when
+we call virtual(polymorphic) function in derived class.
+- there is "dynamic cast keyword" (used for convert class type to another class type). check at "KeywordDynamicCast.cpp"
+- there are abstruct class, interface and pure virtual (abstract) function. check at "Polymorphism.cpp".
 
 create object on the heap and how to call its function, check at "KeywordClass3.cpp," "DefaultConstructor.cpp,"
 "Destructor3.cpp," "Destructor4.cpp".

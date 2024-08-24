@@ -2,6 +2,11 @@
 
 // this is how to call virtual functions have argument in polymorphism is working.
 
+/* when we call "derived class's virtual(polymorphic) function", compiler always use
+the default arguments(parameters) of function in base class even though we call
+"derived class's virtual(polymorphic) function", but compiler use function body of derived class.
+so, compiler use default arguments/parameter of base class and function body of derived class. */
+
 class Base
 {
 public:

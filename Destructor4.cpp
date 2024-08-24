@@ -3,6 +3,9 @@
 /* this is how to make "Animal * p_animal = new Dog;" behavior like "Dog * no_animal = new Dog;" which
 call automatically other destructors to achieve that we have to give "virtual keyword" at destruction function. */
 
+/***notation*** dont call virtual(plymorphic) functions from constructor and destructor we cannot do 
+dynamic binding over there. but we can do static binding over there (constructor and destructor). */
+
 class Animal
 {
 public:

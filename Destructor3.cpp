@@ -2,6 +2,9 @@
 
 // this is how destructor behaves.  constructor and destructor are called in order.
 
+/***notation*** dont call virtual(plymorphic) functions from constructor and destructor we cannot do 
+dynamic binding over there. but we can do static binding over there (constructor and destructor). */
+
 class Animal
 {
 public:

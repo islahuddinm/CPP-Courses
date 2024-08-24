@@ -48,6 +48,7 @@ public:
     }
 
     static int m_count;
+    static int const m_count2 = 5;
 	
 private : 
     double m_x_radius;
@@ -75,6 +76,7 @@ int main(){
     Ellipse ellipse1(10,12,"ellipse1");
     std::cout << "shape count : " << Shape::m_count << std::endl;// 4
     std::cout << "ellipse count : " << Ellipse::m_count << std::endl;//1
+    std::cout << "ellipse count : " << Ellipse::m_count2 << std::endl;
 
 
     std::cout  << "***********************************************" << std::endl;
