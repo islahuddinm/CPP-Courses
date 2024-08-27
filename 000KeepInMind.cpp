@@ -77,8 +77,9 @@ base class, check at "Polymorphism.cpp".
 - compiler always use default function arguments/parameter of base class and function body of derived class when
 we call virtual(polymorphic) function in derived class.
 - there is "dynamic cast keyword" (used for convert class type to another class type). check at "KeywordDynamicCast.cpp"
-- there are abstruct class, interface and pure virtual (abstract) function. check at "Polymorphism.cpp," "04AbstrackClassAsInterface.cpp".
--there is "typeid()". check at "OperatorTypeid.cpp," "OperatorTypeid2.cpp".
+- there are abstruct class, interface and pure virtual (abstract) function. check at "AbstractClass.cpp,"
+"AbstractClass2.cpp," "04AbstrackClassAsInterface.cpp".
+- there is "typeid()". check at "OperatorTypeid.cpp," "OperatorTypeid2.cpp".
 
 create object on the heap and how to call its function, check at "KeywordClass3.cpp," "DefaultConstructor.cpp,"
 "Destructor3.cpp," "Destructor4.cpp".

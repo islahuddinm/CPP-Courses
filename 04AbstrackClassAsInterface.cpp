@@ -14,10 +14,10 @@ pure virtual function have to implement in derived class.*/
 /////////**notation**///////// "if we already made 'abstrack class' as a base case, we have to inherit
 ////////////////////////////// pure function in derived class, if we dont do that we would get error."
 
-class StreamInsertable{ // this is abstrack class.
+class StreamInsertable{ // this is abstrack class as interface.
     /* operator<< function that allows you to output a object directly to an output stream (std::ostream).
     or // this functin can be called to output by just using 'object name' in main function.*/
-    friend std::ostream& operator<< (std::ostream& out,const StreamInsertable& operand){ // this is operator<< function.
+    friend std::ostream& operator<< (std::ostream& out,const StreamInsertable& operand){ // this is operator<< function or helper function.
         operand.stream_insert(out);
         return out;
     }
@@ -36,8 +36,8 @@ public :
     {
     }
 
-    virtual void stream_insert(std::ostream& out)const override{
-        out << "Point [x: " << m_x << ",y: " << m_y << "]";
+    virtual void stream_insert(std::ostream& out)const override{ // this "std::ostream& out" is a variable declaration
+        out << "Point [x: " << m_x << ",y: " << m_y << "]"; // "out" is variable stores " Point [x: " << m_x << ",y: " << m_y << "] ".
     }
 
 private : 
@@ -218,8 +218,9 @@ public:
 int main(){
 
     Point p1(10,20);
-    std::cout << "p1 : " << p1 << std::endl;
-    //operator<<(std::cout,p1);
+    std::cout << "p1 : " << p1 << std::endl; // this is how to print "operator function".
+    operator<<(std::cout,p1); // another way to print "operator function".
+    operator<<(std::cout,p1) << std::endl; // another way to print "operator function" with "endl".
 
     std::cout << "------------" << std::endl;
 

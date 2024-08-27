@@ -67,6 +67,7 @@ int main(){
 
     std::cout << "------------------------- 1" << std::endl;
     
+    // creates a single object of "Dog" type, but you are storing its address in a pointer of type Animal *.
     Animal * p_animal = new Dog;
 
     delete p_animal;

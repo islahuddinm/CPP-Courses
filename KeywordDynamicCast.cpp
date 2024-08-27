@@ -24,9 +24,11 @@ public:
 };
 
 int main() {
-    Base* basePtr = new Derived;
+    Base* basePtr;
     
-    /* we would be failed because we dont have any "child class" information.
+    /* 
+    //Base* basePtr = new Derived;
+    we would be failed because we dont have any "child class" information.
     it should be "Base* basePtr = new Child;" instead of "Base* basePtr = new Derived;". */
     //Child* derivedPtr = dynamic_cast<Child*>(basePtr);
     Derived* derivedPtr = dynamic_cast<Derived*>(basePtr);
