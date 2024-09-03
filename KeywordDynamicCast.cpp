@@ -7,6 +7,7 @@ or reference pointing to a derived class object, and you want to safely downcast
 class Base {
 public:
     virtual ~Base() {}
+    
 };
 
 class Derived : public Base {
@@ -24,21 +25,49 @@ public:
 };
 
 int main() {
-    Base* basePtr;
+
+    // this 'Base* basePtr;' is just a pointer declaration, not object creation.
+    /* if pointer is declared but not initialized, it holds an indeterminate value (essentially garbage). */
+    Base* basePtr;   
+    Child* basePtr2;  
     
-    /* 
-    //Base* basePtr = new Derived;
-    we would be failed because we dont have any "child class" information.
-    it should be "Base* basePtr = new Child;" instead of "Base* basePtr = new Derived;". */
-    //Child* derivedPtr = dynamic_cast<Child*>(basePtr);
+    // this is create object for polymorphism.
+    Base* basePtr3 = new Derived; 
+    
+    // this would get error because 'specificFunction()' is not virtual function.
+    // in default this also would get error because there is no 'specificFunction()' in base class.
+    //basePtr3->specificFunction();
+    
+    /* 'dynamic_cast' is used to safely convert a pointer or reference from one type to another
+    within a class hierarchy. */
     Derived* derivedPtr = dynamic_cast<Derived*>(basePtr);
-    if (derivedPtr) {
-        //derivedPtr->childFunction();
+    
+    if (derivedPtr == nullptr) {        
         derivedPtr->specificFunction();
     } else {
         std::cout << "dynamic_cast failed\n";
     }
 
+    // this is used to check if 'basePtr2' is object. if 'basePtr2' is not 'nullptr' so it is object
+    if(basePtr2 == nullptr) {
+        basePtr2->childFunction();
+    } else {
+        std::cout << "basePtr2 is 'Object'\n";
+    }    
+
+    
+    Derived* try1;
+    Child* try2 = dynamic_cast<Child*>(try1);
+    
+    if(try2 == nullptr) {
+        try2->childFunction();
+    } else {
+        std::cout << "dynamic_cast failed'\n";
+    } 
+    
+    try1->specificFunction();
+
+    
     delete basePtr;
     return 0;
 }

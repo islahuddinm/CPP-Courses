@@ -59,8 +59,8 @@ public:
 
 int main(){
 
-    /* when we create object without parameter of animal class / base class, default constructor in
-    animal class would be called automatically. */
+    /* when we create object without parameter (declare pointer) of animal class / base class,
+    default constructor in animal class would be called automatically. */
     Animal* dog1 = new Animal; // this is how to create object on heap memory
 
     std::cout << "------------------------- 1" << std::endl;

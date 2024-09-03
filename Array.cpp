@@ -35,7 +35,7 @@ int main2() { //its result does not work because there is no "b[5]" the maximum 
 
     int b[5] = {2, 4, 5, 8, 11};    
 
-    std::cout << "b is " << b[5] << '\n';    
+    std::cout << "b is " << b[5] << '\n';      
 
     return 0;
 }

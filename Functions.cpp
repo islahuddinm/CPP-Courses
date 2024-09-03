@@ -82,12 +82,13 @@ int main() {
     int result = max(a, b);
 
     std::cout << "value result : " << result << '\n';
-    std::cout << "value result : " << max(a, b) << '\n';
+    std::cout << "value result : " << max(max(a, b), b) << '\n';
     std::cout << "value result : " << max(4, 20) << '\n';
 
     std::cout << "//////////////////////////////////////////////////////////////////////////// 2\n";
     std::cout << '\n';
 
+    sayHello();
     sayHello();
     std::cout << "//////////////////////////////////////////////////////////////////////////// 3\n";
     std::cout << '\n';

@@ -1,5 +1,10 @@
 
 /*
+Macros in Unreal Engine and standard C++ are similar in concept, as they both rely on the preprocessor to
+perform text substitution.
+    Examples in C++ include #define PI 3.14159, #define SQUARE(x) ((x) * (x)), and #ifdef DEBUG.
+    Check at "Macro.cpp"
+
 library function (functions that are already available and implemented in C++ standard library).
     example: "std::strlen(parameters)," "std::strcpy(parameters)," "std::strcat(parameters)," "std::strcmp()".
     file location: "FunctionLibStd_.cpp"

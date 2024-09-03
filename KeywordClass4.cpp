@@ -69,6 +69,8 @@ cars::~cars() { // Destructor is always have '~'(tilde sign) in prefix.
 
 int main() {
 
+    cars("brandParam", "typeParam", 1, 1).setMclarenBrandYears("New Brand", 2025);
+
     //cars toyota; // this will be error because there is no default constructor inside class
 
     cars mclaren("Mclaren", "Spider 720", 2023, 1000000);
