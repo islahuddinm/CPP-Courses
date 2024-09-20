@@ -89,12 +89,12 @@ the GPU’s architecture (such as NVIDIA's architecture, AMD's architecture, etc
 - After translation, the GPU executes this machine code directly, performing tasks like rendering graphics,
 running shaders, or executing parallel computations.
 
-- The driver's job is to translate these instructions into GPU-specific commands and then after
-pass through driver process, API passes/continues instructions to GPU/graphic card through GPU's firmware (as
-instructions reciver and GPU trigger to start execute programs and instructions) to describe instructions
-to be graphics objects to be rendered and how they should be rendered (e.g., position, size, color).
+- After translation, GPU's firmware (as instructions reciver and GPU trigger to start execute programs and
+instructions) takes over from GPU driver to describe instructions(machine codes) to be graphics objects to
+be rendered and how they should be rendered (e.g., position, size, color). then GPU executes this machine code
+directly, performing tasks like rendering graphics, running shaders, or executing parallel computations.
 
-- then GPU renders the graphics into a frame buffer, which is a GPU's memory that holds the pixel data
+- then GPU renders the graphics inside a frame buffer, which is a GPU's memory that holds the pixel data
 for the current frame. and then GPU sends the contents of the frame buffer to the display hardware.
 The display hardware updates the actual display based on the pixel data received from the GPU.
 This may involve refreshing the screen with new content.
