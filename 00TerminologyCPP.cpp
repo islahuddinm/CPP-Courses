@@ -7,6 +7,9 @@
 
 /*
 - function = a reusable block of code that performs a specific task or set of tasks.
+- overload function (Function allows multiple functions to have the same name but with different parameters).
+- override function is function in the derived class "overrides"(menggantikan) the function in
+the base class.
 - data types = int(integer), float, double, char(character), bolean. used to define the type of
 data that a variable can store.
 - pre-defined class types = std::srting, std::vector<T>, std::deque<T>, std::list<T>, and so on.

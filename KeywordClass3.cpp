@@ -64,6 +64,9 @@ int main() {
     // this create "stack object". it means create object at stack memory.
     cars pagani("Pagani", "Hyura", 2022, 2000000);
 
+    pagani = run();
+    pagani.run();
+
     cars italy = pagani;
 
     std::cout << italy.speed << '\n';

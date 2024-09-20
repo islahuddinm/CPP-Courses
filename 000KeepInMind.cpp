@@ -1,5 +1,8 @@
 
 /*
+C++ elements that have "<...>" angle brackets symbol e.g. class type (vector, deque), keyword (dynamic_cast,
+static_cast), type trait (std::is_integral<int>::value), function template (std::numeric_limits<...>::min()).
+
 Macros in Unreal Engine and standard C++ are similar in concept, as they both rely on the preprocessor to
 perform text substitution.
     Examples in C++ include #define PI 3.14159, #define SQUARE(x) ((x) * (x)), and #ifdef DEBUG.
@@ -18,6 +21,13 @@ different parameters).
 
 function template (Function template is a feature in languages like C++ that allows you to define once
 a function and use it with different data types. it is used to avoid "overload functions").
+    example: 
+    
+    template<>
+    void printValue<std::string>(const std::string& value) { // this "<std::string>" to make explicit / convert other data types into string.
+        std::cout << "Specialized: [" << value << "]" << std::endl;
+    }
+    
     file location: "FunctionTemplate.ccp"
 
 concept (a feature introduced in the C++20 standard that allows programmers to specify

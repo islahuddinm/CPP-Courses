@@ -11,6 +11,10 @@ struct FRotator {
         : Pitch(InPitch), Yaw(InYaw), Roll(InRoll) {}
 };
 
+class coba {
+
+};
+
 
 // A simplified example of Unreal Engine's ACharacter class
 class ACharacter {
@@ -22,6 +26,8 @@ public:
         FRotator RotationRate;
         float JumpZVelocity;
         float AirControl;
+
+        coba a; // try create object inside class
     };
 
     // Method to get the movement component (simulating Unreal Engine's API)
@@ -61,6 +67,8 @@ int main() {
     std::cout << "RotationRate (Yaw): " << MovementComp->RotationRate.Yaw << std::endl;
     std::cout << "JumpZVelocity: " << MovementComp->JumpZVelocity << std::endl;
     std::cout << "AirControl: " << MovementComp->AirControl << std::endl;
+
+    UCharacterMovementComponent coba; // try create object of a class is inside class. it is error.
 
     return 0;
 }

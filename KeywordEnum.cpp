@@ -15,6 +15,12 @@ enum day {
 
 int main() {
 
+    day::sunday;
+
+    day (9);
+
+    day coba = day::sunday;
+
     day today = monday; // we can use 'int' as well instead of 'day'
 
     switch(today) {

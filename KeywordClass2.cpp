@@ -17,7 +17,10 @@ private: // it means only can use/access in local.
     double price2;
 
 public:
-    // Constructor (constructor is allow creat an object) is a special member function of a class that is automatically called when an object of that class is created in main function.
+    /* Constructor/ Default Constructor (constructor is allow creat an object) is a special member function of
+    a class that is automatically called when an object of that class is created in main function. but
+    keep in mind there is also called as a Custom Constructor which constructor has parameters. its behavior of
+    custom constructor is not called automatically like the default constructor. */
     // Constructor name has to same with class name.
     Cars() { // this is default constructor.
         // access member variable or attribute.

@@ -36,9 +36,13 @@ public:
         return this->age;
     }
 
+    /* Constructor/ Default Constructor (constructor is allow creat an object) is a special member function of
+    a class that is automatically called when an object of that class is created in main function. but
+    keep in mind there is also called as a Custom Constructor which constructor has parameters. its behavior of
+    custom constructor is not called automatically like the default constructor. */
     // default constructor (a constructor with no arguments).
     employee() = default; // constructor
-    employee(std::string nameParam, std::string companyParam, int ageParam) { // constructor
+    employee(std::string nameParam, std::string companyParam, int ageParam) { // custom constructor
         name = nameParam;
         company = companyParam;
         age = ageParam;

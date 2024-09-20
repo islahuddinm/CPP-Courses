@@ -5,11 +5,11 @@ turn computer's power ON ///////////////////////////////////////////////////////
 first of all we have to know about what happend when we turn computer's power ON?
 when we turn computer's power ON, The computer's hardware, including the processor, memory(RAM),
 graphic card (external GPU), and hard drive (storage) are initialized and checked
-by BIOS/UEFI (new version of BIOS) or firmware.
+by BIOS/ UEFI(new version of BIOS) or firmware.
 
 what does BIOS/UEFI do after initialize and check computer's hardware?
 The BIOS/UEFI locates and loads or runs the boot loader, which is a small program stored in
-the boot sector of the hard drive. The boot loader then loads the operating system (OS) into memory
+the boot sector of the hard drive. The boot loader then loads the operating system (OS) into memory(RAM)
 to enable CPU execute. it is called boot process (Boot is process load OS to RAM).
 
 what does OS do after OS is runned by CPU?
@@ -33,6 +33,10 @@ software is a program contains instruction sets relate with computer.
 how can computer's instructions reach computer machine?
 there is a role of 'API' acts as carrier or intermediary for user's instructions in computer.
 
+what is API?
+API (Application Programming Interface) is a type of software / independent software libraries /program.
+Specifically, APIs are software interfaces that allow different programs or systems to communicate with
+each other. API is not part of GPU driver, but they work closely with the GPU driver.
 
 what is API passed through whe API is carrying user's instructions in computer?
 we will talk about a graphical API (such as directx, opengl) for example.
@@ -42,20 +46,50 @@ the program's executable file from disk into memory (RAM).
 
 - Once the program is loaded into memory, the CPU (central processing unit) begins executing
 its instructions by fetching instructions from the app's code in RAM, then
-decodes(convertion process to original format) what actions to perform, and then executes those instructions.
+decodes(convertion process from binary to original format) what actions to perform, and then
+executes those instructions to be display.
 // encode(convertion process of original format to another format).
 // decode(convertion process to original format).
 
-- after CPU execute the program, the program's instructions are already in binary form. program needs
-to display graphics, it uses a graphics API (such as DirectX or OpenGL) as instructions/program carrier to
-communicate with the GPU/graphic card through graphic driver.
+- after CPU execute the program, it is no longer needed in RAM (btw the program's instructions are already in
+binary form (machine codes) from app. This is generated from a program's source code (written in C++,
+Python, etc.) when it is compiled).
 
-- The graphics driver's role is to translate these program's instructions that the GPU/graphic card
-can understand and execute. but the driver doesn't need to translate high-level language to binary because
-the program's instructions are already in binary form when they are passed to the driver through
-the OpenGL API as instructions/program carrier.
+program needs to display graphics (A program doesn't always need to go through the graphics card (GPU) because
+it depends on the type of tasks the program is performing), it uses a graphics API (such as DirectX, OpenGL,
+OpenGL, DirectX, Vulkan, or CUDA.) the CPU use APIs to send commands that specify tasks to be done by
+the GPU (e.g., render this scene, compute this shader).
 
-- The driver's job is to translate these binary instructions into GPU-specific commands and then after
+if we dont have the necessary API (like OpenGL, DirectX, Vulkan, or CUDA), we need install.
+but APIs like OpenGL, Vulkan, and CUDA as part of the driver package and Most modern operating systems come
+with popular APIs (like DirectX for Windows or OpenGL for both Windows and Linux).
+
+- The graphics driver's role is to translate these program's instructions from API into GPU machine code
+that the GPU/graphic card can understand based on its architecture and execute. When a program uses APIs like
+OpenGL, DirectX, Vulkan, or CUDA, it issues(mengeluarkan) high-level, abstract commands.
+These commands are not in CPU machine code; they are API function calls.
+    
+    Examples of API instructions include:
+    - glDrawArrays() in OpenGL.
+    - vkCmdDraw() in Vulkan.
+    - cudaMemcpy() in CUDA.
+    
+    These API calls are instructions that specify what the GPU needs to do, but they are abstract and
+    hardware-agnostic. They are not CPU machine code or binary instructions.
+
+    For example:
+    An OpenGL command like glDrawArrays() tells the GPU to render a certain set of vertices, but the API call
+    itself is not machine code. It's an instruction the program makes using a library (OpenGL, Vulkan, etc.).
+
+the API instructions tell the system what needs to be done but don’t specify how it should be done at
+the hardware level. Role of the Graphics Driver is responsible for translating these
+high-level API instructions into GPU-specific commands are in the form of low-level machine code that matches
+the GPU’s architecture (such as NVIDIA's architecture, AMD's architecture, etc.).
+
+- After translation, the GPU executes this machine code directly, performing tasks like rendering graphics,
+running shaders, or executing parallel computations.
+
+- The driver's job is to translate these instructions into GPU-specific commands and then after
 pass through driver process, API passes/continues instructions to GPU/graphic card through GPU's firmware (as
 instructions reciver and GPU trigger to start execute programs and instructions) to describe instructions
 to be graphics objects to be rendered and how they should be rendered (e.g., position, size, color).
