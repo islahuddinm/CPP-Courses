@@ -79,4 +79,14 @@ dynamic binding happens at runtime. it means when we only call "deriverd class's
 also call "base class's" function.
 
 https://youtu.be/5FmszF_Tb2A?si=GzShzuEJebtgEOth
+
+'#pragma once' instructs the compiler to include a header file only once when compiling a source file.
+
+'#ifndef CAR_H' stand for "if not defined (code file)"
+'#define CAR_H' stand for "define(code file)"
+
+#ifndef, #define those are directive(yg menginstruksikan) check to ensure that the file's contents are
+not included multiple times. This practice is known as an include guard.
+
+'#endif' This marks the end of the conditional directive started by #ifndef.
 */
