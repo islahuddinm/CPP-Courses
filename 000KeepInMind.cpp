@@ -37,11 +37,12 @@ requirements/constraint/restriction on template arguments / in function template
 class (keyword which used to create custom data types).
 - inside class there is constructor (a special member function of a class that allow creat an object).
 constructor has same name as name class, no return type, can has parameters.
-- there is default constructor default (a constructor with no arguments/parameters).
+- there is default constructor (a constructor with no arguments/parameters).
 default constructor can be automatically called when an object of that class is created in
 main function, check at "DefaultConstructor.cpp". and also there is own/custom constructor which we declare
 with arguments/parameters. when we create class then we dont declare default constructor, when we create object
 we cannot create object without parameter like this "cars toyota;". we can see example at "KeyworClass4.cpp".
+- there is custom constructor. check at "KeywordCalss3.cpp".
 - when we create private attributes and then we want to get it to make public, we have to use 'return function'
 to retrieve the value of a private, check at "KeywordCalss2". we can still access even though the
 attributes is private because it is in same class.
@@ -64,8 +65,13 @@ check at "Inheritance2.cpp".
 - there is how to inherit default constructor, check at "Inheritance3.cpp".
 
 polymorphism (a fundamental concept in OOP / method in C++ allows us to reuse code by creating one function
-that's usable for multiple uses in different scenarios). In simple terms, polymorphism enables one interface to
-be used for a general class of actions. There are two main types of polymorphism:
+that's usable for multiple uses in different scenarios). Polymorphism refers to the ability of derived classes
+to override base class methods and allow the base class pointer or reference to call the derived class version
+of the method, typically through virtual functions.
+Without the virtual keyword, it is not polymorphism, even if the functions in the base and derived classes
+have the same name. If you don't declare a base class function as virtual, the function called depends solely
+on the type of the pointer or reference, not on the actual object type at runtime.
+There are two main types of polymorphism:
 - Compile-Time Polymorphism (Static Binding):
 Achieved through method overloading and operator overloading.
 example, check at "BindingStatic.cpp" and "BindingDynamic.cpp"
@@ -77,8 +83,8 @@ before understand polymorphism we have to understand
 how create object on the heap and how to call its function, check at "KeywordClass3.cpp," "DefaultConstructor.cpp,"
 "Destructor3.cpp," "Destructor4.cpp" and how they behave and also understand static and dynamic binding, check
 at "BindingStatic.cpp," "BindingDynamic.cpp".
-- there is vistual keyword is used to a base class's member function that you can redefine in a derived class
-to achieve polymorphism, check at "Polymorphism.cpp".
+- there is virtual keyword is used to a base class's member function that you can redefine in a derived class
+to achieve polymorphism, check at "Polymorphism.cpp" and "BindingDynamic.cpp".
 - there is static and dynamic binding check at "BindingStatic.cpp," "BindingDynamic.cpp," "Polymorphism.cpp".
 - there is pholymorphism size, check at "SizeofPolymorphism.cpp".
 - there is object slicing, check at "PolymorphismSlicing.cpp," "SizeofPolymorphism.cpp" and "BindingStatic.cpp".
@@ -98,4 +104,21 @@ we call virtual(polymorphic) function in derived class.
 
 create object on the heap and how to call its function, check at "KeywordClass3.cpp," "DefaultConstructor.cpp,"
 "Destructor3.cpp," "Destructor4.cpp".
+
+Behaviors:
+- Default Constructor: 
+    - when we create object without parameter / declare pointer of animal class (base class),
+    default constructor in animal class would be called automatically.
+    - when we create object without parameter of dog class (child/derived class), default constructor in
+    animal, feline, dog class would be called automatically even though we dont call all of it.
+- Destructor:
+    - when we create base class's object on stack memory, base class's default constructor and destructor
+    function will be called automatically.
+    - when we create child/derived class's object on stack memory, child/derived, base class's default
+    constructor and destructor function will be called automatically.
+    - but when we create object on heap memory, destructor function will be never called automatically.
+- Polymorphism:
+    - Polymorphism refers to the ability of derived classes to override base class methods and allow the base
+    class pointer or reference to call the derived class version of the method, typically through
+    virtual functions.
 */

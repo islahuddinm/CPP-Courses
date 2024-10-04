@@ -2,8 +2,11 @@
 #include <memory>
 
 /* Polymorphism(many forms) or concpept or method in C++ allows us to reuse code by creating one function
-that's usable for multiple uses in different scenarios. In simple terms, polymorphism enables one interface to
-be used for a general class of actions. There are two main types of polymorphism:
+that's usable for multiple uses in different scenarios. Polymorphism refers to the ability of derived classes
+to override base class methods and allow the base class pointer or reference to call the derived class version
+of the method, typically through virtual functions. In simple terms, polymorphism enables one interface
+(base class pointer/reference) to interact with multiple types (derived classes) at runtime, with
+the derived class's implementation. There are two main types of polymorphism:
 - Compile-Time Polymorphism (Static Binding):
 Achieved through method overloading and operator overloading.
 example, check at "BindingStatic.cpp" and "BindingDynamic.cpp"
@@ -27,7 +30,9 @@ This enables code reuse and the creation of a hierarchy of classes.*/
 /* virtual keyword is used to a base class's member function that you can redefine in
 a derived class to achieve polymorphism. you can use a pointer or reference to call the virtual function in
 base class and it will automatically execute its actual function(you have redifined function) in
-the derived class.FOR EXAMPLE IN MAIN FUNCTION BELOW.*/
+the derived class.
+FOR EXAMPLE IN MAIN FUNCTION BELOW ('employee &E1 = employee2;' and employee *E2 = &employee3;)
+or you can check at "BindingStatic.cpp" and "BindingDynamic.cpp".*/
 
 /* Interface: A special kind of abstract class that typically only contains pure virtual functions and
 no data members or implemented functions. Interface cannot be used to create object.
@@ -63,6 +68,7 @@ public:
 
     // default constructor (a constructor with no arguments).
     employee() = default; // constructor
+    // custom constructor
     employee(std::string nameParam, std::string companyParam, int ageParam) { // constructor
         name = nameParam;
         company = companyParam;
@@ -160,9 +166,6 @@ int main() {
     employee3.working();
 
     std::cout << '\n';
-
-    // Polymorphism(many forms) or concpept or method in C++ allows us to reuse code by creating one function that's usable for multiple uses in different scenarios.
-    // we can call polymorphism is method to make values of other class types to be part of current class type.
     
     // this is dynamic binding
     employee &E1 = employee2; // E1 refer to employee2 as a reference. or employee2 is E1.

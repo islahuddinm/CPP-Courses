@@ -93,6 +93,8 @@ int main(){
 
     std::cout << "Calling methods through pointers : dynamic binding\n";
 
+    // Dynamic binding does not look at 'class type' but look at 'actual object type'.
+
     Shape* shapePtr = &shape1;
     shapePtr->draw(); // this is dynamic binding.
 
