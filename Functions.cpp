@@ -51,13 +51,47 @@ double increment_multiply(double a, double b) {
     std::cout << "a : " << a <<'\n';
     std::cout << "b : " << b <<'\n';
 
-    double result = ((++a) * (++b));
+    double result11 = ((++a) * (++b));
 
     std::cout << "inside function, after increment\n";
     std::cout << "a : " << a << '\n';
     std::cout << "b : " << b << '\n';
 
-    return result;
+    return result11;
+}
+
+void ifinfunction(int a, int b) {
+
+    std::cout << result11 <<'\n';
+
+    int cc = 0;
+
+    if(true) {
+
+        int aa = a;
+        cc++;
+
+        std::cout << aa << std::endl;
+    }
+
+    //aa++; // error, we cannot access inside flow control
+    //std::cout << aa << std::endl; // error, we cannot access inside flow control
+    
+    if(false) {
+
+        int bb = b;
+
+        std::cout << bb << std::endl;
+        std::cout << aa << std::endl;
+    }
+
+    /* The error here stems from the fact that you cannot declare a function (declare()) inside
+    another function (ifinfunction()) in standard C++ syntax. */
+    void declare() {
+        int dd;
+    }
+
+    dd = 44;
 }
 
 // this is declaration function
@@ -107,6 +141,14 @@ int main() {
     std::cout << "d : " << d <<'\n';
     std::cout << "//////////////////////////////////////////////////////////////////////////// 4\n";
     std::cout << '\n';
+
+    ifinfunction(11, 22);
+
+    /* The error here stems from the fact that you cannot declare a function (declare()) inside
+    another function (ifinfunction()) in standard C++ syntax. */
+    int returnint() {        
+        return 0;
+    }
     
     return 0;
 }

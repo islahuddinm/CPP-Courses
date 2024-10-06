@@ -121,4 +121,14 @@ Behaviors:
     - Polymorphism refers to the ability of derived classes to override base class methods and allow the base
     class pointer or reference to call the derived class version of the method, typically through
     virtual functions.
+- Flow Control:
+    - we cannot access variables inside flow control. but we can access variables outside flow control
+    from flow control.
+    - we cannot access variables inside flow control from flow control.
+- Function:
+    - we cannot access variables inside function. but we can access variables outside function
+    from function.
+    - we cannot access variables inside function from function. but we can access variables inside function
+    from function inside class.
+    - we cannot declare/create a function inside function. but we can create lambda function inside function.
 */

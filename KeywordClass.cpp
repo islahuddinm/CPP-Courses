@@ -11,21 +11,39 @@ each with its own unique set of data and behaviors.*/
 //class is used as a template or blueprint for creating objects.
 
 int topSpeed;
+int toptopSpeed;
 
-class cars {
-    
+void func() {
+    int var;
+}
+
+class cars {    
 public : // it means only can use/access in another function.
     /* member function are used to implement the behavior of the class and can access the
     class's member variables and other member functions.*/
     void behavior() {         
         std::cout << "Mclaren is running" << '\n';
+
+        var= 10;
+        topSpeed = 50;
+        toptopSpeed = 100;
     }
+
+    var= 10;
+    topSpeed = 50;
+    toptopSpeed = 100;
 
     int behavior2() {
 
+        int integer;
+        int integer2;
+        return integer2;
         return topSpeed;
         return speed + power;
     }
+
+    integer = 0;
+    integer2 = 0;    
 
 public:
     // member variable is variables that are associated with a specific instance of a class (object) and hold the state or data for that object or frist declaration.
