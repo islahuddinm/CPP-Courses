@@ -6,6 +6,8 @@
 no data members or implemented functions. Interface cannot be used to create object.
 Abstract Class: A class that contains at least one pure virtual function. in abstract there can be data members
 but in interface is nothing. abstract class cannot be used to create object.
+We can also say an Abstraction in programming is a technique that reduces complexity
+by hiding unnecessary details and showing only the essential information.
 
 an interface is indeed a type of abstract class, but not all abstract classes are interfaces. */
 
