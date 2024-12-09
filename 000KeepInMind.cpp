@@ -126,9 +126,22 @@ Behaviors:
     from flow control.
     - we cannot access variables inside flow control from flow control.
 - Function:
+    - access variables inside function. Check at "AccessVariableInsideFunction.cpp"
     - we cannot access variables inside function. but we can access variables outside function
     from function.
     - we cannot access variables inside function from function. but we can access variables inside function
-    from function inside class.
+    from function inside class. Check at "ClassGetsExternalFunctionReturn.cpp".
     - we cannot declare/create a function inside function. but we can create lambda function inside function.
+    Chect at "ClassCreateClass.cpp", "FunctionInsideFunction.cpp"
+    - we can call a function inside a class without create a object. Chect at "CallFunctionInsideClass.cpp".
+    - we can call a function inside a class from another class.
+    Check at "CallFunctionInsideClassFromAnotherClass.cpp"
+- Class:
+    - We can create a class inside a class. Chect at "ClassCreateClass.cpp".
+    - We can create an object of the Logger class inside the class itself. Check at "DesignPatternSingleton.cpp"
+    - We can cleate an object of another class inside class. Check at "ClassCreateObjectInside.cpp".
+    - Class can get an external ReturnFunction. Check at "ClassGetsExternalFunctionReturn.cpp".
+    - Class is inside function. Check at "ClassInsideFunction.cpp".
+    - Create object outside function. Check at "ClassOutsideFunction.cpp".
+    - Initializing static member variables of the cars class from outside. Check at "ClassOutsideFunction4.cpp"
 */
