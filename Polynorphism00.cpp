@@ -31,7 +31,9 @@ int main() {
 
     // Case 2: Animal* pointer (polymorphism)
     Animal* p_animal = new Dog;
-    p_animal->speak();  // Calls Dog's speak() method through polymorphism
+    // This is dynamic binding cuz virtual function. If we do not give virtual, it would be slicing.
+    //**notation** object slicing is affected by 2 things is no virtual keyword and no pointer implementation.
+    p_animal->speak();  // Calls Dog's speak() method through polymorphism.
 
     std::cout << "-------------------------\n";
 

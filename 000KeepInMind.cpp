@@ -89,7 +89,8 @@ to achieve polymorphism, check at "Polymorphism.cpp" and "BindingDynamic.cpp".
 - there is pholymorphism size, check at "SizeofPolymorphism.cpp".
 - there is object slicing, check at "PolymorphismSlicing.cpp," "SizeofPolymorphism.cpp" and "BindingStatic.cpp".
 how to avoid "object slicing"? Mark functions as virtual in the base class when they need to be overridden in
-derived classes & use pointer for implementation, check at "PolymorphismSlicing.cpp," "SizeofPolymorphism.cpp" and "BindingStatic.cpp".
+derived classes & use pointer for implementation, check at "PolymorphismSlicing.cpp," "SizeofPolymorphism.cpp",
+"Polynorphism00.cpp" and "BindingStatic.cpp".
 - there is "override" keyword that is used to check if the function name is same with function name in
 base class, check at "Polymorphism.cpp".
 - there is overload function, check at "PolymorphismOverload.cpp," "PolymorphismOverload2.cpp," "PolymorphismOverload3.cpp"
@@ -99,7 +100,7 @@ base class, check at "Polymorphism.cpp".
 we call virtual(polymorphic) function in derived class.
 - there is "dynamic cast keyword" (used for convert class type to another class type). check at "KeywordDynamicCast.cpp"
 - there are abstruct class, interface and pure virtual (abstract) function. check at "AbstractClass.cpp,"
-"AbstractClass2.cpp," "04AbstrackClassAsInterface.cpp".
+"AbstractClass2.cpp," "04AbstrackClassAsInterface.cpp," "PolymorphismAbstrackClass.cpp".
 - there is "typeid()". check at "OperatorTypeid.cpp," "OperatorTypeid2.cpp".
 
 create object on the heap and how to call its function, check at "KeywordClass3.cpp," "DefaultConstructor.cpp,"
@@ -144,4 +145,6 @@ Behaviors:
     - Class is inside function. Check at "ClassInsideFunction.cpp".
     - Create object outside function. Check at "ClassOutsideFunction.cpp".
     - Initializing static member variables of the cars class from outside. Check at "ClassOutsideFunction4.cpp"
+    - Create object. Check at "Polynorphism00.cpp", "KeywordClass2.cpp".
+    - Access class attributes. Check at "KeywordClass.cpp", "KeywordClass4.cpp".
 */
