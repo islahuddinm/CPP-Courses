@@ -32,6 +32,9 @@ the executed program succeeded or encountered problems.
 
 - "FunctionUserDefined.cpp"(cpp file) in CPP-COURSES folder. it explaind more function terminologys.
 
+- "encapsulation" means bundling data (variables) together with the methods (functions) that
+operate on that data into a single unit, usually within a class, effectively hiding
+internal implementation details and controlling how the data can be accessed and modified.
 - "encapsulation" refers to the practice of bundling data (variables) and the methods that
     operate on that data together into a single unit, usually a class. 
 - "delegates" refer to allowing you to pass a method as an argument to another method.

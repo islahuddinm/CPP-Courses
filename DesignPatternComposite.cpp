@@ -67,6 +67,11 @@ Solution:
 3. Implement a "composite" class to hold and manage child components.
 
 Use in Unreal Engine:
+Encapsulates behavior into reusable components that can be attached to actors.
+Examples:
+    - Actor Components: Modular pieces of functionality that can be attached to actors,
+        such as movement logic (UCharacterMovementComponent), health, or sound emitters.
+    - Scene Components: Components with a transform, used for attaching visual or spatial elements to actors.
 
 */
 
@@ -140,6 +145,18 @@ int main() {
 
     // Show details of the file system
     rootFolder->showDetails();
+
+    /* These are its outputs.
+    
+    Folder: Root
+        Folder: Documents
+            File: file1.txt
+            File: file2.docx
+        Folder: Pictures
+            File: file3.pdf
+
+
+    */
 
     return 0;
 }
