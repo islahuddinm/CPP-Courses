@@ -31,6 +31,19 @@ the executed program succeeded or encountered problems.
 - "return" in other functions = enable to return values to main function.
 
 - "FunctionUserDefined.cpp"(cpp file) in CPP-COURSES folder. it explaind more function terminologys.
+
+- "encapsulation" refers to the practice of bundling data (variables) and the methods that
+    operate on that data together into a single unit, usually a class. 
+- "delegates" refer to allowing you to pass a method as an argument to another method.
+- "delegation" refers to the practice of one object passing on a task or responsibility to another object,
+    essentially allowing an object to "delegate" work to another object that is better suited to handle it,
+    instead of performing the task itself.
+- "instantiation" refer to the process of creating a new instance or object from a class.
+- "explicit" means clearly stating instructions or details within the code, where the programmer
+    manually specifies everything needed.
+- "implicit" means something is done automatically by the language or compiler without
+    the programmer explicitly writing it out.
+
 */
 
 //function

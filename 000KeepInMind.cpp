@@ -145,6 +145,6 @@ Behaviors:
     - Class is inside function. Check at "ClassInsideFunction.cpp".
     - Create object outside function. Check at "ClassOutsideFunction.cpp".
     - Initializing static member variables of the cars class from outside. Check at "ClassOutsideFunction4.cpp"
-    - Create object. Check at "Polynorphism00.cpp", "KeywordClass2.cpp".
+    - Ways create object. Check at "Polynorphism00.cpp", "KeywordClass2.cpp".
     - Access class attributes. Check at "KeywordClass.cpp", "KeywordClass4.cpp".
 */

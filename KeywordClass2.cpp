@@ -107,6 +107,9 @@ int main() {
     cout << "Price: $" << bugatti2.getPrice() << endl;
     cout << endl;
 
+    //Cars porce = Cars "porce", "GT", 2020, 500; // This is wrong way
+    //Cars porce = "porce", "GT", 2020, 500; // This is wrong way
+
     // this is how to call defautl constructor.
     //Cars ferarri;
 
