@@ -72,6 +72,7 @@ Examples:
     - Actor Components: Modular pieces of functionality that can be attached to actors,
         such as movement logic (UCharacterMovementComponent), health, or sound emitters.
     - Scene Components: Components with a transform, used for attaching visual or spatial elements to actors.
+    - UI components (e.g., a window containing buttons and panels).
 
 */
 

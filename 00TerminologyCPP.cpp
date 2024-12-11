@@ -32,7 +32,7 @@ the executed program succeeded or encountered problems.
 
 - "FunctionUserDefined.cpp"(cpp file) in CPP-COURSES folder. it explaind more function terminologys.
 
-- "encapsulation" means bundling data (variables) together with the methods (functions) that
+- "encapsulate" means bundling data (variables) together with the methods (functions) that
 operate on that data into a single unit, usually within a class, effectively hiding
 internal implementation details and controlling how the data can be accessed and modified.
 - "encapsulation" refers to the practice of bundling data (variables) and the methods that
@@ -46,6 +46,14 @@ internal implementation details and controlling how the data can be accessed and
     manually specifies everything needed.
 - "implicit" means something is done automatically by the language or compiler without
     the programmer explicitly writing it out.
+- "semantics" refers to the meaning behind a piece of code, essentially defining
+    what a set of instructions will do when executed.
+- "syntax" refers to the set of rules that define the structure and order of symbols, words, and
+    punctuation used to write valid code in a specific programming language. In english it is like Grammer.
+- "Lvalue (Left Value)" refers to an expression that has a persistent memory location (an address) and
+    can appear on the left-hand side of an assignment. Check below at main() function.
+- "Rvalue (Right Value)" refers to a temporary value (a value without a persistent memory location).
+    It is typically used on the right-hand side of an assignment. Check below at main() function.
 
 */
 
@@ -66,6 +74,17 @@ int main() { // "int"(data type) for main function's "return 0". "main"(function
 
     state = true; //assignment
     std::cout << state << std::boolalpha << '\n';
+
+    //this is lvalue (left value)
+    int x = 10;  // 'x' is an lvalue.
+    x = 20;      // Valid: 'x' is on the left-hand side.
+    int& ref = x;  // Valid: lvalue reference to 'x'.
+    const int y = 15;  // 'y' is a const lvalue (non-modifiable).
+
+    //this is rvalue (right value)
+    int x = 10;   // '10' is an rvalue (temporary value).
+    int y = x + 5;  // '(x + 5)' is an rvalue.
+    int&& r = 10;  // Valid: rvalue reference to a temporary value.
     
     return 0;
 }
