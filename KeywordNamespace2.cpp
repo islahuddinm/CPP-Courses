@@ -22,6 +22,8 @@ int main(){
     string character = "I have ";
    
     cout << character << x + second::x << '\n';
+    cout << character << x << '\n';
+    cout << character << second::x << '\n';
 
     return 0; //a way for main function send the message to user that this task is success or there are problems.
 }
