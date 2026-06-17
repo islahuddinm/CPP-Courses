@@ -1,5 +1,17 @@
 
 /*
+Decimals are essentially an alternative way to write fractions.
+For example, the fraction half (1/2) is written as (0.5) in decimal form
+fruction = 1/2
+decimal = 0.5
+
+elements store values: int (integer), double, float, char (character), string, enum (enumeration), struc (structure), class
+
+    int stores: integer (bilangan bulat)
+    double stores: fractional number (bilangan pecahan)
+
+Containers: array, vector, deque
+
 C++ elements that have "<...>" angle brackets symbol e.g. class type (vector, deque), keyword (dynamic_cast,
 static_cast), type trait (std::is_integral<int>::value), function template (std::numeric_limits<...>::min()).
 
