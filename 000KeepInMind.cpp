@@ -9,6 +9,12 @@ elements store values: int (integer), double, float, char (character), string, e
 
     int stores: integer (bilangan bulat)
     double stores: fractional number (bilangan pecahan)
+    float stores: fractional number (bilangan pecahan)
+    char stores: one of latter/symbol
+    string stores: multiple of latter/symbol
+    enum stores: customed data type
+    struc: variables, functions, struc, class
+    class: variables, functions, struc, class
 
 Containers: array, vector, deque
 
