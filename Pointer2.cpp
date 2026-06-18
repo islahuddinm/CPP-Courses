@@ -21,7 +21,7 @@ int main() {
     y = 20;
 
     cout << y << endl;  // 20
-    cout << p << endl;    // 20
+    cout << *p << endl;    // 20
 
 // reference
     int x = 1;
