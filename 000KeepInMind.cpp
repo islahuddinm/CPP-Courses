@@ -58,6 +58,7 @@ Syntax:
     - ControlFlow WhileLoop (Loop) ---> ControlFlowLoop.cpp
     - ControlFlow DoWhileLoop (Loop) ---> ControlFlowLoop.cpp, ControlFlowLoop2.cpp
 
+    - Operator = Symbols or tokens that perform specific actions
     - Operator sizeof (Checking Sizes) ---> OperatorSizeof.cpp, ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
     - Operator static_cast (Conversion of Type) ---> OperatorCasting.cpp, ConversionTypes.cpp
     - Operator dynamic_cast (Conversion of Type) ---> OperatorDynamicCast.cpp
@@ -65,6 +66,17 @@ Syntax:
     - STL(Standard Library) Function (Conversion of StringToInteger) ---> ConversionTypes.cpp
     - STL(Standard Library) Function (Conversion of StringToDouble) ---> ConversionTypes.cpp
     
+    - Keyword = Reserved(disimpan) words used to make/specify types for variable/function.
+    automatically detect the type of a variable/function based on the value you assign to it.
+    You cannot change their meaning, and you cannot use them(keywords) as identifier names for
+    your variables, functions, or classes.
+        
+        Examples of keyword:
+        - Data Types: int, double, bool, char
+        - Control Flow: if, else, switch, for, while
+        - Access Modifiers: public, private, protected
+        
+    - Keyword (e.g., int, if, class)
     - Keyword this ---> KeywordThis.cpp, KeywordThis2.cpp
 
     - Manipulator
