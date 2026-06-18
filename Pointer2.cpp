@@ -32,6 +32,8 @@ int main() {
     // Allocate an array of 5 ints at runtime
     int* arr = new int[n];
 
+    std::cin >> arr[0];
+
     // Store values in the allocated memory
     arr[0] = 10;
     arr[1] = 20;
