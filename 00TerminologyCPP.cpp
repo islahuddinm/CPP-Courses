@@ -22,6 +22,8 @@ data that a variable can store.
 - initialize = start to the assignment of an initial value.
 - expression = a combination of values, variables, operators, and functions that can be evaluated to
 produce a result.
+- "void function(size_t age) {}" ---> "size_t age" is function parameter
+- "enter_bar(20);" ---> funtion call & "(20)" = funtion argument
 
 - "return 0" in the main function = a signal to indicate to the operating system that the program is
 successfully. it is used when scripting or using tools that execute programs, it's common to
