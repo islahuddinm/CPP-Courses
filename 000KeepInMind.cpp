@@ -49,9 +49,9 @@ Syntax:
     - ControlFlow If-Else (Conditional) ---> ControlFlowConditional.cpp, ControlFlowConditional3.cpp
     - ControlFlow Ternary (Conditional) ---> ControlFlowConditional4.cpp, Ternary.cpp
     - ControlFlow Switch (Conditional) ---> ControlFlowConditional2.cpp
-    - ControlFlow ForLoop (Loop)
-    - ControlFlow WhileLoop (Loop)
-    - ControlFlow DoWhileLoop (Loop)
+    - ControlFlow ForLoop (Loop) ---> ControlFlowLoop.cpp, ControlFlowLoop2.cpp, ControlFlowLoop3.cpp
+    - ControlFlow WhileLoop (Loop) ---> ControlFlowLoop.cpp
+    - ControlFlow DoWhileLoop (Loop) ---> ControlFlowLoop.cpp, ControlFlowLoop2.cpp
 
     - Keyword sizeof ---> ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
 
@@ -60,7 +60,7 @@ Syntax:
 
     - DynamicBinding/Virtual(Polymorphic)Function ---> BindingDynamic.cpp
     - AccessClassAttributes "::(DoubleColon)" ---> CallFunctionInsideClass.cpp
-    - IntegrateElement ":(SingleColon)" ---> ControlFlowConditional4.cpp, Inheritance.cpp
+    - IntegrateElements ":(SingleColon)" ---> ControlFlowConditional4.cpp, ControlFlowLoop3.cpp, Inheritance.cpp
     
     
 
