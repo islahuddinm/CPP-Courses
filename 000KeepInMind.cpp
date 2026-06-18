@@ -20,7 +20,7 @@ Containers: array, vector, deque
 
 Syntax:
 
-    - Function ---> SyntaxFunction.cpp
+    - Function ---> SyntaxFunction.cpp, Assignment.cpp
     - Function Declaration ---> Functions.cpp
     - Function Call ---> Functions.cpp
     - Function Template ---> FunctionTemplate.cpp, KeywordConcept.cpp
@@ -33,27 +33,34 @@ Syntax:
     - Print out ---> Output.cpp
     - Print in ---> OutputInput.cpp
 
+    - Pointer ---> Pointer.cpp, Pointer2.cpp, BindingDynamic.cpp, BindingStatic.cpp
+    - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp, ArrayDynamic.cpp
+    - Container Array ---> Array.cpp, ArrayInitialization.cpp
+
     - Class ---> KeywordClass.cpp, Inheritance.cpp, Polymorphism.cpp
     - Class DefaultFunctionConstructor ---> KeywordClass3.cpp
     - Class CustomFunctionConstructor ---> KeywordClass3.cpp
     - Class FunctionConstructor (Declaration types of Constructor) ---> AbstractClass.cpp
     - Class FunctionDestructor ---> Destructor.cpp
     - Class Interface&Abstract ---> AbstractClass.cpp
-    - Class PureVirtualFunction ---> AbstractClass.cpp
+    - Class PureVirtualFunction ---> AbstractClass.cpp    
 
-    - Pointer ---> Pointer.cpp, Pinter2.cpp
-    - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp
-    - Container Array ---> Array.cpp
-
-    - ControlFlow If-Else (Conditional)
-    - ControlFlow Ternary (Conditional)
-    - ControlFlow Switch (Conditional)
+    - ControlFlow (Declaration types of ConditionalFlowControl) ---> ControlFlowConditional4.cpp, Ternary.cpp
+    - ControlFlow If-Else (Conditional) ---> ControlFlowConditional.cpp, ControlFlowConditional3.cpp
+    - ControlFlow Ternary (Conditional) ---> ControlFlowConditional4.cpp, Ternary.cpp
+    - ControlFlow Switch (Conditional) ---> ControlFlowConditional2.cpp
     - ControlFlow ForLoop (Loop)
     - ControlFlow WhileLoop (Loop)
     - ControlFlow DoWhileLoop (Loop)
 
+    - Keyword sizeof ---> ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
+
     - Manipulator
     - Conversion
+
+    - DynamicBinding/Virtual(Polymorphic)Function ---> BindingDynamic.cpp
+    - AccessClassAttributes "::(DoubleColon)" ---> CallFunctionInsideClass.cpp
+    - IntegrateElement ":(SingleColon)" ---> ControlFlowConditional4.cpp, Inheritance.cpp
     
     
 
