@@ -23,6 +23,15 @@ int main() {
     cout << var << endl;  // 20
     cout << p << endl;    // 20
 
+// reference
+    int x = 1;
+    int& ref = x;
+
+    ref = 0;
+
+    cout << x << endl;
+    cout << ref << endl;
+
 // the pointer is not used to allocate memory. The "new" operator allocates the memory.
     int* pp = new int; // Allocate memory for an integer on the heap(memory stock have not been used).   
     *pp = 42; // Assigning a value to the allocated memory by 'new int;' then the value(42) is placed to the allocated memory.
