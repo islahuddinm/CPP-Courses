@@ -18,6 +18,42 @@ elements store values: int (integer), double, float, char (character), string, e
 
 Containers: array, vector, deque
 
+Syntax:
+
+    - Function ---> SyntaxFunction.cpp
+    - Function Declaration ---> Functions.cpp
+    - Function Call ---> Functions.cpp
+    - Function Template ---> FunctionTemplate.cpp, KeywordConcept.cpp
+    
+    - Variable ---> Syntax01Variable.cpp
+    - Variable Assigment ---> Syntax01Variable.cpp
+    - Variable (Decalration types of Variable) ---> Syntax01Variable.cpp
+
+    - Print out
+    - Print in
+
+    - Class DefaultFunctionConstructor ---> KeywordClass3.cpp
+    - Class CustomFunctionConstructor ---> KeywordClass3.cpp
+    - Class FunctionConstructor (Declaration types of Constructor) ---> AbstractClass.cpp
+    - Class FunctionDestructor ---> Destructor.cpp
+
+    - Pointer
+    - Container Array ---> Array.cpp
+
+    - ControlFlow If-Else (Conditional)
+    - ControlFlow Ternary (Conditional)
+    - ControlFlow Switch (Conditional)
+    - ControlFlow ForLoop (Loop)
+    - ControlFlow WhileLoop (Loop)
+    - ControlFlow DoWhileLoop (Loop)
+
+    - Manipulator
+    - Conversion
+    
+
+
+
+
 C++ elements that have "<...>" angle brackets symbol e.g. class type (vector, deque), keyword (dynamic_cast,
 static_cast), type trait (std::is_integral<int>::value), function template (std::numeric_limits<...>::min()).
 
