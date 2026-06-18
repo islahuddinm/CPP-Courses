@@ -28,16 +28,21 @@ Syntax:
     - Variable ---> Syntax01Variable.cpp
     - Variable Assigment ---> Syntax01Variable.cpp
     - Variable (Decalration types of Variable) ---> Syntax01Variable.cpp
+    - ArithmaticOperation ---> OperatorArithmatic.cpp
 
-    - Print out
-    - Print in
+    - Print out ---> Output.cpp
+    - Print in ---> OutputInput.cpp
 
+    - Class ---> KeywordClass.cpp, Inheritance.cpp, Polymorphism.cpp
     - Class DefaultFunctionConstructor ---> KeywordClass3.cpp
     - Class CustomFunctionConstructor ---> KeywordClass3.cpp
     - Class FunctionConstructor (Declaration types of Constructor) ---> AbstractClass.cpp
     - Class FunctionDestructor ---> Destructor.cpp
+    - Class Interface&Abstract ---> AbstractClass.cpp
+    - Class PureVirtualFunction ---> AbstractClass.cpp
 
-    - Pointer
+    - Pointer ---> Pointer.cpp, Pinter2.cpp
+    - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp
     - Container Array ---> Array.cpp
 
     - ControlFlow If-Else (Conditional)
@@ -49,6 +54,7 @@ Syntax:
 
     - Manipulator
     - Conversion
+    
     
 
 
