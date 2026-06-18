@@ -35,13 +35,18 @@ Syntax:
 
     - Pointer ---> Pointer.cpp, Pointer2.cpp, BindingDynamic.cpp, BindingStatic.cpp
     - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp, ArrayDynamic.cpp
+    
     - Container Array ---> Array.cpp, ArrayInitialization.cpp
+    - Container Deque ---> ClassTypeDeque.cpp, ClassTypeDeque2.cpp, ClassTypeDeque3.cpp
+    - Container Pair ---> ClassTypePair.cpp
+    - Container String ---> ClassTypeString.cpp
+    - Container Vector ---> ClassTypeVector.cpp, ClassTypeVector2.cpp
 
     - Class ---> KeywordClass.cpp, Inheritance.cpp, Polymorphism.cpp
     - Class DefaultFunctionConstructor ---> KeywordClass3.cpp
     - Class CustomFunctionConstructor ---> KeywordClass3.cpp
-    - Class FunctionConstructor (Declaration types of Constructor) ---> AbstractClass.cpp
-    - Class FunctionDestructor ---> Destructor.cpp
+    - Class FunctionConstructor (Declaration types of Constructor) ---> AbstractClass.cpp, ConstructorDestructor.cpp
+    - Class FunctionDestructor ---> Destructor.cpp, ConstructorDestructor.cpp
     - Class Interface&Abstract ---> AbstractClass.cpp
     - Class PureVirtualFunction ---> AbstractClass.cpp    
 
@@ -53,7 +58,14 @@ Syntax:
     - ControlFlow WhileLoop (Loop) ---> ControlFlowLoop.cpp
     - ControlFlow DoWhileLoop (Loop) ---> ControlFlowLoop.cpp, ControlFlowLoop2.cpp
 
-    - Keyword sizeof ---> ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
+    - Operator sizeof (Checking Sizes) ---> OperatorSizeof.cpp, ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
+    - Operator static_cast (Conversion of Type) ---> OperatorCasting.cpp, ConversionTypes.cpp
+    - Operator dynamic_cast (Conversion of Type) ---> OperatorDynamicCast.cpp
+
+    - STL(Standard Library) Function (Conversion of StringToInteger) ---> ConversionTypes.cpp
+    - STL(Standard Library) Function (Conversion of StringToDouble) ---> ConversionTypes.cpp
+    
+    - Keyword this ---> KeywordThis.cpp, KeywordThis2.cpp
 
     - Manipulator
     - Conversion
@@ -61,6 +73,7 @@ Syntax:
     - DynamicBinding/Virtual(Polymorphic)Function ---> BindingDynamic.cpp
     - AccessClassAttributes "::(DoubleColon)" ---> CallFunctionInsideClass.cpp
     - IntegrateElements ":(SingleColon)" ---> ControlFlowConditional4.cpp, ControlFlowLoop3.cpp, Inheritance.cpp
+    - AccessObjectAttributes ".(Dot)" ---> ClassCreateObjectInside3.cpp
     
     
 
