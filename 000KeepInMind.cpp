@@ -67,7 +67,7 @@ Syntax:
     - STL(Standard Library) Function (Conversion of StringToDouble) ---> ConversionTypes.cpp
     
     - Keyword = Reserved(disimpan) words used to make/specify types for variable/function.
-    automatically detect the type of a variable/function based on the value you assign to it.
+    They work automatically to detect the type of a variable/function based on the value you assign to it.
     You cannot change their meaning, and you cannot use them(keywords) as identifier names for
     your variables, functions, or classes.
         
