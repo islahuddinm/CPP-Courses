@@ -7,20 +7,20 @@ int main() {
 
 // copy of its value
     int var = 10; // sizeof(var) = usually 4 bytes
-    int p = var; // sizeof(p) = usually 4 bytes
+    int a = var; // sizeof(p) = usually 4 bytes
 
     var = 20;
 
     cout << var << endl;  // 20
-    cout << p << endl;    // 10
+    cout << a << endl;    // 10
 
 // pointer is used to refer to the same object, not a copy of its value
-    int var = 10; // sizeof(var) = usually 4 bytes
-    int* p = &var; // sizeof(*p) = usually 8 bytes on 64-bit systems (*p is not an int. p is an int*, a pointer that stores an address.)
+    int y = 10; // sizeof(var) = usually 4 bytes
+    int* p = &y; // sizeof(*p) = usually 8 bytes on 64-bit systems (*p is not an int. p is an int*, a pointer that stores an address.)
 
-    var = 20;
+    y = 20;
 
-    cout << var << endl;  // 20
+    cout << y << endl;  // 20
     cout << p << endl;    // 20
 
 // reference
