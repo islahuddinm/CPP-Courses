@@ -18,35 +18,37 @@ elements store values: int (integer), double, float, char (character), string, e
 
 Containers: array, vector, deque
 
-Syntax:
+Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FUNCTION, OPRETATOR.
 
     - Function ---> SyntaxFunction.cpp, Assignment.cpp
     - Function Declaration ---> Functions.cpp
     - Function Call ---> Functions.cpp
     - Function Template ---> FunctionTemplate.cpp, KeywordConcept.cpp
+    - Function Lambda ---> FunctionInsideFunction.cpp, FunctionLambda.cpp
     
     - Variable ---> Syntax01Variable.cpp
-    - Variable Assigment ---> Syntax01Variable.cpp
-    - Variable (Decalration types of Variable) ---> Syntax01Variable.cpp
+    - Variable Assigment ---> Syntax01Variable.cpp, Declaration.cpp
+    - Variable (Decalration types of Variable) ---> Syntax01Variable.cpp, Declaration.cpp
     - ArithmaticOperation ---> OperatorArithmatic.cpp
 
     - Print out ---> Output.cpp
     - Print in ---> OutputInput.cpp
 
-    - Pointer ---> Pointer.cpp, Pointer2.cpp, BindingDynamic.cpp, BindingStatic.cpp
+    - Pointer ---> Pointer.cpp, Pointer2.cpp, BindingDynamic.cpp, BindingStatic.cpp, FunctionLibMalloc.cpp
     - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp, ArrayDynamic.cpp, BindingDynamic.cpp
     
     - Container Array ---> Array.cpp, ArrayInitialization.cpp
     - Container Deque ---> ClassTypeDeque.cpp, ClassTypeDeque2.cpp, ClassTypeDeque3.cpp
     - Container Pair ---> ClassTypePair.cpp
     - Container String ---> ClassTypeString.cpp
-    - Container Vector ---> ClassTypeVector.cpp, ClassTypeVector2.cpp
+    - Container Vector ---> ClassTypeVector.cpp, ClassTypeVector2.cpp, ClassUseVector.cpp, FunctionEmpty.cpp, FunctionFront.cpp
 
     - Class ---> KeywordClass.cpp, Inheritance.cpp, Polymorphism.cpp
-    - Class DefaultFunctionConstructor ---> KeywordClass3.cpp
+    - Class DefaultFunctionConstructor ---> KeywordClass3.cpp, DefaultConstructor.cpp
     - Class CustomFunctionConstructor ---> KeywordClass3.cpp
-    - Class FunctionConstructor (Declaration types of Constructor) ---> AbstractClass.cpp, ConstructorDestructor.cpp
-    - Class FunctionDestructor ---> Destructor.cpp, ConstructorDestructor.cpp
+    - Class FunctionConstructor (Declaration types of Constructor) ---> AbstractClass.cpp, ConstructorDestructor.cpp, ClassCreateClass2.cpp, ClassCreateObjectInside.cpp
+    - Class FunctionDestructor ---> Destructor.cpp, ConstructorDestructor.cpp, DestructorVirtual.cpp
+    - Class CopyConstructor ---> CopyConstructor.cpp
     - Class Interface&Abstract ---> AbstractClass.cpp
     - Class PureVirtualFunction ---> AbstractClass.cpp    
 
@@ -69,6 +71,9 @@ Syntax:
     - STL(Standard Library) Function std::stod (Conversion of StringToDouble) ---> ConversionTypes.cpp
     - STL(Standard Library) Function std::strtol (Conversion of StringToLongInteger) ---> ArgcArgv.cpp
     - STL(Standard Library) Function std::size ---> Array.cpp, ArrayCharacter.cpp, ArraySizeof.cpp
+    - STL(Standard Library) Function _kbhit() ---> FunctionLib_kbhit().cpp, FunctionLib_getch.cpp
+    - STL(Standard Library) Function _getch() ---> FunctionLib_getch.cpp, FunctionLib_kbhit().cpp
+    - STL(Standard Library) Function malloc() ---> FunctionLibMalloc.cpp
     
     - Keyword = Reserved(disimpan) words used to make/specify types for variable/function.
     They work automatically to detect the type of a variable/function based on the value you assign to it.
@@ -86,6 +91,7 @@ Syntax:
     - Keyword const ---> AbstracClass.cpp
     - Keyword override ---> AbstracClass.cpp
     - Keyword auto ---> Array.cpp
+    - Keyword DataType ---> DataType.cpp
 
     - Manipulator std::boolalpha ---> Assignment.cpp
     - Conversion
@@ -94,7 +100,9 @@ Syntax:
     - AccessClassAttributes "::(DoubleColon)" ---> CallFunctionInsideClass.cpp
     - IntegrateElements ":(SingleColon)" ---> ControlFlowConditional4.cpp, ControlFlowLoop3.cpp, Inheritance.cpp
     - AccessObjectAttributes ".(Dot)" ---> ClassCreateObjectInside3.cpp
-    
+    - DesignPattern ---> DesignPattern.cpp
+    - CheckIfaKeyHasBeenPressed "if (_kbhit())" ---> FunctionLib_getch.cpp, FunctionLib_kbhit().cpp
+    - GetThePressedKey "char ch = _getch();" ---> FunctionLib_getch.cpp, FunctionLib_kbhit().cpp
     
 
 
