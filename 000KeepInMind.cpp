@@ -34,7 +34,7 @@ Syntax:
     - Print in ---> OutputInput.cpp
 
     - Pointer ---> Pointer.cpp, Pointer2.cpp, BindingDynamic.cpp, BindingStatic.cpp
-    - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp, ArrayDynamic.cpp
+    - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp, ArrayDynamic.cpp, BindingDynamic.cpp
     
     - Container Array ---> Array.cpp, ArrayInitialization.cpp
     - Container Deque ---> ClassTypeDeque.cpp, ClassTypeDeque2.cpp, ClassTypeDeque3.cpp
@@ -50,7 +50,7 @@ Syntax:
     - Class Interface&Abstract ---> AbstractClass.cpp
     - Class PureVirtualFunction ---> AbstractClass.cpp    
 
-    - ControlFlow (Declaration types of ConditionalFlowControl) ---> ControlFlowConditional4.cpp, Ternary.cpp
+    - ControlFlow (Declaration types of ConditionalFlowControl) ---> ArrayInitialization.cpp, ControlFlowConditional4.cpp, Ternary.cpp
     - ControlFlow If-Else (Conditional) ---> ControlFlowConditional.cpp, ControlFlowConditional3.cpp
     - ControlFlow Ternary (Conditional) ---> ControlFlowConditional4.cpp, Ternary.cpp
     - ControlFlow Switch (Conditional) ---> ControlFlowConditional2.cpp
@@ -68,7 +68,7 @@ Syntax:
     - STL(Standard Library) Function std::stoi (Conversion of StringToInteger) ---> ConversionTypes.cpp
     - STL(Standard Library) Function std::stod (Conversion of StringToDouble) ---> ConversionTypes.cpp
     - STL(Standard Library) Function std::strtol (Conversion of StringToLongInteger) ---> ArgcArgv.cpp
-    - STL(Standard Library) Function std::size ---> Array.cpp
+    - STL(Standard Library) Function std::size ---> Array.cpp, ArrayCharacter.cpp, ArraySizeof.cpp
     
     - Keyword = Reserved(disimpan) words used to make/specify types for variable/function.
     They work automatically to detect the type of a variable/function based on the value you assign to it.
@@ -85,9 +85,9 @@ Syntax:
     - Keyword virtual ---> AbstracClass.cpp
     - Keyword const ---> AbstracClass.cpp
     - Keyword override ---> AbstracClass.cpp
-    - Keywword auto ---> Array.cpp
+    - Keyword auto ---> Array.cpp
 
-    - Manipulator
+    - Manipulator std::boolalpha ---> Assignment.cpp
     - Conversion
 
     - DynamicBinding/Virtual(Polymorphic)Function ---> BindingDynamic.cpp

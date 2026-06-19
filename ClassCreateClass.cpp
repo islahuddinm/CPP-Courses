@@ -16,8 +16,9 @@ public:
 
 
 // we cannot create function inside function, but we can create lambda function inside function.
+// *** CHECK IN "FunctionInsideFunction2.cpp" ***
 void coba() {
-    void coba1() {
+    void coba1(); {
         std::cout << "Try to print function inside functon\n";
     }
 }
