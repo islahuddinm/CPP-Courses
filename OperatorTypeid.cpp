@@ -19,7 +19,7 @@ int main() {
     Base* basePtr = new Derived();
     
     // Using typeid to check the actual type of the object
-    if (typeid(*basePtr) == typeid(Derived)) {
+    if (typeid(*basePtr) == typeid(Derived)) { // if it is like this "if (*basePtr == Derived)" will get errors
         std::cout << "basePtr points to a Derived object\n";
     } else {
         std::cout << "basePtr does not point to a Derived object\n";
