@@ -134,7 +134,18 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Keyword concept ---> KeywordConcept.cpp, Concept Folder, KeywordRequires.cpp
     - Keyword requires ---> KeywordConcept.cpp, Concept Folder, KeywordRequires.cpp
 
-    - Manipulator std::boolalpha ---> Assignment.cpp
+    - ManipulatorStream std::boolalpha ---> Assignment.cpp
+    - ManipulatorStream std::setw() ---> Manipulator.cpp
+    - ManipulatorStream std::left ---> Manipulator.cpp
+    - ManipulatorStream std::setfill() ---> Manipulator.cpp
+    - ManipulatorStream std::showpos ---> Manipulator.cpp
+    - ManipulatorStream std::noshowpos ---> Manipulator.cpp
+    - ManipulatorStream std::showbase ---> Manipulator.cpp
+    - ManipulatorStream std::uppercase ---> Manipulator.cpp
+    - ManipulatorStream std::hex ---> Manipulator.cpp
+    - ManipulatorStream std::oct ---> Manipulator.cpp
+    - ManipulatorStream std::dex ---> Manipulator.cpp
+
     - Conversion
 
     - DynamicBinding/Virtual(Polymorphic)Function ---> BindingDynamic.cpp
