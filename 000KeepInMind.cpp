@@ -20,30 +20,40 @@ Containers: array, vector, deque
 
 Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FUNCTION, OPRETATOR.
 
-    - Function ---> SyntaxFunction.cpp, Assignment.cpp
+    - size_t ---> FunctionLibStd_strlen.cpp, Functions.cpp, Iterator.cpp
+
+    - Function ---> SyntaxFunction.cpp, Assignment.cpp, Functions.cpp, Functions2.cpp, FunctionUserDefined.cpp
     - Function Declaration ---> Functions.cpp
+    - Function (Declaration types of Function) ---> FunctionMainVersion.cpp, ArgcArgv.cpp
     - Function Call ---> Functions.cpp
     - Function Template ---> FunctionTemplate.cpp, KeywordConcept.cpp
     - Function Lambda ---> FunctionInsideFunction.cpp, FunctionLambda.cpp
+    - Function Operator ---> FunctionOperator.cpp
+    - Function Overload ---> FunctionOverload.cpp
     
     - Variable ---> Syntax01Variable.cpp
     - Variable Assigment ---> Syntax01Variable.cpp, Declaration.cpp
-    - Variable (Decalration types of Variable) ---> Syntax01Variable.cpp, Declaration.cpp
-    - ArithmaticOperation ---> OperatorArithmatic.cpp
+    - Variable (Decalration types of Variable) ---> Syntax01Variable.cpp, InitializingWays.cpp, Declaration.cpp
+    
+    - ArithmaticOperation ---> OperatorArithmatic.cpp, IncrementDecrement.cpp
 
     - Print out ---> Output.cpp
     - Print in ---> OutputInput.cpp
 
-    - Pointer ---> Pointer.cpp, Pointer2.cpp, BindingDynamic.cpp, BindingStatic.cpp, FunctionLibMalloc.cpp
-    - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp, ArrayDynamic.cpp, BindingDynamic.cpp
+    - Pointer ---> Pointer.cpp, Pointer2.cpp, BindingDynamic.cpp, BindingStatic.cpp,
+        FunctionLibMalloc.cpp, FunctionLibStd_makeShare.cpp, FunctionLibStd_unique.cpp
+    - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp,
+        ArrayDynamic.cpp, BindingDynamic.cpp
     
     - Container Array ---> Array.cpp, ArrayInitialization.cpp
     - Container Deque ---> ClassTypeDeque.cpp, ClassTypeDeque2.cpp, ClassTypeDeque3.cpp
     - Container Pair ---> ClassTypePair.cpp
     - Container String ---> ClassTypeString.cpp
-    - Container Vector ---> ClassTypeVector.cpp, ClassTypeVector2.cpp, ClassUseVector.cpp, FunctionEmpty.cpp, FunctionFront.cpp
+    - Container Vector ---> ClassTypeVector.cpp, ClassTypeVector2.cpp, ClassUseVector.cpp, FunctionEmpty.cpp,
+        FunctionFront.cpp, FunctionLibStd_move.cpp, FunctionLibStd_sort.cpp
 
     - Class ---> KeywordClass.cpp, Inheritance.cpp, Polymorphism.cpp
+    - Class Inheritance ---> Inheritance.cpp
     - Class DefaultFunctionConstructor ---> KeywordClass3.cpp, DefaultConstructor.cpp
     - Class CustomFunctionConstructor ---> KeywordClass3.cpp
     - Class FunctionConstructor (Declaration types of Constructor) ---> AbstractClass.cpp, ConstructorDestructor.cpp, ClassCreateClass2.cpp, ClassCreateObjectInside.cpp
@@ -61,19 +71,39 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - ControlFlow DoWhileLoop (Loop) ---> ControlFlowLoop.cpp, ControlFlowLoop2.cpp
 
     - Operator = Symbols or tokens that perform specific actions
-    - Operator sizeof (Checking Sizes) ---> OperatorSizeof.cpp, ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
-    - Operator static_cast (Conversion of Type) ---> OperatorCasting.cpp, ConversionTypes.cpp
-    - Operator dynamic_cast (Conversion of Type) ---> OperatorDynamicCast.cpp
+    - Operator sizeof() (Checking Sizes) ---> OperatorSizeof.cpp, ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
+    - Operator static_cast<>() (Conversion of Type) ---> OperatorCasting.cpp, ConversionTypes.cpp, ImpliciteExplicite.cpp
+    - Operator dynamic_cast<>() (Conversion of Type) ---> OperatorDynamicCast.cpp
     - Operator new ---> OperatorNewDelete.cpp, OperatorTypeid.cpp
     - Operator delete ---> OperatorNewDelete.cpp
 
     - STL(Standard Library) Function std::stoi (Conversion of StringToInteger) ---> ConversionTypes.cpp
     - STL(Standard Library) Function std::stod (Conversion of StringToDouble) ---> ConversionTypes.cpp
-    - STL(Standard Library) Function std::strtol (Conversion of StringToLongInteger) ---> ArgcArgv.cpp
-    - STL(Standard Library) Function std::size ---> Array.cpp, ArrayCharacter.cpp, ArraySizeof.cpp
+    - STL(Standard Library) Function std::strtol (Conversion of StringToLongInteger) ---> ArgcArgv.cpp, FunctionLibStd_strlo.cpp
+    - STL(Standard Library) Function std::size ---> FunctionLibStd_size.cpp, Array.cpp, ArrayCharacter.cpp, ArraySizeof.cpp
     - STL(Standard Library) Function _kbhit() ---> FunctionLib_kbhit().cpp, FunctionLib_getch.cpp
     - STL(Standard Library) Function _getch() ---> FunctionLib_getch.cpp, FunctionLib_kbhit().cpp
     - STL(Standard Library) Function malloc() ---> FunctionLibMalloc.cpp
+    - STL(Standard Library) Function std::floor ---> FunctionLibrary.cpp
+    - STL(Standard Library) Function std::ceil ---> FunctionLibrary.cpp
+    - STL(Standard Library) Function std::abs ---> FunctionLibrary.cpp
+    - STL(Standard Library) Function std::isalnum() ---> FunctionLibrary.cpp, FunctionLibStd_isalnum.cpp
+    - STL(Standard Library) Function std::find() ---> FunctionLibStd_find.cpp
+    - STL(Standard Library) Function std::isupper() ---> FunctionLibStd_isupper.cpp
+    - STL(Standard Library) Function std::make_shared<>() ---> FunctionLibStd_makeShare.cpp
+    - STL(Standard Library) Function std::make_unique<>() ---> FunctionLibStd_unique.cpp
+    - STL(Standard Library) Function std::max() ---> FunctionLibStd_max.cpp
+    - STL(Standard Library) Function std::min() ---> FunctionLibStd_min.cpp
+    - STL(Standard Library) Function std::move() ---> FunctionLibStd_move.cpp
+    - STL(Standard Library) Function std::sort() ---> FunctionLibStd_sort.cpp
+    - STL(Standard Library) Function std::strcat() ---> FunctionLibStd_strcat.cpp
+    - STL(Standard Library) Function std::strchr() ---> FunctionLibStd_strchr.cpp
+    - STL(Standard Library) Function std::strcmp() ---> FunctionLibStd_strcmp.cpp
+    - STL(Standard Library) Function std::strcpy() ---> FunctionLibStd_strcpy.cpp
+    - STL(Standard Library) Function std::strlen() ---> FunctionLibStd_strlen.cpp
+    - STL(Standard Library) Function std::toupper() ---> FunctionLibStd_toupper.cpp
+    - STL(Standard Library) Function std::srand() ---> Generator.cpp
+    - STL(Standard Library) Function std::time() ---> Generator.cpp
     
     - Keyword = Reserved(disimpan) words used to make/specify types for variable/function.
     They work automatically to detect the type of a variable/function based on the value you assign to it.
@@ -90,7 +120,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Keyword virtual ---> AbstracClass.cpp
     - Keyword const ---> AbstracClass.cpp
     - Keyword override ---> AbstracClass.cpp
-    - Keyword auto ---> Array.cpp
+    - Keyword auto ---> KeywordAuto.cpp, Array.cpp
     - Keyword DataType ---> DataType.cpp
 
     - Manipulator std::boolalpha ---> Assignment.cpp
