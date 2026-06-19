@@ -73,7 +73,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Operator = Symbols or tokens that perform specific actions
     - Operator sizeof() (Checking Sizes) ---> OperatorSizeof.cpp, ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
     - Operator static_cast<>() (Conversion of Type) ---> OperatorCasting.cpp, ConversionTypes.cpp, ImpliciteExplicite.cpp
-    - Operator dynamic_cast<>() (Conversion of Type) ---> OperatorDynamicCast.cpp
+    - Operator dynamic_cast<>() (Conversion of Type) ---> OperatorDynamicCast.cpp, KeywordDynamicCast.cpp
     - Operator new ---> OperatorNewDelete.cpp, OperatorTypeid.cpp
     - Operator delete ---> OperatorNewDelete.cpp
 
@@ -105,7 +105,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - STL(Standard Library) Function std::srand() ---> Generator.cpp
     - STL(Standard Library) Function std::time() ---> Generator.cpp
     
-    - Keyword = Reserved(disimpan) words used to make/specify types for variable/function to do a certain task.
+    - Keyword = Reserved(disimpan) words used to make/specify types for variable/function to make them doing a certain task.
     They work automatically to detect the type of a variable/function based on the value you assign to it.
     You cannot change their meaning, and you cannot use them(keywords) as identifier names for
     your variables, functions, or classes.
@@ -116,12 +116,23 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
         - Access Modifiers: public, private, protected
         
     - Keyword (e.g., int, if, class)
+    - Keyword struct ---> KeywordStruct.cpp
+    - Keyword enum ---> KeywordEnum.cpp
     - Keyword this ---> KeywordThis.cpp, KeywordThis2.cpp
     - Keyword virtual ---> AbstracClass.cpp
-    - Keyword const ---> AbstracClass.cpp
-    - Keyword override ---> AbstracClass.cpp
+    - Keyword const ---> KeywordConst.cpp, AbstracClass.cpp
+    - Keyword override ---> KeywordOverride.cpp, AbstracClass.cpp
     - Keyword auto ---> KeywordAuto.cpp, Array.cpp
-    - Keyword DataType ---> DataType.cpp
+    - Keyword DataType ---> DataType.cpp    
+    - Keyword explicit ---> KeywordExplicit.cpp
+    - Keyword final ---> KeywordFinal.cpp
+    - Keyword friend ---> KeywordFriend.cpp
+    - Keyword namespace ---> KeywordNamespace.cpp, KeywordNamespace2.cpp
+    - Keyword using ---> KeywordUsing.cpp, KeywordUsing2.cpp
+    - Keyword typedef ---> KeywordTypedef.cpp
+    - Keyword static ---> Keywordstatic.cpp, Keywordstatic2.cpp, Keywordstatic3.cpp
+    - Keyword concept ---> KeywordConcept.cpp, Concept Folder, KeywordRequires.cpp
+    - Keyword requires ---> KeywordConcept.cpp, Concept Folder, KeywordRequires.cpp
 
     - Manipulator std::boolalpha ---> Assignment.cpp
     - Conversion
