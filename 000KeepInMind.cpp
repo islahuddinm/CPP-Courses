@@ -62,9 +62,13 @@ Syntax:
     - Operator sizeof (Checking Sizes) ---> OperatorSizeof.cpp, ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
     - Operator static_cast (Conversion of Type) ---> OperatorCasting.cpp, ConversionTypes.cpp
     - Operator dynamic_cast (Conversion of Type) ---> OperatorDynamicCast.cpp
+    - Operator new ---> OperatorNewDelete.cpp, OperatorTypeid.cpp
+    - Operator delete ---> OperatorNewDelete.cpp
 
-    - STL(Standard Library) Function (Conversion of StringToInteger) ---> ConversionTypes.cpp
-    - STL(Standard Library) Function (Conversion of StringToDouble) ---> ConversionTypes.cpp
+    - STL(Standard Library) Function std::stoi (Conversion of StringToInteger) ---> ConversionTypes.cpp
+    - STL(Standard Library) Function std::stod (Conversion of StringToDouble) ---> ConversionTypes.cpp
+    - STL(Standard Library) Function std::strtol (Conversion of StringToLongInteger) ---> ArgcArgv.cpp
+    - STL(Standard Library) Function std::size ---> Array.cpp
     
     - Keyword = Reserved(disimpan) words used to make/specify types for variable/function.
     They work automatically to detect the type of a variable/function based on the value you assign to it.
@@ -72,12 +76,16 @@ Syntax:
     your variables, functions, or classes.
         
         Examples of keyword:
-        - Data Types: int, double, bool, char
+        - Data Types: int, double, bool, char, class
         - Control Flow: if, else, switch, for, while
         - Access Modifiers: public, private, protected
         
     - Keyword (e.g., int, if, class)
     - Keyword this ---> KeywordThis.cpp, KeywordThis2.cpp
+    - Keyword virtual ---> AbstracClass.cpp
+    - Keyword const ---> AbstracClass.cpp
+    - Keyword override ---> AbstracClass.cpp
+    - Keywword auto ---> Array.cpp
 
     - Manipulator
     - Conversion
@@ -177,6 +185,8 @@ how create object on the heap and how to call its function, check at "KeywordCla
 at "BindingStatic.cpp," "BindingDynamic.cpp".
 - there is virtual keyword is used to a base class's member function that you can redefine in a derived class
 to achieve polymorphism, check at "Polymorphism.cpp" and "BindingDynamic.cpp".
+- Virtual keyword: used to achieve runtime polymorphism by enabling late binding (dynamic dispatch) on
+member functions or base classes.
 - there is static and dynamic binding check at "BindingStatic.cpp," "BindingDynamic.cpp," "Polymorphism.cpp".
 - there is pholymorphism size, check at "SizeofPolymorphism.cpp".
 - there is object slicing, check at "PolymorphismSlicing.cpp," "SizeofPolymorphism.cpp" and "BindingStatic.cpp".

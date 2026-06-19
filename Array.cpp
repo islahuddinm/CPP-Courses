@@ -9,6 +9,10 @@ int main3();
 void main4();
 void main5();
 
+int max() {
+    return 5;
+}
+
 int main() {
 
     //this is array data
@@ -20,6 +24,11 @@ int main() {
     }
 
     for (int i = 0; i < std::size(a); i++) { //you can use "i < 10;" instead of "i < std::size(a)"
+
+        std::cout << "the value of interger is " << a[i] << '\n';
+    }
+
+    for (int i = 0; i < max(); i++) { // max(); is a function call for "int max() {return 5;}"
 
         std::cout << "the value of interger is " << a[i] << '\n';
     }
