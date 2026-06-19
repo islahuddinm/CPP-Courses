@@ -1,7 +1,10 @@
 #include <iostream>
 
-/* 'final' keyword is used in the context of inheritance to indicate that a virtual function cannot be
-overridden in a derived class or that a class cannot be inherited from.*/
+/* 
+'final' keyword is used in the context of inheritance to indicate that a virtual function cannot be
+overridden in a derived class or that a class cannot be inherited from.
+Check in "class Bird : public Animal"
+*/
 
 class Animal
 {
