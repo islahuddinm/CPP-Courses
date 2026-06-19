@@ -105,7 +105,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - STL(Standard Library) Function std::srand() ---> Generator.cpp
     - STL(Standard Library) Function std::time() ---> Generator.cpp
     
-    - Keyword = Reserved(disimpan) words used to make/specify types for variable/function.
+    - Keyword = Reserved(disimpan) words used to make/specify types for variable/function to do a certain task.
     They work automatically to detect the type of a variable/function based on the value you assign to it.
     You cannot change their meaning, and you cannot use them(keywords) as identifier names for
     your variables, functions, or classes.
