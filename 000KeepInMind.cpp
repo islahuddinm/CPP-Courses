@@ -21,6 +21,7 @@ Containers: array, vector, deque
 Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FUNCTION, OPRETATOR.
 
     - size_t ---> FunctionLibStd_strlen.cpp, Functions.cpp, Iterator.cpp
+    - Keyword DataType ---> DataType.cpp
 
     - Function ---> SyntaxFunction.cpp, Assignment.cpp, Functions.cpp, Functions2.cpp, FunctionUserDefined.cpp
     - Function Declaration ---> Functions.cpp
@@ -33,9 +34,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     
     - Variable ---> Syntax01Variable.cpp
     - Variable Assigment ---> Syntax01Variable.cpp, Declaration.cpp
-    - Variable (Decalration types of Variable) ---> Syntax01Variable.cpp, InitializingWays.cpp, Declaration.cpp
-    
-    - ArithmaticOperation ---> OperatorArithmatic.cpp, IncrementDecrement.cpp
+    - Variable (Decalration types of Variable) ---> Syntax01Variable.cpp, InitializingWays.cpp, Declaration.cpp    
 
     - Print out ---> Output.cpp
     - Print in ---> OutputInput.cpp
@@ -71,11 +70,16 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - ControlFlow DoWhileLoop (Loop) ---> ControlFlowLoop.cpp, ControlFlowLoop2.cpp
 
     - Operator = Symbols or tokens that perform specific actions
-    - Operator sizeof() (Checking Sizes) ---> OperatorSizeof.cpp, ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
+    - Operatir arithmatic (+,-,*,/,%) ---> OperatorArithmatic.cpp, IncrementDecrement.cpp
+    - Operator logical (&&,||,!) ---> OperatorLogical.cpp
+    - Operator comparison (<, <=, >, >=, ==, <!, >!, =!) ---> OperatorRealtion.cpp
+    - Operator Precedence ---> OperatorPrecedence.cpp
+    - Operator sizeof() (Checking Sizes) ---> NumberSystem.cpp, OperatorSizeof.cpp, ArraySizeof.cpp, SizeofClass.cpp, SizeofPolymorphism.cpp
     - Operator static_cast<>() (Conversion of Type) ---> OperatorCasting.cpp, ConversionTypes.cpp, ImpliciteExplicite.cpp
     - Operator dynamic_cast<>() (Conversion of Type) ---> OperatorDynamicCast.cpp, KeywordDynamicCast.cpp
     - Operator new ---> OperatorNewDelete.cpp, OperatorTypeid.cpp
     - Operator delete ---> OperatorNewDelete.cpp
+    - Operator typeid() ---> OperatorTypeid.cpp
 
     - STL(Standard Library) Function std::stoi (Conversion of StringToInteger) ---> ConversionTypes.cpp
     - STL(Standard Library) Function std::stod (Conversion of StringToDouble) ---> ConversionTypes.cpp
@@ -104,6 +108,8 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - STL(Standard Library) Function std::toupper() ---> FunctionLibStd_toupper.cpp
     - STL(Standard Library) Function std::srand() ---> Generator.cpp
     - STL(Standard Library) Function std::time() ---> Generator.cpp
+    - STL(Standard Library) Function std::numeric_limits<>::min() ---> NumericLimits.cpp
+    - STL(Standard Library) Function std::getline() ---> OutputInput.cpp
     
     - Keyword = Reserved(disimpan) words used to make/specify types for variable/function to make them doing a certain task.
     They work automatically to detect the type of a variable/function based on the value you assign to it.
@@ -116,14 +122,14 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
         - Access Modifiers: public, private, protected
         
     - Keyword (e.g., int, if, class)
+    - Keyword DataType ---> DataType.cpp
     - Keyword struct ---> KeywordStruct.cpp
     - Keyword enum ---> KeywordEnum.cpp
     - Keyword this ---> KeywordThis.cpp, KeywordThis2.cpp
     - Keyword virtual ---> AbstracClass.cpp
     - Keyword const ---> KeywordConst.cpp, AbstracClass.cpp
     - Keyword override ---> KeywordOverride.cpp, AbstracClass.cpp
-    - Keyword auto ---> KeywordAuto.cpp, Array.cpp
-    - Keyword DataType ---> DataType.cpp    
+    - Keyword auto ---> KeywordAuto.cpp, Array.cpp        
     - Keyword explicit ---> KeywordExplicit.cpp
     - Keyword final ---> KeywordFinal.cpp
     - Keyword friend ---> KeywordFriend.cpp
@@ -145,9 +151,10 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - ManipulatorStream std::hex ---> Manipulator.cpp
     - ManipulatorStream std::oct ---> Manipulator.cpp
     - ManipulatorStream std::dex ---> Manipulator.cpp
-
-    - Conversion
-
+    - ManipulatorStream std::ws ---> OutputInput.cpp
+    
+    - OOP(Object-Oriented Programming) Paradigm ---> ParadigmOOP.cpp
+    - NumberSystem ---> NumberSystem.cpp
     - DynamicBinding/Virtual(Polymorphic)Function ---> BindingDynamic.cpp
     - AccessClassAttributes "::(DoubleColon)" ---> CallFunctionInsideClass.cpp
     - IntegrateElements ":(SingleColon)" ---> ControlFlowConditional4.cpp, ControlFlowLoop3.cpp, Inheritance.cpp
