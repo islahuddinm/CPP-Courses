@@ -39,8 +39,9 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Print out ---> Output.cpp
     - Print in ---> OutputInput.cpp
 
-    - Pointer ---> Pointer.cpp, Pointer2.cpp, BindingDynamic.cpp, BindingStatic.cpp,
-        FunctionLibMalloc.cpp, FunctionLibStd_makeShare.cpp, FunctionLibStd_unique.cpp
+    - Pointer&Reference ---> Pointer.cpp, Reference.cpp, Pointer2.cpp, BindingDynamic.cpp, BindingStatic.cpp, PassByPointer.cpp,
+        PassByReference.cpp, FunctionLibMalloc.cpp, FunctionLibStd_makeShare.cpp, FunctionLibStd_unique.cpp,
+        PointerSmartStd_sharedPtr.cpp, PointerSmartStd_uniquePtr.cpp
     - Allocate Memory ---> Pinter2.cpp, OperatorNewDelete.cpp, OperatorNewDelete2.cpp, ObjectOnHeap.cpp,
         ArrayDynamic.cpp, BindingDynamic.cpp
     
@@ -65,7 +66,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - ControlFlow If-Else (Conditional) ---> ControlFlowConditional.cpp, ControlFlowConditional3.cpp
     - ControlFlow Ternary (Conditional) ---> ControlFlowConditional4.cpp, Ternary.cpp
     - ControlFlow Switch (Conditional) ---> ControlFlowConditional2.cpp
-    - ControlFlow ForLoop (Loop) ---> ControlFlowLoop.cpp, ControlFlowLoop2.cpp, ControlFlowLoop3.cpp
+    - ControlFlow ForLoop (Loop) ---> ControlFlowLoop.cpp, ControlFlowLoop2.cpp, ControlFlowLoop3.cpp, ParadigmImperative.cpp, ParadigmProcedural.cpp
     - ControlFlow WhileLoop (Loop) ---> ControlFlowLoop.cpp
     - ControlFlow DoWhileLoop (Loop) ---> ControlFlowLoop.cpp, ControlFlowLoop2.cpp
 
@@ -110,9 +111,11 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - STL/StandardLibrary Function std::toupper() ---> FunctionLibStd_toupper.cpp
     - STL/StandardLibrary Function std::srand() ---> Generator.cpp
     - STL/StandardLibrary Function std::time() ---> Generator.cpp
-    - STL/StandardLibrary std::numeric_limits<>::min() ---> NumericLimits.cpp
-    - STL/StandardLibrary std::getline() ---> OutputInput.cpp
-    - STL/StandardLibrary Fuction std::accumulate() ---> ParadigmFunctional.cpp
+    - STL/StandardLibrary Function std::numeric_limits<>::min() ---> NumericLimits.cpp
+    - STL/StandardLibrary Function std::getline() ---> OutputInput.cpp
+    - STL/StandardLibrary Function std::accumulate() ---> ParadigmFunctional.cpp
+    - STL/StandardLibrary Function std::make_shard<>() ---> PointerSmartStd_sharedPtr.cpp
+    - STL/StandardLibrary Function std::make_unique<>() ---> PointerSmartStd_uniquePtr.cpp
     
     - Keyword = Reserved(disimpan) words used to make/specify types for variable/function to make them doing a certain task.
     They work automatically to detect the type of a variable/function based on the value you assign to it.
@@ -125,6 +128,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
         - Access Modifiers: public, private, protected
         
     - Keyword (e.g., int, if, class)
+    - Keyword return ---> Return.cpp
     - Keyword DataType ---> DataType.cpp
     - Keyword struct ---> KeywordStruct.cpp
     - Keyword enum ---> KeywordEnum.cpp
@@ -158,6 +162,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     
     - OOP(Object-Oriented Programming) Paradigm ---> ParadigmOOP.cpp
     - NumberSystem ---> NumberSystem.cpp
+    - Polymorphism ---> Polymorphism.cpp
     - DynamicBinding/Virtual(Polymorphic)Function ---> BindingDynamic.cpp
     - AccessClassAttributes "::(DoubleColon)" ---> CallFunctionInsideClass.cpp
     - IntegrateElements ":(SingleColon)" ---> ControlFlowConditional4.cpp, ControlFlowLoop3.cpp, Inheritance.cpp
@@ -165,10 +170,6 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - DesignPattern ---> DesignPattern.cpp
     - CheckIfaKeyHasBeenPressed "if (_kbhit())" ---> FunctionLib_getch.cpp, FunctionLib_kbhit().cpp
     - GetThePressedKey "char ch = _getch();" ---> FunctionLib_getch.cpp, FunctionLib_kbhit().cpp
-    
-
-
-
 
 C++ elements that have "<...>" angle brackets symbol e.g. class type (vector, deque), keyword (dynamic_cast,
 static_cast), type trait (std::is_integral<int>::value), function template (std::numeric_limits<...>::min()).
