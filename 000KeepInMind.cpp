@@ -16,9 +16,9 @@ elements store values: int (integer), double, float, char (character), string, e
     struc: variables, functions, struc, class
     class: variables, functions, struc, class
 
-Containers: array, vector, deque
+ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FUNCTION, OPRETATOR.
 
-Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FUNCTION, OPRETATOR.
+Syntax:
 
     - size_t ---> FunctionLibStd_strlen.cpp, Functions.cpp, Iterator.cpp
     - Keyword DataType ---> DataType.cpp
