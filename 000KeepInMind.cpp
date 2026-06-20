@@ -27,7 +27,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Function Declaration ---> Functions.cpp
     - Function (Declaration types of Function) ---> FunctionMainVersion.cpp, ArgcArgv.cpp
     - Function Call ---> Functions.cpp
-    - Function Template ---> FunctionTemplate.cpp, KeywordConcept.cpp
+    - Function Template ---> FunctionTemplate.cpp, KeywordConcept.cpp, TypeTrait.cpp
     - Function Lambda ---> FunctionInsideFunction.cpp, FunctionLambda.cpp, ParadigmFunctional.cpp
     - Function Operator ---> FunctionOperator.cpp
     - Function Overload ---> FunctionOverload.cpp
@@ -48,7 +48,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Container Array ---> Array.cpp, ArrayInitialization.cpp
     - Container Deque ---> ClassTypeDeque.cpp, ClassTypeDeque2.cpp, ClassTypeDeque3.cpp
     - Container Pair ---> ClassTypePair.cpp
-    - Container String ---> ClassTypeString.cpp
+    - Container String ---> ClassTypeString.cpp, String.cpp
     - Container Vector ---> ClassTypeVector.cpp, ClassTypeVector2.cpp, ClassUseVector.cpp, FunctionEmpty.cpp,
         FunctionFront.cpp, FunctionLibStd_move.cpp, FunctionLibStd_sort.cpp, ParadigmFunctional.cpp
 
@@ -145,7 +145,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Keyword typedef ---> KeywordTypedef.cpp
     - Keyword static ---> Keywordstatic.cpp, Keywordstatic2.cpp, Keywordstatic3.cpp
     - Keyword concept ---> KeywordConcept.cpp, Concept Folder, KeywordRequires.cpp
-    - Keyword requires ---> KeywordConcept.cpp, Concept Folder, KeywordRequires.cpp
+    - Keyword requires ---> TypeTraitStd_integral.cpp, KeywordConcept.cpp, Concept Folder, KeywordRequires.cpp
 
     - ManipulatorStream std::boolalpha ---> Assignment.cpp
     - ManipulatorStream std::setw() ---> Manipulator.cpp
@@ -159,6 +159,16 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - ManipulatorStream std::oct ---> Manipulator.cpp
     - ManipulatorStream std::dex ---> Manipulator.cpp
     - ManipulatorStream std::ws ---> OutputInput.cpp
+
+    Boolean is used to check whether the given type T is integral or float, etc. or not.
+    - Boolean std::is_integral<T>::value ---> TypeTrait.cpp, TypeTraitStd_integral.cpp FunctionTemplate.cpp, KeywordConcept.cpp
+    - Boolean std::is_floating_point<T>::value ---> TypeTrait.cpp, FunctionTemplate.cpp, KeywordConcept.cpp
+    - Boolean std::is_pointer<T>::value ---> TypeTrait.cpp, FunctionTemplate.cpp, KeywordConcept.cpp
+    - Boolean std::is_convertible<T, T>::value ---> TypeTrait.cpp, FunctionTemplate.cpp, KeywordConcept.cpp
+    - Boolean std::is_same<T, T>::value ---> TypeTrait.cpp, FunctionTemplate.cpp, KeywordConcept.cpp
+    - Boolean std::is_const<T>::value ---> TypeTrait.cpp, FunctionTemplate.cpp, KeywordConcept.cpp
+    - Boolean std::is_reference<T>::value ---> TypeTrait.cpp, FunctionTemplate.cpp, KeywordConcept.cpp
+    - Boolean std::is_array<T>::value ---> TypeTrait.cpp, FunctionTemplate.cpp, KeywordConcept.cpp
     
     - OOP(Object-Oriented Programming) Paradigm ---> ParadigmOOP.cpp
     - NumberSystem ---> NumberSystem.cpp
