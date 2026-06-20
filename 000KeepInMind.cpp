@@ -28,7 +28,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Function (Declaration types of Function) ---> FunctionMainVersion.cpp, ArgcArgv.cpp
     - Function Call ---> Functions.cpp
     - Function Template ---> FunctionTemplate.cpp, KeywordConcept.cpp
-    - Function Lambda ---> FunctionInsideFunction.cpp, FunctionLambda.cpp
+    - Function Lambda ---> FunctionInsideFunction.cpp, FunctionLambda.cpp, ParadigmFunctional.cpp
     - Function Operator ---> FunctionOperator.cpp
     - Function Overload ---> FunctionOverload.cpp
     
@@ -49,7 +49,7 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Container Pair ---> ClassTypePair.cpp
     - Container String ---> ClassTypeString.cpp
     - Container Vector ---> ClassTypeVector.cpp, ClassTypeVector2.cpp, ClassUseVector.cpp, FunctionEmpty.cpp,
-        FunctionFront.cpp, FunctionLibStd_move.cpp, FunctionLibStd_sort.cpp
+        FunctionFront.cpp, FunctionLibStd_move.cpp, FunctionLibStd_sort.cpp, ParadigmFunctional.cpp
 
     - Class ---> KeywordClass.cpp, Inheritance.cpp, Polymorphism.cpp
     - Class Inheritance ---> Inheritance.cpp
@@ -81,35 +81,38 @@ Syntax:             ELEMENTS can be PRINTED directly: VARIABLE, FUNCTION, STL FU
     - Operator delete ---> OperatorNewDelete.cpp
     - Operator typeid() ---> OperatorTypeid.cpp
 
-    - STL(Standard Library) Function std::stoi (Conversion of StringToInteger) ---> ConversionTypes.cpp
-    - STL(Standard Library) Function std::stod (Conversion of StringToDouble) ---> ConversionTypes.cpp
-    - STL(Standard Library) Function std::strtol (Conversion of StringToLongInteger) ---> ArgcArgv.cpp, FunctionLibStd_strlo.cpp
-    - STL(Standard Library) Function std::size ---> FunctionLibStd_size.cpp, Array.cpp, ArrayCharacter.cpp, ArraySizeof.cpp
-    - STL(Standard Library) Function _kbhit() ---> FunctionLib_kbhit().cpp, FunctionLib_getch.cpp
-    - STL(Standard Library) Function _getch() ---> FunctionLib_getch.cpp, FunctionLib_kbhit().cpp
-    - STL(Standard Library) Function malloc() ---> FunctionLibMalloc.cpp
-    - STL(Standard Library) Function std::floor ---> FunctionLibrary.cpp
-    - STL(Standard Library) Function std::ceil ---> FunctionLibrary.cpp
-    - STL(Standard Library) Function std::abs ---> FunctionLibrary.cpp
-    - STL(Standard Library) Function std::isalnum() ---> FunctionLibrary.cpp, FunctionLibStd_isalnum.cpp
-    - STL(Standard Library) Function std::find() ---> FunctionLibStd_find.cpp
-    - STL(Standard Library) Function std::isupper() ---> FunctionLibStd_isupper.cpp
-    - STL(Standard Library) Function std::make_shared<>() ---> FunctionLibStd_makeShare.cpp
-    - STL(Standard Library) Function std::make_unique<>() ---> FunctionLibStd_unique.cpp
-    - STL(Standard Library) Function std::max() ---> FunctionLibStd_max.cpp
-    - STL(Standard Library) Function std::min() ---> FunctionLibStd_min.cpp
-    - STL(Standard Library) Function std::move() ---> FunctionLibStd_move.cpp
-    - STL(Standard Library) Function std::sort() ---> FunctionLibStd_sort.cpp
-    - STL(Standard Library) Function std::strcat() ---> FunctionLibStd_strcat.cpp
-    - STL(Standard Library) Function std::strchr() ---> FunctionLibStd_strchr.cpp
-    - STL(Standard Library) Function std::strcmp() ---> FunctionLibStd_strcmp.cpp
-    - STL(Standard Library) Function std::strcpy() ---> FunctionLibStd_strcpy.cpp
-    - STL(Standard Library) Function std::strlen() ---> FunctionLibStd_strlen.cpp
-    - STL(Standard Library) Function std::toupper() ---> FunctionLibStd_toupper.cpp
-    - STL(Standard Library) Function std::srand() ---> Generator.cpp
-    - STL(Standard Library) Function std::time() ---> Generator.cpp
-    - STL(Standard Library) Function std::numeric_limits<>::min() ---> NumericLimits.cpp
-    - STL(Standard Library) Function std::getline() ---> OutputInput.cpp
+    The Standard Template Library (STL) is a component subset of the larger C++ Standard Library.
+    C++ Standard Library encompasses the entire built-in runtime environment.
+    - STL/StandardLibrary Function std::stoi (Conversion of StringToInteger) ---> ConversionTypes.cpp
+    - STL/StandardLibrary Function std::stod (Conversion of StringToDouble) ---> ConversionTypes.cpp
+    - STL/StandardLibrary Function std::strtol (Conversion of StringToLongInteger) ---> ArgcArgv.cpp, FunctionLibStd_strlo.cpp
+    - STL/StandardLibrary Function std::size ---> FunctionLibStd_size.cpp, Array.cpp, ArrayCharacter.cpp, ArraySizeof.cpp
+    - STL/StandardLibrary Function _kbhit() ---> FunctionLib_kbhit().cpp, FunctionLib_getch.cpp
+    - STL/StandardLibrary Function _getch() ---> FunctionLib_getch.cpp, FunctionLib_kbhit().cpp
+    - STL/StandardLibrary Function malloc() ---> FunctionLibMalloc.cpp
+    - STL/StandardLibrary Function std::floor ---> FunctionLibrary.cpp
+    - STL/StandardLibrary Function std::ceil ---> FunctionLibrary.cpp
+    - STL/StandardLibrary Function std::abs ---> FunctionLibrary.cpp
+    - STL/StandardLibrary Function std::isalnum() ---> FunctionLibrary.cpp, FunctionLibStd_isalnum.cpp
+    - STL/StandardLibrary Function std::find() ---> FunctionLibStd_find.cpp
+    - STL/StandardLibrary Function std::isupper() ---> FunctionLibStd_isupper.cpp
+    - STL/StandardLibrary Function std::make_shared<>() ---> FunctionLibStd_makeShare.cpp
+    - STL/StandardLibrary Function std::make_unique<>() ---> FunctionLibStd_unique.cpp
+    - STL/StandardLibrary Function std::max() ---> FunctionLibStd_max.cpp
+    - STL/StandardLibrary Function std::min() ---> FunctionLibStd_min.cpp
+    - STL/StandardLibrary Function std::move() ---> FunctionLibStd_move.cpp
+    - STL/StandardLibrary Function std::sort() ---> FunctionLibStd_sort.cpp
+    - STL/StandardLibrary Function std::strcat() ---> FunctionLibStd_strcat.cpp
+    - STL/StandardLibrary Function std::strchr() ---> FunctionLibStd_strchr.cpp
+    - STL/StandardLibrary Function std::strcmp() ---> FunctionLibStd_strcmp.cpp
+    - STL/StandardLibrary Function std::strcpy() ---> FunctionLibStd_strcpy.cpp
+    - STL/StandardLibrary Function std::strlen() ---> FunctionLibStd_strlen.cpp
+    - STL/StandardLibrary Function std::toupper() ---> FunctionLibStd_toupper.cpp
+    - STL/StandardLibrary Function std::srand() ---> Generator.cpp
+    - STL/StandardLibrary Function std::time() ---> Generator.cpp
+    - STL/StandardLibrary std::numeric_limits<>::min() ---> NumericLimits.cpp
+    - STL/StandardLibrary std::getline() ---> OutputInput.cpp
+    - STL/StandardLibrary Fuction std::accumulate() ---> ParadigmFunctional.cpp
     
     - Keyword = Reserved(disimpan) words used to make/specify types for variable/function to make them doing a certain task.
     They work automatically to detect the type of a variable/function based on the value you assign to it.
