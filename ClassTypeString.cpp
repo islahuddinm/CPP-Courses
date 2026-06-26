@@ -28,6 +28,7 @@ int main() {
     std::cout << '\n';
     std::cout << "greeting : " << greeting << '\n';
     std::cout << "greeting : " << sayHai << '\n';
+    std::cout << "greeting : " << sayHai + hai << '\n';
 
     return 0;
 }
