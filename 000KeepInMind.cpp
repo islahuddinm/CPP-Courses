@@ -138,10 +138,10 @@ Syntax:
     - Keyword Private ---> PolymorphismAbstrackClass.cpp
     - Keyword Protected ---> PolymorphismAbstrackClass.cpp
     - Keyword virtual ---> AbstracClass.cpp
-    - Keyword const ---> KeywordConst.cpp, AbstracClass.cpp
+    - Keyword const ---> KeywordFinal2.cpp, KeywordConst.cpp, AbstracClass.cpp
     - Keyword override ---> KeywordOverride.cpp, AbstracClass.cpp        
     - Keyword explicit ---> KeywordExplicit.cpp
-    - Keyword final ---> KeywordFinal.cpp
+    - Keyword final ---> KeywordFinal.cpp, KeywordFinal2.cpp
     - Keyword friend ---> KeywordFriend.cpp
     - Keyword namespace ---> KeywordNamespace.cpp, KeywordNamespace2.cpp
     - Keyword using ---> KeywordUsing.cpp, KeywordUsing2.cpp
