@@ -35,6 +35,8 @@ public:
     }
 
     void display() { std::cout << score; }
+
+    Scoreboard Obj;
 };
 
 class Player {
