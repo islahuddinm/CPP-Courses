@@ -20,6 +20,10 @@ public:  // it means only can use/access in another function.
         std::cout << "Number : " << value << '\n' << '\n';
     }
 
+    number() {} // we can have many constructor
+
+    number(int x, int y) {} // we can have many constructor
+
     ~number() { // Destructor is always have '~'(tilde sign) in prefix.
         std::cout << "Destructor executing!" << '\n';
         std::cout << "Number : " << value << '\n' << '\n';
