@@ -1,7 +1,9 @@
 #include <iostream>
 
 int main() {
-
+    
+    //double *temperature = new double[] {};
+    //temperature[4] = 400; //modify array
     double *temperature = new double[] {1, 4, 2, 3, 5};
 
     for(double temp : temperature) {
