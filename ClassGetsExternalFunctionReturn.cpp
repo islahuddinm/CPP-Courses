@@ -16,7 +16,9 @@ public:
     }
 };
 
-int main() {
+void MyClass::displayValue(){}
+
+int main() { 
     MyClass obj;
     obj.displayValue(); // Output: The value is: 42
     return 0;

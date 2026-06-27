@@ -13,6 +13,9 @@ struct Person { // the default of struck is public.
     string name;
     int age;
     float height;
+
+    void functon () { int variable = 5;}
+    void functonn ();
 };
 
 class car { // the default of class is private.

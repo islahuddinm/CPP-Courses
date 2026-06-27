@@ -133,7 +133,7 @@ Syntax:
     - Keyword DataType ---> DataType.cpp
     - Keyword struct ---> KeywordStruct.cpp
     - Keyword enum ---> KeywordEnum.cpp
-    - Keyword this ---> KeywordThis.cpp, KeywordThis2.cpp, KeywordClass2.cpp
+    - Keyword this ---> KeywordThis.cpp, KeywordThis2.cpp, KeywordClass2.cpp, Inheritance.cpp
     - Keyword Public ---> PolymorphismAbstrackClass.cpp
     - Keyword Private ---> PolymorphismAbstrackClass.cpp
     - Keyword Protected ---> PolymorphismAbstrackClass.cpp
