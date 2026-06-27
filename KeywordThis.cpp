@@ -1,7 +1,10 @@
 #include <iostream>
 #include <iomanip>
 
-// 'this' keyword is a pointer that stores the memory address of the object.
+// 'this' is a keyword points directly to the specific object instance that is currently executing that function.
+// '->' symbol is called the Arrow Operator (or Class Member Access Operator), and it is used to access the variables or methods of a class.
+// Pointer uses '->'(arrow access symbol).
+// Non Pointer uses '.'(dot access symbol).
 
 /* When you use this, you are referring to the current object instance. This is particularly useful
 when you have a member variable with the same name as a parameter in a member function, and
