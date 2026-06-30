@@ -11,7 +11,15 @@ lamda function signature :
 
 */
 
+    auto lambFunction = [](){
+        std::cout << "hello lambdaFunction" << '\n';
+    };
+    //lambFunction();
+
 int main() {
+
+    lambFunction(); // output: "hello lambdaFunction"
+    std::cout << lambFunction << '\n'; // output: 1
 
     // this lamda function cant printout because we dont call this function.
     [](){
