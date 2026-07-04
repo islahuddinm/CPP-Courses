@@ -123,7 +123,7 @@ Syntax:
     your variables, functions, or classes.
         
         Examples of keyword:
-        - Data Types: int, double, bool, char, class
+        - Data Types: int, double, bool, char, class, struct, enum
         - Control Flow: if, else, switch, for, while
         - Access Modifiers: public, private, protected
         
