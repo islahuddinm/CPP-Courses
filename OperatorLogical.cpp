@@ -46,6 +46,7 @@ int main() {
     a = false; //reset
     b = false;
     std::cout << " a || b : " << std::boolalpha << !(a || b) << '\n'; //result is true
+    std::cout << " a || b : " << std::boolalpha << !(a==b || b==b) << '\n'; //result is true
 
     return 0;
 }
