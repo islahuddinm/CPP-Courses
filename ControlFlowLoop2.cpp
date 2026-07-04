@@ -11,9 +11,12 @@ int main3() {
 
         if (c == 10) {
             c++;
+            std::cout << "Skip" << '\n';
 
-            continue; //it skip 10 value
+            continue; //it skip 10 value and jump the current loop to continue the next loop
         }
+
+        std::cout << "No skip" << '\n';
 
     } while (c < 20);
 

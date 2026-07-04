@@ -131,7 +131,9 @@ Syntax:
         
     - Keyword (e.g., int, if, class)
     - Keyword auto ---> KeywordAuto.cpp, Array.cpp
+    - Keyword break ---> ControlFlowLoop2.cpp
     - Keyword return ---> Return.cpp
+    - Keyword continue ---> ControlFlowLoop2.cpp
     - Keyword DataType ---> DataType.cpp
     - Keyword struct ---> KeywordStruct.cpp
     - Keyword enum ---> KeywordEnum.cpp
