@@ -5,6 +5,8 @@ For example, the fraction half (1/2) is written as (0.5) in decimal form
 fruction = 1/2
 decimal = 0.5
 
+Programming is an activity displays data types & manipulates properties of data types (int, double, char, class, enum, struct).
+
 elements store values: int (integer), double, float, char (character), string, enum (enumeration), struc (structure), class
 
     int stores: integer (bilangan bulat)
