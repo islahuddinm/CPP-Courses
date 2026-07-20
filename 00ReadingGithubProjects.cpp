@@ -10,11 +10,12 @@ Summary:
         > lib: contains libraries
         > docs: contains documentation
         > build or cmake: contains build scripts (CMakeLists.txt, Makefile, etc.)
+    - Identify the programming language
     - Find .cpp files and .h files in scr, core, or include folders.
     - Find the main() function (entry point) in test, examples, or src folders.
     - Follow one function at a time (This is called tracing the program flow)
     - Understand the build files of builder tools (CMake, Makefile, etc.)
-    
+
 
 Reading a GitHub project is like exploring a new city: do not try to understand every street immediately.
 First understand the map, then follow one path through the program.
