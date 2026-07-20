@@ -1,5 +1,21 @@
 /*
 
+Summary:
+
+    - Understand the main folders:
+        > src or source: contains the main source code (.cpp files & .h files)
+        > include: contains header files (.h or .hpp files)
+        > tests or test: contains unit tests (assets/samples and main.cpp file or c++ main() function)            
+        > examples: contains example usage (main.cpp file or c++ main() function)
+        > lib: contains libraries
+        > docs: contains documentation
+        > build or cmake: contains build scripts (CMakeLists.txt, Makefile, etc.)
+    - Find .cpp files and .h files in scr, core, or include folders.
+    - Find the main() function (entry point) in test, examples, or src folders.
+    - Follow one function at a time (This is called tracing the program flow)
+    - Understand the build files of builder tools (CMake, Makefile, etc.)
+    
+
 Reading a GitHub project is like exploring a new city: do not try to understand every street immediately.
 First understand the map, then follow one path through the program.
 
