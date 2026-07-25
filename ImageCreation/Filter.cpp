@@ -33,7 +33,7 @@ int main() {
         std::string red = "", green = "", blue = "";
         int r = 0, g = 0, b = 0;
 
-        while (!image.eof()) {
+        while (!image.eof()) { // image.eof() means "end of file". This loop will continue until the end of the file is reached.
             
             // take color informations
             image >> red;
