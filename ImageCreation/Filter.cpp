@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream> // for "ifstream" and "ofstream" classes
-#include <sstream>
+#include <sstream> // for "stringstream" class
 
 
 int main() {
