@@ -1,5 +1,5 @@
 #include <iostream>
-#include <fstream>
+#include <fstream> // for "ifstream" and "ofstream" classes
 #include <sstream>
 
 
@@ -16,6 +16,7 @@ int main() {
         return 1;
     } else {
 
+        // copy over header information
         std::string type = "", width = "", height = "", RGB = "";
         image >> type;
         image >> width;
@@ -24,6 +25,7 @@ int main() {
 
         // std::cout << type << width << height << RGB << std::endl;
 
+        // paste over header information
         newimage << type << std::endl;
         newimage << width << " " << height << std::endl;
         newimage << RGB << std::endl;
@@ -32,18 +34,21 @@ int main() {
         int r = 0, g = 0, b = 0;
 
         while (!image.eof()) {
+            
+            // take color informations
             image >> red;
             image >> green;
             image >> blue;
 
-            std::stringstream redstream(red);
-            std::stringstream greenstream(green);
-            std::stringstream bluestream(blue);
+            std::stringstream redstream(red); // Converting a string to a number
+            std::stringstream greenstream(green); // Converting a string to a number
+            std::stringstream bluestream(blue); // Converting a string to a number
 
-            redstream >> r;
-            greenstream >> g;
-            bluestream >> b;
+            redstream >> r; // put the value of the stringstream(conversion result) into the integer variable
+            greenstream >> g; // put the value of the stringstream(conversion result) into the integer variable
+            bluestream >> b; // put the value of the stringstream(conversion result) into the integer variable
 
+            // manipulate color informations
             if(b + 50 >= 255) {
                 b = 255;
             } else {

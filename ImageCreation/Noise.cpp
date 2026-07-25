@@ -1,7 +1,7 @@
 #include <iostream>
-#include <fstream>
-#include <ctime>
-#include <cstdlib>
+#include <fstream> // for "ifstream" and "ofstream" classes
+#include <ctime> // for "time" function to seed the random number generator
+#include <cstdlib> // for "rand" and "srand" functions
 
 /*
 
