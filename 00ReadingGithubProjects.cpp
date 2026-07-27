@@ -4,7 +4,7 @@ Summary:
 
     - Understand the main folders:
         > src or source: contains the main source code (.cpp files & .h files)
-        > include: contains header files (.h or .hpp files)
+        > include: contains header files (.h or .hpp files or libraries)
         > tests or test: contains unit tests (assets/samples and main.cpp file or c++ main() function)            
         > examples: contains example usage (main.cpp file or c++ main() function)
         > lib: contains libraries
