@@ -12,7 +12,7 @@ Summary:
         > build or cmake: contains build scripts (CMakeLists.txt, Makefile, etc.)
     - Identify the programming language
     - Find .cpp files and .h files in scr, core, or include folders.
-    - Find the main() function (entry point) in test, examples, or src folders.
+    - Find the entry point ("main()"" function) in test, examples, or src folders.
     - Follow one function at a time (This is called tracing the program flow)
     - Understand the build files of builder tools (CMake, Makefile, etc.)
 
