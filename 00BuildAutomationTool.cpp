@@ -1,6 +1,6 @@
 /*
 
-A build automation tool is a program that automatically performs the steps needed to
+A build automation tool (Buld System) is a program that automatically performs the steps needed to
 turn source code into a finished application. The build automation tool is not usually the compiler itself.
 It organizes instructions to run the compiler and other required tools.
 Instead of typing every command manually, you give the tool build instructions, and the build automation tool runs them for you.
@@ -27,6 +27,7 @@ Instead of typing every command manually, you give the tool build instructions, 
 
                 make
 
+
     What it can automate
 
         A build automation tool can:
@@ -39,6 +40,7 @@ Instead of typing every command manually, you give the tool build instructions, 
             - Create APK, EXE, or other application files
             - Build debug and release versions
             - Rebuild only files that changed
+
 
     Types of build automation tools:
 
@@ -86,6 +88,7 @@ Instead of typing every command manually, you give the tool build instructions, 
             | **Rake**                  | Ruby projects                                  |
             | **Swift Package Manager** | Swift projects                                 |
             | **Xcode Build System**    | Apple macOS and iOS applications               |
+            
 
     The basic relationship is:
 
@@ -96,5 +99,113 @@ Instead of typing every command manually, you give the tool build instructions, 
         Compiler and other tools
             ↓
         Finished application
+
+    
+    A useful distinction:s
+
+        Make, Gradle, Maven, Ninja
+        → directly manage build tasks
+
+        CMake, Meson, Premake
+        → often generate instructions for another build tool
+
+        gcc, g++, clang
+        → compilers, not build automation tools
+
+
+Make:
+
+    make is a build automation program. It reads instructions from a file called a Makefile and
+    runs the required commands to build your program.
+
+    For example, you run:
+
+        </> bash
+            
+            make
+        
+        Then make:
+
+            1. Opens the Makefile
+            2. Checks which source files changed
+            3. Runs compiler commands such as g++
+            4. Produces the executable program
+
+            Example
+
+                Makefile:
+
+                    app: main.cpp
+                        g++ main.cpp -o app
+
+                When you run:
+
+                    make
+
+                make executes:
+
+                    g++ main.cpp -o app
+
+                and creates:
+
+                    app
+
+
+    make is not a compiler, "make" does not compile C++ itself.
+
+        Instead:
+
+            make → reads build instructions
+            g++  → compiles the C++ code
+
+
+    What is MakeFile:
+
+        A Makefile is a text file containing instructions for the make build tool.
+
+        It tells make:
+
+            - Which source files must be compiled
+            - Which compiler to use
+            - Which compiler options to use
+            - How to create the final executable
+            - Which files depend on other files
+
+        Simple example
+
+            Suppose you have:
+
+                main.cpp
+                math.cpp
+                math.h
+
+            A Makefile might contain:
+
+                app: main.o math.o
+                    g++ main.o math.o -o app
+
+                main.o: main.cpp math.h
+                    g++ -c main.cpp
+
+                math.o: math.cpp math.h
+                    g++ -c math.cpp
+
+                clean:
+                    rm -f main.o math.o app
+
+            Then you run:
+
+                make
+
+            make reads the Makefile and creates:
+
+                app
+
+
+    Relationship
+
+        Makefile = the build instructions
+        make     = the program that reads the instructions for compiler (g++)
+        g++      = the compiler that compiles the code
 
 */
