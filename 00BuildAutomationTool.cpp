@@ -27,7 +27,6 @@ Instead of typing every command manually, you give the tool build instructions, 
 
                 make
 
-
     What it can automate
 
         A build automation tool can:
@@ -40,7 +39,6 @@ Instead of typing every command manually, you give the tool build instructions, 
             - Create APK, EXE, or other application files
             - Build debug and release versions
             - Rebuild only files that changed
-
 
     Types of build automation tools:
 
@@ -87,8 +85,7 @@ Instead of typing every command manually, you give the tool build instructions, 
             | **Vite**                  | Builds modern web applications                 |
             | **Rake**                  | Ruby projects                                  |
             | **Swift Package Manager** | Swift projects                                 |
-            | **Xcode Build System**    | Apple macOS and iOS applications               |
-            
+            | **Xcode Build System**    | Apple macOS and iOS applications               |            
 
     The basic relationship is:
 
@@ -99,7 +96,6 @@ Instead of typing every command manually, you give the tool build instructions, 
         Compiler and other tools
             ↓
         Finished application
-
     
     A useful distinction:s
 
@@ -150,14 +146,12 @@ Make:
 
                     app
 
-
     make is not a compiler, "make" does not compile C++ itself.
 
         Instead:
 
             make → reads build instructions
             g++  → compiles the C++ code
-
 
     What is MakeFile:
 
@@ -201,11 +195,103 @@ Make:
 
                 app
 
-
     Relationship
 
         Makefile = the build instructions
         make     = the program that reads the instructions for compiler (g++)
         g++      = the compiler that compiles the code
+
+
+CMake:
+
+    CMake is a tool that creates build instructions for C and C++ projects.
+
+    CMake usually does not compile your code directly. Instead, it generates files for another build tool, such as:
+
+        - Makefiles for make
+        - Ninja build files
+        - Visual Studio project files
+        - Xcode project files
+
+    Basic workflow:
+
+        CMakeLists.txt
+            ↓
+            CMake
+            ↓
+        Makefile / Ninja files / Visual Studio project
+            ↓
+        make / Ninja / MSBuild
+            ↓
+        Compiler such as g++ or clang++
+            ↓
+        Executable program
+
+    Example project
+
+        MyProject/
+        ├── CMakeLists.txt
+        ├── main.cpp
+        ├── math.cpp
+        └── math.h
+
+        A simple CMakeLists.txt:
+
+            </> file
+
+                cmake_minimum_required(VERSION 3.20)
+
+                project(MyApp)
+
+                add_executable(MyApp
+                    main.cpp
+                    math.cpp
+                )
+
+            This tells CMake:
+
+                The minimum CMake version
+                The project name
+                Which source files belong to the executable
+
+    Building the project
+
+        From the project folder:
+
+        </>
+
+            cmake -S . -B build
+            cmake --build build
+
+        The first command:
+            
+            cmake -S . -B build
+
+            (reads CMakeLists.txt and creates build files inside the build folder).
+
+        The second command:
+
+            cmake --build build
+
+            (uses those generated files to compile and link the program).
+
+    So the usual relationship is:
+
+        CMake creates the Makefile
+        make reads the Makefile
+        g++ compiles the C++ code
+
+    CMake VS Make:
+
+        | CMake                                       | Make                             |
+        | ------------------------------------------- | -------------------------------- |
+        | Reads `CMakeLists.txt`                      | Reads a `Makefile`               |
+        | Generates build instructions                | Executes build instructions      |
+        | Works with many platforms and build systems | Usually executes Makefile rules  |
+        | Common for cross-platform C++ projects      | Common as a low-level build tool |
+
+    CMake is especially useful because the same CMakeLists.txt can be used on Windows, Linux, and
+    macOS, even though each platform may use a different compiler or build system.
+
 
 */
