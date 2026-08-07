@@ -2,13 +2,10 @@
 
 //compiler will always start to read top project to below then start to working in main fuction (int main)
 
-//namespace is a keyword in C++ used to declare an identifier.
-//namespace (keyword provides a solution for preventing name conflicts in large projects)
+//namespace (A namespace in C++ is a feature used to organize code into logical groups and prevent name collision)
 
 /* 'using' keyword can be used to bring specific names from a namespace/an identifier into the current scope.
 for example 'using namespace std;'.*/
-
-//each entity needs unique name. a namespace allows for indetically named entities as long as namespaces are different
 
 namespace first{
     int x = 2;
