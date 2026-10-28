@@ -1,0 +1,240 @@
+
+
+#include<iostream>
+
+// Compilation Command: g++ 00TokoPrabot.cpp -o TokoPrabot
+// Command for Running .exe File: ./TokoPrabot
+
+using namespace std;
+
+int main() {
+
+    cout << "\nDaftar/Stock Barang di Etalase *Toko Prabot*\n"
+    "\n"
+    "Perabotan Dapur:\n"
+    "1. Lamari Dapur\n"
+    "2. Kursi Dapur\n"
+    "3. Meja Dapur\n"
+    "4. Kulkas\n"
+    "5. Kompor\n"
+    "6. Rice Cooker\n"
+    "7. Panci\n"
+    "8. Wajan\n"
+    "9. Rak Piring\n"
+    // "\n"
+    // "Perabotan Kamar Tidur:\n"
+    // "10. Kasur\n"
+    // "11. Lemari Baju\n"
+    // "12. Bantal\n"
+    // "13. Guling\n"
+    // "14. Selimut\n"
+    // "\n"
+    // "Perabotan Ruang Tamu:\n"
+    // "15. Sofa\n"
+    // "16. Meja\n"
+    // "17. Karpet\n"
+    // "18. Tirai atau Gorden"
+    // "19. Jam Dinding\n"
+    ;
+
+    int barangPilihan;
+
+    int hargaLemariDapur, hargaKursiDapur, hargaMejaDapur, hargaKulkas,
+    hargaKompor, hargaRiceCooker, hargaPanci, hargaWajan, hargaRakPiring;
+    
+    int jumlahLemariDapurDibeli, jumlahKursiDapurDibeli, jumlahMejaDapurDibeli, jumlahKulkasDibeli,
+    jumlahKomporDibeli, jumlahRiceCookerDibeli, jumlahPanciDibeli, jumlahWajanDibeli, jumlahRakPiringDibeli;
+
+    int jumlahBarangDibeli = 0;
+
+    bool loop = true;
+    char inginBeli;
+
+    
+
+    while(loop) {
+
+        cout << "\nPilih barang yang dibeli dengan mengetik/menulis nomor urut barang tersebut!" << endl;
+        cin >> barangPilihan;
+
+        if(barangPilihan == 1) {
+            
+            cout << "Masukkan jumlah 'Lemari Dapur': "; cin >> jumlahLemariDapurDibeli;
+            hargaLemariDapur = 100000;
+
+            cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
+            cin >> inginBeli;
+            if(inginBeli == 'n') {
+                loop = false;
+            }
+        }
+
+        else if(barangPilihan == 2) {
+            
+            cout << "Masukkan jumlah 'Kursi Dapur': "; cin >> jumlahKursiDapurDibeli;
+            hargaKursiDapur = 200000;
+
+            cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
+            cin >> inginBeli;
+            if(inginBeli == 'n') {
+                loop = false;
+            }
+        }
+
+        else if(barangPilihan == 3) {
+            
+            cout << "Masukkan jumlah 'Meja Dapur': "; cin >> jumlahMejaDapurDibeli;
+            hargaMejaDapur = 200000;
+
+            cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
+            cin >> inginBeli;
+            if(inginBeli == 'n') {
+                loop = false;
+            }
+        }
+
+        else if(barangPilihan == 4) {
+            
+            cout << "Masukkan jumlah 'Kulkas': "; cin >> jumlahKulkasDibeli;
+            hargaKulkas = 200000;
+
+            cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
+            cin >> inginBeli;
+            if(inginBeli == 'n') {
+                loop = false;
+            }
+        }
+
+        else if(barangPilihan == 5) {
+            
+            cout << "Masukkan jumlah 'Kompor': "; cin >> jumlahKomporDibeli;
+            hargaKompor = 200000;
+
+            cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
+            cin >> inginBeli;
+            if(inginBeli == 'n') {
+                loop = false;
+            }
+        }
+
+        else if(barangPilihan == 6) {
+            
+            cout << "Masukkan jumlah 'Rice Cooker': "; cin >> jumlahRiceCookerDibeli;
+            hargaRiceCooker = 200000;
+
+            cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
+            cin >> inginBeli;
+            if(inginBeli == 'n') {
+                loop = false;
+            }
+        }
+
+        else if(barangPilihan == 7) {
+            
+            cout << "Masukkan jumlah 'Panci': "; cin >> jumlahPanciDibeli;
+            hargaPanci = 200000;
+
+            cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
+            cin >> inginBeli;
+            if(inginBeli == 'n') {
+                loop = false;
+            }
+        }
+
+        else if(barangPilihan == 8) {
+            
+            cout << "Masukkan jumlah 'Wajan': "; cin >> jumlahWajanDibeli;
+            hargaWajan = 200000;
+
+            cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
+            cin >> inginBeli;
+            if(inginBeli == 'n') {
+                loop = false;
+            }
+        }
+
+        else if(barangPilihan == 9) {
+            
+            cout << "Masukkan jumlah 'Rak Piring': "; cin >> jumlahRakPiringDibeli;
+            hargaRakPiring = 200000;
+
+            cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
+            cin >> inginBeli;
+            if(inginBeli == 'n') {
+                loop = false;
+            }
+        }
+
+        else {
+
+            cout << "*** INPUT TIDAK VALID ***" << endl;
+        }
+
+        
+
+        
+    }
+
+    jumlahBarangDibeli = hargaLemariDapur + hargaKursiDapur + hargaMejaDapur + hargaKulkas +
+    hargaKompor + hargaRiceCooker + hargaPanci + hargaWajan + hargaRakPiring;
+
+    
+
+    
+    // char inginBeli;
+    // cout << "\nApakah anda igin membeli barang? y/n" << '\n';
+    // cin >> inginBeli;
+
+    // int jumlahBarangDibeli = 0;
+
+    // int barangPilihan1;
+    // int barangPilihan2;
+    // int barangPilihan3;
+    // int barangPilihan4;
+    // int barangPilihan5;
+    // int barangPilihan6;
+    // int barangPilihan7;
+    // int barangPilihan8;
+    // int barangPilihan9;
+
+    // if(inginBeli == 'y') {
+
+    //     cout << "\nPilih barang yang dibeli dengan mengetik/menulis nomor urut barang tersebut!" << endl;
+    //     cin >> barangPilihan1;        
+    //     jumlahBarangDibeli++;
+        
+    //     cout << "\nApakah anda igin menambah barang lagi? Jika tidak, ketik 'n' dan jika iya, silahkan mengetik/menulis nomor urut barang tersebut!" << '\n';
+    //     if(inginBeli == 'y') {
+    //         cin >> barangPilihan2;
+    //         jumlahBarangDibeli++;
+    //     }
+
+        
+    // }    
+
+    // int lemariDapur;
+    // lemariDapur = (barangPilihan1 = 1) ? 100000 : 0;
+    // lemariDapur = (barangPilihan2 = 1) ? 100000 : 0;
+    // lemariDapur = (barangPilihan3 = 1) ? 100000 : 0;
+    // lemariDapur = (barangPilihan4 = 1) ? 100000 : 0;
+    // lemariDapur = (barangPilihan5 = 1) ? 100000 : 0;
+    // lemariDapur = (barangPilihan6 = 1) ? 100000 : 0;
+    // lemariDapur = (barangPilihan7 = 1) ? 100000 : 0;
+    // lemariDapur = (barangPilihan8 = 1) ? 100000 : 0;
+    // lemariDapur = (barangPilihan9 = 1) ? 100000 : 0;
+
+    // int kursiDapur;
+    // kursiDapur = (barangPilihan1 = 1) ? 100000 : 0;    
+    // kursiDapur = (barangPilihan2 = 1) ? 100000 : 0;
+    // kursiDapur = (barangPilihan3 = 1) ? 100000 : 0;
+    // kursiDapur = (barangPilihan4 = 1) ? 100000 : 0;
+    // kursiDapur = (barangPilihan5 = 1) ? 100000 : 0;
+    // kursiDapur = (barangPilihan6 = 1) ? 100000 : 0;
+    // kursiDapur = (barangPilihan7 = 1) ? 100000 : 0;
+    // kursiDapur = (barangPilihan8 = 1) ? 100000 : 0;
+    // kursiDapur = (barangPilihan9 = 1) ? 100000 : 0;
+
+    
+
+    return 0;
+}
