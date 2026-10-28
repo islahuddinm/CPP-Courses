@@ -1,4 +1,21 @@
 
+/*
+
+Kelompok:
+
+    1. Nama : Muhammad Islahuddin
+       NIM  : 202651050
+       Kelas: B Informatika
+
+    2. Nama : M Naufal Hasan Mubarok
+       NIM  : 202651063
+       Kelas: B Informatika
+
+    3. Nama : Ilmi
+       NIM  : 0
+       Kelas: B Informatika
+
+*/
 
 #include<iostream>
 
