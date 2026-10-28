@@ -235,20 +235,41 @@ int main() {
 
         total = jumlahHargaBarangDibeli - jumlahHargaBarangDibeli / 100 * 10;
 
-        cout << "\n------------------------------------------" << endl;
+        cout << "\n---------------------------------------------" << endl;
         cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
         cout << "Jumlah harga barang \t: " << jumlahHargaBarangDibeli << endl;
         cout << "Diskon barang \t\t: 10 %" << endl;
-        cout << "------------------------------------------" << endl;
-        cout << "Total \t\t\t: " << std::fixed << total << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "Total \t\t\t: " << total << endl;
+        cout << "-----------------------------------------------" << endl;
     }
     else if(jumlahHargaBarangDibeli >= 500000) {
 
         // Total ≥ Rp500.000 dan kurang dari Rp1.000.000: mendapatkan diskon 5%. 
+
+        total = jumlahHargaBarangDibeli - jumlahHargaBarangDibeli / 100 * 5;
+
+        cout << "\n---------------------------------------------" << endl;
+        cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
+        cout << "Jumlah harga barang \t: " << jumlahHargaBarangDibeli << endl;
+        cout << "Diskon barang \t\t: 5 %" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "Total \t\t\t: " << total << endl;
+        cout << "-----------------------------------------------" << endl;
     }
     else {
 
         // Total kurang dari Rp500.000: tidak mendapatkan diskon.
+
+        total = jumlahHargaBarangDibeli;
+
+        cout << "\n---------------------------------------------" << endl;
+        cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
+        cout << "Jumlah harga barang \t: " << jumlahHargaBarangDibeli << endl;
+        cout << "Diskon barang \t\t: Tidak Mendapat Diskon" << endl;
+        cout << "-----------------------------------------------" << endl;
+        cout << "Total \t\t\t: " << total << endl;
+        cout << "-----------------------------------------------" << endl;
     }
     
 
