@@ -46,6 +46,7 @@ int main() {
     int jumlahLemariDapurDibeli = 0, jumlahKursiDapurDibeli = 0, jumlahMejaDapurDibeli = 0, jumlahKulkasDibeli = 0,
     jumlahKomporDibeli = 0, jumlahRiceCookerDibeli = 0, jumlahPanciDibeli = 0, jumlahWajanDibeli = 0, jumlahRakPiringDibeli = 0;
 
+    int hargaBarang = 0;
     int jumlahHargaBarangDibeli = 0;
     int jumlahBarangDibeli = 0;
     int total = 0;
@@ -64,6 +65,7 @@ int main() {
             
             cout << "Masukkan jumlah 'Lemari Dapur': "; cin >> jumlahLemariDapurDibeli;
             hargaLemariDapur = 100000;
+            hargaBarang = hargaLemariDapur;
 
             cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
             cin >> inginBeli;
@@ -81,6 +83,7 @@ int main() {
             
             cout << "Masukkan jumlah 'Kursi Dapur': "; cin >> jumlahKursiDapurDibeli;
             hargaKursiDapur = 200000;
+            hargaBarang = hargaKursiDapur;
 
             cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
             cin >> inginBeli;
@@ -98,6 +101,7 @@ int main() {
             
             cout << "Masukkan jumlah 'Meja Dapur': "; cin >> jumlahMejaDapurDibeli;
             hargaMejaDapur = 200000;
+            hargaBarang = hargaMejaDapur;
 
             cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
             cin >> inginBeli;
@@ -115,6 +119,7 @@ int main() {
             
             cout << "Masukkan jumlah 'Kulkas': "; cin >> jumlahKulkasDibeli;
             hargaKulkas = 200000;
+            hargaBarang = hargaKulkas;
 
             cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
             cin >> inginBeli;
@@ -132,6 +137,7 @@ int main() {
             
             cout << "Masukkan jumlah 'Kompor': "; cin >> jumlahKomporDibeli;
             hargaKompor = 200000;
+            hargaBarang = hargaKompor;
 
             cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
             cin >> inginBeli;
@@ -149,6 +155,7 @@ int main() {
             
             cout << "Masukkan jumlah 'Rice Cooker': "; cin >> jumlahRiceCookerDibeli;
             hargaRiceCooker = 200000;
+            hargaBarang = hargaRiceCooker;
 
             cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
             cin >> inginBeli;
@@ -166,6 +173,7 @@ int main() {
             
             cout << "Masukkan jumlah 'Panci': "; cin >> jumlahPanciDibeli;
             hargaPanci = 200000;
+            hargaBarang = hargaPanci;
 
             cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
             cin >> inginBeli;
@@ -183,6 +191,7 @@ int main() {
             
             cout << "Masukkan jumlah 'Wajan': "; cin >> jumlahWajanDibeli;
             hargaWajan = 200000;
+            hargaBarang = hargaWajan;
 
             cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
             cin >> inginBeli;
@@ -200,6 +209,7 @@ int main() {
             
             cout << "Masukkan jumlah 'Rak Piring': "; cin >> jumlahRakPiringDibeli;
             hargaRakPiring = 200000;
+            hargaBarang = hargaRakPiring;
 
             cout << "\nApakah anda igin menambah barang lagi? y/n" << '\n';
             cin >> inginBeli;
@@ -236,11 +246,12 @@ int main() {
         total = jumlahHargaBarangDibeli - jumlahHargaBarangDibeli / 100 * 10;
 
         cout << "\n---------------------------------------------" << endl;
+        //cout << "Harga barang: " << hargaBarang << endl;
         cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
-        cout << "Jumlah harga barang \t: " << jumlahHargaBarangDibeli << endl;
+        cout << "Jumlah harga barang \t: Rp." << jumlahHargaBarangDibeli << endl;
         cout << "Diskon barang \t\t: 10 %" << endl;
         cout << "-----------------------------------------------" << endl;
-        cout << "Total \t\t\t: " << total << endl;
+        cout << "Total \t\t\t: Rp." << total << endl;
         cout << "-----------------------------------------------" << endl;
     }
     else if(jumlahHargaBarangDibeli >= 500000) {
@@ -250,11 +261,12 @@ int main() {
         total = jumlahHargaBarangDibeli - jumlahHargaBarangDibeli / 100 * 5;
 
         cout << "\n---------------------------------------------" << endl;
+        //cout << "Harga barang: " << hargaBarang << endl;
         cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
-        cout << "Jumlah harga barang \t: " << jumlahHargaBarangDibeli << endl;
+        cout << "Jumlah harga barang \t: Rp." << jumlahHargaBarangDibeli << endl;
         cout << "Diskon barang \t\t: 5 %" << endl;
         cout << "-----------------------------------------------" << endl;
-        cout << "Total \t\t\t: " << total << endl;
+        cout << "Total \t\t\t: Rp." << total << endl;
         cout << "-----------------------------------------------" << endl;
     }
     else {
@@ -264,11 +276,12 @@ int main() {
         total = jumlahHargaBarangDibeli;
 
         cout << "\n---------------------------------------------" << endl;
+        //cout << "Harga barang: " << hargaBarang << endl;
         cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
-        cout << "Jumlah harga barang \t: " << jumlahHargaBarangDibeli << endl;
+        cout << "Jumlah harga barang \t: Rp." << jumlahHargaBarangDibeli << endl;
         cout << "Diskon barang \t\t: Tidak Mendapat Diskon" << endl;
         cout << "-----------------------------------------------" << endl;
-        cout << "Total \t\t\t: " << total << endl;
+        cout << "Total \t\t\t: Rp." << total << endl;
         cout << "-----------------------------------------------" << endl;
     }
 
