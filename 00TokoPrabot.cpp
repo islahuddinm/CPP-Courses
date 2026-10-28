@@ -203,6 +203,7 @@ int main() {
 
         // Total kurang dari Rp500.000: tidak mendapatkan diskon.
     }
+    
 
     
 
