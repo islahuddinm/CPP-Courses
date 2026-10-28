@@ -39,13 +39,15 @@ int main() {
 
     int barangPilihan;
 
-    int hargaLemariDapur, hargaKursiDapur, hargaMejaDapur, hargaKulkas,
-    hargaKompor, hargaRiceCooker, hargaPanci, hargaWajan, hargaRakPiring;
+    int hargaLemariDapur = 0, hargaKursiDapur = 0, hargaMejaDapur = 0, hargaKulkas = 0,
+    hargaKompor = 0, hargaRiceCooker = 0, hargaPanci = 0, hargaWajan = 0, hargaRakPiring = 0;
     
-    int jumlahLemariDapurDibeli, jumlahKursiDapurDibeli, jumlahMejaDapurDibeli, jumlahKulkasDibeli,
-    jumlahKomporDibeli, jumlahRiceCookerDibeli, jumlahPanciDibeli, jumlahWajanDibeli, jumlahRakPiringDibeli;
+    int jumlahLemariDapurDibeli = 0, jumlahKursiDapurDibeli = 0, jumlahMejaDapurDibeli = 0, jumlahKulkasDibeli = 0,
+    jumlahKomporDibeli = 0, jumlahRiceCookerDibeli = 0, jumlahPanciDibeli = 0, jumlahWajanDibeli = 0, jumlahRakPiringDibeli = 0;
 
+    int jumlahHargaBarangDibeli = 0;
     int jumlahBarangDibeli = 0;
+    double total = 0;
 
     bool loop = true;
     char inginBeli;
@@ -168,15 +170,39 @@ int main() {
         else {
 
             cout << "*** INPUT TIDAK VALID ***" << endl;
-        }
+        } 
 
-        
+    }    
 
-        
+    jumlahHargaBarangDibeli = (hargaLemariDapur * jumlahLemariDapurDibeli) + 
+    (hargaKursiDapur * jumlahKursiDapurDibeli) + (hargaMejaDapur * jumlahMejaDapurDibeli) +
+    (hargaKulkas * jumlahKulkasDibeli) + (hargaKompor * jumlahKomporDibeli) + (hargaRiceCooker * jumlahRiceCookerDibeli) +
+    (hargaPanci * jumlahPanciDibeli) + (hargaWajan * jumlahWajanDibeli) + (hargaRakPiring * jumlahRakPiringDibeli);
+
+    jumlahBarangDibeli = jumlahLemariDapurDibeli + jumlahKursiDapurDibeli + jumlahMejaDapurDibeli + jumlahKulkasDibeli +
+    jumlahKomporDibeli + jumlahRiceCookerDibeli + jumlahPanciDibeli + jumlahWajanDibeli + jumlahRakPiringDibeli;
+
+    if(jumlahHargaBarangDibeli >= 1000000) {
+
+        // Total ≥ Rp1.000.000: mendapatkan diskon 10%. 
+
+        total = jumlahHargaBarangDibeli * 0.9;
+
+        cout << "\n------------------------------------------" << endl;
+        cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
+        cout << "Jumlah harga barang \t: " << jumlahHargaBarangDibeli << endl;
+        cout << "Diskon barang \t\t: 10 %" << endl;
+        cout << "------------------------------------------" << endl;
+        cout << "Total \t\t\t: " << std::fixed << total << endl;
     }
+    else if(jumlahHargaBarangDibeli >= 500000) {
 
-    jumlahBarangDibeli = hargaLemariDapur + hargaKursiDapur + hargaMejaDapur + hargaKulkas +
-    hargaKompor + hargaRiceCooker + hargaPanci + hargaWajan + hargaRakPiring;
+        // Total ≥ Rp500.000 dan kurang dari Rp1.000.000: mendapatkan diskon 5%. 
+    }
+    else {
+
+        // Total kurang dari Rp500.000: tidak mendapatkan diskon.
+    }
 
     
 
