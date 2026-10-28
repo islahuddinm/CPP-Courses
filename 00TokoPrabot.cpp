@@ -39,6 +39,7 @@ int main() {
 
     int barangPilihan;
 
+    // Perlu menginisialisasi nilai variabel supaya tidak menghasilkan nilai sampah.
     int hargaLemariDapur = 0, hargaKursiDapur = 0, hargaMejaDapur = 0, hargaKulkas = 0,
     hargaKompor = 0, hargaRiceCooker = 0, hargaPanci = 0, hargaWajan = 0, hargaRakPiring = 0;
     
@@ -47,7 +48,7 @@ int main() {
 
     int jumlahHargaBarangDibeli = 0;
     int jumlahBarangDibeli = 0;
-    double total = 0;
+    int total = 0;
 
     bool loop = true;
     char inginBeli;
@@ -68,6 +69,11 @@ int main() {
             cin >> inginBeli;
             if(inginBeli == 'n') {
                 loop = false;
+            } else if(inginBeli == 'y') {
+                loop = true;
+            } else {
+                cout << "*** INPUT TIDAK VALID ***" << endl;
+                break;
             }
         }
 
@@ -80,6 +86,11 @@ int main() {
             cin >> inginBeli;
             if(inginBeli == 'n') {
                 loop = false;
+            } else if(inginBeli == 'y') {
+                loop = true;
+            } else {
+                cout << "*** INPUT TIDAK VALID ***" << endl;
+                break;
             }
         }
 
@@ -92,6 +103,11 @@ int main() {
             cin >> inginBeli;
             if(inginBeli == 'n') {
                 loop = false;
+            } else if(inginBeli == 'y') {
+                loop = true;
+            } else {
+                cout << "*** INPUT TIDAK VALID ***" << endl;
+                break;
             }
         }
 
@@ -104,6 +120,11 @@ int main() {
             cin >> inginBeli;
             if(inginBeli == 'n') {
                 loop = false;
+            } else if(inginBeli == 'y') {
+                loop = true;
+            } else {
+                cout << "*** INPUT TIDAK VALID ***" << endl;
+                break;
             }
         }
 
@@ -116,6 +137,11 @@ int main() {
             cin >> inginBeli;
             if(inginBeli == 'n') {
                 loop = false;
+            } else if(inginBeli == 'y') {
+                loop = true;
+            } else {
+                cout << "*** INPUT TIDAK VALID ***" << endl;
+                break;
             }
         }
 
@@ -128,6 +154,11 @@ int main() {
             cin >> inginBeli;
             if(inginBeli == 'n') {
                 loop = false;
+            } else if(inginBeli == 'y') {
+                loop = true;
+            } else {
+                cout << "*** INPUT TIDAK VALID ***" << endl;
+                break;
             }
         }
 
@@ -140,6 +171,11 @@ int main() {
             cin >> inginBeli;
             if(inginBeli == 'n') {
                 loop = false;
+            } else if(inginBeli == 'y') {
+                loop = true;
+            } else {
+                cout << "*** INPUT TIDAK VALID ***" << endl;
+                break;
             }
         }
 
@@ -152,6 +188,11 @@ int main() {
             cin >> inginBeli;
             if(inginBeli == 'n') {
                 loop = false;
+            } else if(inginBeli == 'y') {
+                loop = true;
+            } else {
+                cout << "*** INPUT TIDAK VALID ***" << endl;
+                break;
             }
         }
 
@@ -164,12 +205,18 @@ int main() {
             cin >> inginBeli;
             if(inginBeli == 'n') {
                 loop = false;
+            } else if(inginBeli == 'y') {
+                loop = true;
+            } else {
+                cout << "*** INPUT TIDAK VALID ***" << endl;
+                break;
             }
         }
 
         else {
 
             cout << "*** INPUT TIDAK VALID ***" << endl;
+            break;
         } 
 
     }    
@@ -186,7 +233,7 @@ int main() {
 
         // Total ≥ Rp1.000.000: mendapatkan diskon 10%. 
 
-        total = jumlahHargaBarangDibeli * 0.9;
+        total = jumlahHargaBarangDibeli - jumlahHargaBarangDibeli / 100 * 10;
 
         cout << "\n------------------------------------------" << endl;
         cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
