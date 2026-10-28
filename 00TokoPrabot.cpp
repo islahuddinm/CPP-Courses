@@ -12,7 +12,7 @@ int main() {
     cout << "\nDaftar/Stock Barang di Etalase *Toko Prabot*\n"
     "\n"
     "Perabotan Dapur:\n"
-    "1. Lamari Dapur\n"
+    "1. Lamari Dapur - Rp.100.000\n"
     "2. Kursi Dapur\n"
     "3. Meja Dapur\n"
     "4. Kulkas\n"
@@ -283,7 +283,8 @@ int main() {
 
     
 
-    
+/// EXPERIMENT //////////////////////////////////////////////////////////////////////////////
+
     // char inginBeli;
     // cout << "\nApakah anda igin membeli barang? y/n" << '\n';
     // cin >> inginBeli;
