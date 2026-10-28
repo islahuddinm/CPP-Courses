@@ -271,6 +271,14 @@ int main() {
         cout << "Total \t\t\t: " << total << endl;
         cout << "-----------------------------------------------" << endl;
     }
+
+    if(jumlahBarangDibeli >= 5 && jumlahHargaBarangDibeli >= 500000) {
+        
+        cout << "*** ANDA MENDAPAT BONUS ***\n";
+    } else {
+
+        cout << "*** ANDA TIDAK MENDAPAT BONUS ***\n";
+    }
     
 
     
