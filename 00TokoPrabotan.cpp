@@ -262,7 +262,6 @@ int main() {
 
         total = jumlahHargaBarangDibeli - jumlahHargaBarangDibeli / 100 * 10;
 
-        cout << "\n-----------------------------------------------" << endl;
         cout << "\n=================== RECEIPT ===================" << endl;
         //cout << "Harga barang: " << hargaBarang << endl;
         cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
@@ -278,9 +277,7 @@ int main() {
 
         total = jumlahHargaBarangDibeli - jumlahHargaBarangDibeli / 100 * 5;
 
-        cout << "\n-----------------------------------------------" << endl;
         cout << "\n=================== RECEIPT ===================" << endl;
-        cout << "\n-----------------------------------------------" << endl;
         //cout << "Harga barang: " << hargaBarang << endl;
         cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
         cout << "Jumlah harga barang \t: Rp." << jumlahHargaBarangDibeli << endl;
@@ -295,9 +292,7 @@ int main() {
 
         total = jumlahHargaBarangDibeli;
 
-        cout << "\n-----------------------------------------------" << endl;
         cout << "\n=================== RECEIPT ===================" << endl;
-        cout << "\n-----------------------------------------------" << endl;
         //cout << "Harga barang: " << hargaBarang << endl;
         cout << "Jumlah barang \t\t: " << jumlahBarangDibeli << endl;
         cout << "Jumlah harga barang \t: Rp." << jumlahHargaBarangDibeli << endl;
