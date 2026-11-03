@@ -29,6 +29,82 @@ Stack and Heap:
 
         How to request heap memory?
 
+            Example, request Heap Memory using the new operator:
+
+                </> c++
+
+                    int* p = new int(20);
+
+                Step 1: Request memory
+
+                    </> c++
+                    
+                        new int(20);
+
+                    When the CPU executes the compiled program, the new operation causes the program
+                    to use a memory allocator.
+
+                    The allocator:
+
+                        1. Looks for available memory that can hold an integer.
+                        2. Reserves(menyimpan/mencadangkan) that memory for your program.
+                        3. Initializes the integer with 20.
+                        4. Returns the memory address.
+
+                        For example, imagine the allocator returns address 0x5000.
+
+                            Heap Memory
+
+                                Address        Value
+                                +------------+-------+
+                                | 0x5000     |  20   |
+                                +------------+-------+
+
+                            The address is just an example. Real addresses are chosen by the system.
+
+                Step 2: Store the address in a pointer
+
+                    </> c++
+                    
+                        int* p = new int(20);
+
+                    The pointer p stores the address of the allocated integer.
+
+                        STACK                       HEAP
+                        +-------------+            +-------------+
+                        | p           |            |             |
+                        |             |            |             |
+                        | 0x5000      |----------->| 20          |
+                        |             |            |             |
+                        +-------------+            +-------------+
+
+                                                    Address:
+                                                    0x5000
+
+                    The pointer variable p is typically stored on the stack because it is a local variable.
+                    The integer 20 created using new is stored on the heap.
+
+                Step 3: Access the value
+
+                    </> c++
+
+                        cout << *p;
+
+                    *p means: access the integer located at the address stored in p.
+
+                Step 4: Release heap memory
+
+                    </> c++
+                    
+                        // Release heap memory
+                        delete p;
+                        p = nullptr;
+
+                    The delete operator releases the dynamically allocated integer.
+                    Once released, the memory can be reused by the memory allocator.
+                    p still exists until its own lifetime ends, but its old address must no longer be dereferenced.
+                    You can set p = nullptr; after deleting it to avoid accidentally using the old address.
+
         What is a definiton of automatically disappear?
 
         "when the function that requested it finishes"
@@ -46,7 +122,7 @@ Stack and Heap:
             return 0;
         }
 
-        it means it woould have a less size of the program when i compile the program
+        it means it would have a less size of the program when i compile the program
         but the program size would be growing when i am running the program?
 
 */
