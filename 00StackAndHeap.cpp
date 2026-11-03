@@ -1,3 +1,38 @@
+
+
+/*
+
+Stack and Heap:
+
+    Stack and Heap are two areas of memory that a running program typically uses to store data.
+    or "stack" and "heap" are two areas of memory where data can be stored during the execution of a program.
+    
+    The main difference of both is how memory is allocated, managed, and released.
+
+    Heap memory = an area of memory where a program can request storage dynamically while it is running.
+
+    In C++, you can request heap memory.
+
+        How to request heap memory?
+        
+    What is memory allocation
+
+    when i write codes by using a heap request like this:
+
+        int main() {
+
+            int* p = new int(20);
+            delete p;
+
+            return 0;
+        }
+
+        it means it woould have a less size of the program when i compile the program
+        but the program size would be growing when i am running the program?
+
+*/
+
+
 /* In programming, "stack" and "heap" are two areas of memory where data can be stored during the execution of
 a program. Here's a brief overview of each:
 
