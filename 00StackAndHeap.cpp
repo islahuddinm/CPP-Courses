@@ -2,6 +2,20 @@
 
 /*
 
+First, what is memory?
+
+    When you run a program, your computer needs somewhere to temporarily store data.
+
+    For example, imagine this C++ program:
+    
+        int main() {
+            int age = 20;
+            return 0;
+        }
+
+    The variable age contains the value 20. Your computer needs memory to store that value while the program runs.
+    That memory is usually provided by RAM.
+
 Stack and Heap:
 
     Stack and Heap are two areas of memory that a running program typically uses to store data.
@@ -10,10 +24,15 @@ Stack and Heap:
     The main difference of both is how memory is allocated, managed, and released.
 
     Heap memory = an area of memory where a program can request storage dynamically while it is running.
-
-    In C++, you can request heap memory.
+    In C++, you can request heap memory. Unlike a normal stack allocation, heap memory does not automatically disappear
+    when the function that requested it finishes. Its lifetime is controlled by memory management.
 
         How to request heap memory?
+
+        What is a definiton of automatically disappear?
+
+        "when the function that requested it finishes"
+        what does finish mean?
         
     What is memory allocation
 
