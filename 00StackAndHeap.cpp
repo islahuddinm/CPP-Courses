@@ -241,7 +241,7 @@ Stack and Heap:
             A function finishes when it completes its execution and returns control to the function that called it.
 
             For example:
-            
+
                 void example() {
                     int a = 10;
                     // Function finishes here
@@ -254,6 +254,12 @@ Stack and Heap:
 
                     return 0;
                 }
+
+            Conclusion:
+
+                - Automatically disappear: The program automatically ends a variable's lifetime and can reuse its memory.
+                - Not automatically disappear: The allocation stays allocated until something releases it.
+                - Function finishes: The function completes execution and control returns to its caller.
 
         When i write codes by using a heap request like this:
 
@@ -278,10 +284,7 @@ Stack and Heap:
                     However, the executable file size itself does not increase.
 
 
-What is a definiton of automatically disappear?
-
-"when the function that requested it finishes"
-what does finish mean?
+What is stack memory?
 
 What is memory allocation
 
