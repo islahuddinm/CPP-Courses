@@ -781,6 +781,17 @@ Stack and Heap:
             Both stack and heap are part of a running program's memory, not memory allocated inside
             the executable file during compilation.
 
+    We can say Heap & Stack are regions of a program's virtual address space to tell computer to
+    manage/organize memory allocations, right?
+        
+        Yes! Your understanding is correct.
+        Just one small correction: Stack and Heap don't directly tell the computer what to do.
+        They are memory regions that the program and its runtime use according to different memory management rules.
+
+        A more precise definition would be:
+
+            Stack and Heap are regions of a program's virtual address space used to organize and manage memory allocations in different ways.
+
 */
 
 
