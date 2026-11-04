@@ -233,8 +233,27 @@ Stack and Heap:
                         +--------------+           +--------------+
 
                     Because the pointer is lost(hilang), the program can no longer release(melepaskan) that allocation normally.
-                    This is called a memory leak. The pointer variable p is typically stored on the stack because
-                    it is a local variable.
+                    This is called a memory leak. To avoid that, you can write "delete p;" or use modern C++ automatic ownership tools.
+                    The pointer variable p is typically stored on the stack because it is a local variable.
+
+        What does "when the function that requested it finishes" mean?
+
+            A function finishes when it completes its execution and returns control to the function that called it.
+
+            For example:
+            
+                void example() {
+                    int a = 10;
+                    // Function finishes here
+                }
+
+                int main() {
+                    example();
+
+                    // Program continues here
+
+                    return 0;
+                }
 
         When i write codes by using a heap request like this:
 
