@@ -495,6 +495,28 @@ Stack and Heap:
         | Lifetime     | Normally tied to function execution or scope | Can outlive the allocating function |
         | Example      | `int a = 10;`                                | `int* p = new int(20);`             |
 
+    For this case, why do i need heap memory if i can use stack memory?
+
+        Exampe, case:
+        
+            int main() {
+                int* p = new int(20);
+                delete p;
+                return 0;
+            }
+
+            or
+
+            int main() {
+                int p = 20;
+                return 0;
+            }
+
+        For this case, you do not need heap memory. Using an ordinary local variable is simpler and generally better.
+        So your reasoning is correct: for these two programs, heap allocation provides no useful advantage.
+
+    Why do we need a heap memory?
+
 */
 
 
