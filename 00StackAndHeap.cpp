@@ -495,6 +495,39 @@ Stack and Heap:
         | Lifetime     | Normally tied to function execution or scope | Can outlive the allocating function |
         | Example      | `int a = 10;`                                | `int* p = new int(20);`             |
 
+
+        Stack Memory
+
+            • What it is: A region of memory that operates in a Last-In, First-Out (LIFO) structure, much like a stack of plates or books.
+            • What it stores: Local variables, function parameters, and return addresses for active function calls.
+            • How it works: When a function is called, a block of memory (a "stack frame") is pushed onto the stack. When the function finishes, that block is automatically popped off and the memory is freed.
+            • Key Characteristics:
+                • Speed: Very fast to access and allocate (just moving a stack pointer).
+                • Size: Limited and fixed in size (per thread, often around 1 MB).
+                • Management: Automatic; you do not need to manually allocate or delete stack memory.
+                • Risk: Stack overflow, which happens if a program uses too much stack space, such as through infinite recursion.
+
+        Heap Memory
+
+            • What it is: A large, flexible pool of memory used for dynamic memory allocation.
+            • What it stores: Objects, large data structures, strings, or any data whose size is not known at compile time or that needs to outlive the function that created it.
+            • How it works: You explicitly request memory at runtime (using keywords like new or functions like malloc), and you receive a pointer or reference to that memory stored on the stack.
+            • Key Characteristics:
+                • Speed: Slower to allocate and access than the stack due to lookup overhead and pointer dereferencing.
+                • Size: Vastly larger, limited mostly by total system RAM or virtual memory.
+                • Management: Depends on the language. In languages like C/C++, you must manually free the memory (delete or free). In languages like Java or Python, an automatic Garbage Collector cleans up unreferenced objects.
+                • Risk: Memory leaks (if manual memory is never freed) or fragmentation (free memory breaking into small, scattered blocks).
+
+        Quick Comparison:
+
+            Feature	      |  Stack Memory	                          |  Heap Memory
+            ------------------------------------------------------------------------------------------------------------------
+            Structure	  |  LIFO (Last-In,                           |  First-Out)	Unordered / Dynamic pool
+            Speed	      |  Fast	                                  |  Slower
+            Lifetime	  |  Tied to the scope of the function/block  |	 Persistent until explicitly freed or garbage-collected
+            Size Limit	  |  Small / Fixed	                          |  Large / Flexible
+            Main Danger	  |  Stack overflow	                          |  Memory leaks / fragmentation
+
     For this case, why do i need heap memory if i can use stack memory?
 
         Exampe, case:
@@ -652,6 +685,101 @@ Stack and Heap:
 
                 std::vector normally allocates its elements on the heap and automatically releases that storage
                 when the vector is destroyed. You do not need to manually write delete[].
+
+    Stack memory is allocated at compile time based on the size of code while
+    heap memory is allocated at runtime based on request, right?
+
+        Almost correct! But there is one important correction:
+
+            - Stack memory: The compiler usually determines how much stack space a function needs,
+                but the stack space is actually used or reserved(disimpan/dicadangkan) at runtime, when the function is called.
+            - Heap memory: Memory is allocated at runtime, when the program requests it.
+
+        1. Stack Memory
+
+            Consider this C++ code:
+
+                void example() {
+                    int a = 10;
+                    int b = 20;
+                }
+
+                int main() {
+                    example();
+                    return 0;
+                }
+
+            At compile time, The compiler analyzes the function and determines how much stack space it typically needs.
+
+                For example, assuming each int occupies 4 bytes:
+
+                    example()
+                        |
+                        +-- int a = 10;  (4 bytes)
+                        |
+                        +-- int b = 20;  (4 bytes)
+                        |
+                        +-- Total variable storage: 8 bytes
+
+                The compiler may determine the required stack-frame size, including other information.
+                It could also keep these variables in registers or optimize them away.
+
+                No stack frame for example() is allocated simply because you compile the code.
+                At runtime, When main() calls example(), the program creates or reserves its stack frame.
+                When example() returns, that stack space becomes available for reuse.
+
+        2. Heap Memory
+
+            Consider this C++ code:
+
+                int main() {
+                    int* p = new int(20);
+
+                    delete p;
+                    return 0;
+                }
+
+            At compile time, The compiler generates machine instructions that will perform the dynamic allocation.
+            
+            At runtime, When the program executes:
+                
+                new int(20);
+
+            The heap allocator reserves memory for the integer.
+
+            When the program executes:
+
+                delete p;
+
+            The allocation is released.
+
+        Important: Stack Size Is Not Based on Code Size
+
+            You mentioned that stack memory is allocated based on the size of the code.
+            That is not quite correct.
+
+            Stack memory requirements depend mainly on active function calls and the data each call needs,
+            not the total number of lines of code.
+
+            For example:
+
+                void example() {
+                    int a = 10;
+                }
+
+            Calling example() 100 times one after another does not mean 100 stack frames remain allocated simultaneously.
+            However, 100 nested or recursive calls may require 100 active stack frames.
+
+        Conclusion
+
+            Your statement should be:
+
+                - Stack memory: The compiler usually determines the stack-space requirements of
+                    each function at compile time, but the space is used at runtime as functions execute.
+                - Heap memory: The program requests dynamic memory at runtime, and the amount allocated depends on the request.
+
+            Both stack and heap are part of a running program's memory, not memory allocated inside
+            the executable file during compilation.
 
 */
 
