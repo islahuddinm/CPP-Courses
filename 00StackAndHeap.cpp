@@ -790,7 +790,8 @@ Stack and Heap:
 
         A more precise definition would be:
 
-            Stack and Heap are regions of a program's virtual address space used to organize and manage memory allocations in different ways.
+            Stack and Heap are regions of a program's virtual address space used to organize and manage
+            memory allocations in different ways.
 
 */
 
