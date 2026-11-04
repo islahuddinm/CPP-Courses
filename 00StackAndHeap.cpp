@@ -4,6 +4,52 @@
 
 Alokasi = proses penentuan jatahan (seperti barang, uang, sumber daya, atau kuota).
 
+    Memory allocation = the process of reserving(mencadangkan) a portion(sebagian) of memory for a program to store data.
+    In simple terms, when a program needs memory to store information, some memory space must be made available for that data.
+
+    Example of Memory Allocation:
+
+        Imagine you write this C++ code:
+
+            int main() {
+                int age = 20;
+                return 0;
+            }
+
+        When the program runs, the variable age needs memory to store the value 20.
+        Assume an int occupies 4 bytes on your computer. The program needs 4 bytes of storage for that integer.
+        
+        Illustraion:
+        
+            BEFORE ALLOCATION
+
+                Memory
+                +----------+------------------+
+                | Address  | Status           |
+                +----------+------------------+
+                | 0x1000   | Available        |
+                | 0x1001   | Available        |
+                | 0x1002   | Available        |
+                | 0x1003   | Available        |
+                +----------+------------------+
+
+            AFTER ALLOCATION
+
+                Memory
+                +----------+------------------+
+                | Address  | Status           |
+                +----------+------------------+
+                | 0x1000   | Allocated        |
+                | 0x1001   | Allocated        |
+                | 0x1002   | Allocated        |
+                | 0x1003   | Allocated        |
+                +----------+------------------+
+
+                These 4 bytes can store the integer 20.
+
+            This is a simplified illustration. A compiler may store age in a CPU register or
+            optimize it away instead of allocating stack memory.
+
 First, what is memory?
 
     When you run a program, your computer needs somewhere to temporarily store data.
@@ -283,10 +329,171 @@ Stack and Heap:
                     When I run the program, those instructions can cause the program's memory usage to increase.
                     However, the executable file size itself does not increase.
 
+    Stack memory = an area of memory used by a running program to manage function calls and typically store local variables.
 
-What is stack memory?
+        What is stack memory used for?
 
-What is memory allocation
+            Stack memory commonly stores:
+
+                | Data                | Description                                                           |
+                | ------------------- | --------------------------------------------------------------------- |
+                | Local variables     | Variables declared inside a function                                  |
+                | Function parameters | Values passed to a function                                           |
+                | Return addresses    | Addresses telling the CPU where to continue after a function finishes |
+                | Saved registers     | CPU register values that need to be preserved                         |
+                | Temporary data      | Additional data needed while executing a function                     |
+
+            Not every local variable or parameter is physically stored on the stack.
+            The compiler may use CPU registers instead.
+
+        How does stack memory work?
+
+            Consider this C++ program:
+
+                void example() {
+                    int a = 10;
+                    int b = 20;
+                }
+
+                int main() {
+                    example();
+                    return 0;
+                }
+
+            Let's examine what happens:
+
+                Step 1: The program starts `main()`. The program creates a stack frame for `main()`.
+                Step 2: `main()` calls `example()`. The program creates another stack frame for `example()`.
+                Step 3: `example()` executes.
+
+                    STACK MEMORY
+                    +------------------------+
+                    | example() Stack Frame  |
+                    |                        |
+                    | a = 10                 |
+                    | b = 20                 |
+                    +------------------------+
+                    | main() Stack Frame     |
+                    +------------------------+
+
+                Step 4: `example()` finishes.
+
+                    The stack frame belonging to `example()` is removed automatically.
+
+                    STACK MEMORY
+                    +------------------------+
+                    | Available stack space  |
+                    +------------------------+
+                    | main() Stack Frame     |
+                    +------------------------+
+
+                Step 5: `main()` continues. The program executes `return 0;` and finishes.
+
+        What is a stack frame?
+
+            A stack frame is an area of stack memory associated with a particular function call.
+
+            For example:
+
+                </> c++
+                
+                    void functionA() {
+                        int a = 10;
+                    }
+
+                    void functionB() {
+                        int b = 20;
+                        functionA();
+                    }
+
+                    int main() {
+                        functionB();
+                        return 0;
+                    }
+
+                While functionA() is running, the stack conceptually looks like this:
+
+                                STACK
+                    +---------------------------+
+                    | functionA() Stack Frame   | <- Top
+                    | a = 10                    |
+                    +---------------------------+
+                    | functionB() Stack Frame   |
+                    | b = 20                    |
+                    +---------------------------+
+                    | main() Stack Frame        |
+                    +---------------------------+
+
+                The stack follows a principle called LIFO (Last In, First Out).
+
+                    That means:
+
+                        - functionA() was called last, so it normally finishes first.
+                        - functionB() finishes afterward.
+                        - main() finishes last.
+
+        What happens to stack memory when a function finishes?
+
+            When a function returns, its stack frame is normally removed automatically.
+
+            For example:
+
+                </> c++
+                
+                    void example() {
+                        int age = 20;
+                    }
+
+                    int main() {
+                        example();
+                        return 0;
+                    }
+
+
+                While example() is running, age exists.
+                After example() finishes, age no longer exists, and its storage can be reused.
+
+                This does not mean the computer immediately changes all the bits in that memory to zero.
+                It means that the memory is no longer reserved(disimpan/dicadangkan) for that function's stack frame.
+
+        Where is stack memory located?
+
+            Stack memory is not a separate physical device.
+            It is typically part of a running program's virtual memory, backed by RAM as needed.
+
+            Illustration:
+            
+                COMPUTER
+                    |
+                    v
+                RAM
+                    |
+                    v
+                Running Program
+                    |
+                    +---- Program Instructions
+                    |
+                    +---- Global / Static Data
+                    |
+                    +---- Stack Memory
+                    |        |
+                    |        +---- Function Calls
+                    |        +---- Local Variables
+                    |        +---- Return Addresses
+                    |
+                    +---- Heap Memory
+                                |
+                                +---- Dynamic Allocations
+
+    Stack memory vs. heap memory
+
+        | Feature      | Stack Memory                                 | Heap Memory                         |
+        | ------------ | -------------------------------------------- | ----------------------------------- |
+        | Purpose      | Function calls and automatic local data      | Dynamic allocations                 |
+        | Allocation   | Usually automatic                            | Requested during execution          |
+        | Deallocation | Usually automatic                            | Managed separately                  |
+        | Lifetime     | Normally tied to function execution or scope | Can outlive the allocating function |
+        | Example      | `int a = 10;`                                | `int* p = new int(20);`             |
 
 */
 
