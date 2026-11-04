@@ -2,6 +2,8 @@
 
 /*
 
+Alokasi = proses penentuan jatahan (seperti barang, uang, sumber daya, atau kuota).
+
 First, what is memory?
 
     When you run a program, your computer needs somewhere to temporarily store data.
@@ -137,27 +139,124 @@ Stack and Heap:
                             | Available memory     |
                             +----------------------+
 
-    When i write codes by using a heap request like this:
+        What does "automatically disappear" mean?
+            
+            In programming, automatically disappear means that the program automatically ends
+            the lifetime(masa hidupnya) of some data and makes its memory available for reuse,
+            without you explicitly requesting deallocation.
 
-        int main() {
+            For example:
 
-            int* p = new int(20);
-            delete p;
+                </> c++
+                
+                    void example() {
+                        int a = 10;
+                    }
 
-            return 0;
-        }
+                    int main() {
+                        example();
+                        return 0;
+                    }
 
-        It means it would have a less size of the program when the program is compiled
-        but the program size would be growing when i am running the program?
+                Here's what happens:
 
-            You're partially correct! The important thing is that program file size and
-            program memory usage are two different things.
+                    Step 1: main() calls example().
+                    Step 2: example() starts running.
+                    Step 3: The variable a is created with value 10.
+                    Step 4: example() finishes running.
+                    Step 5: The variable a automatically stops existing. Its stack space can be reused.
 
-            A more accurate statement is:
+                    Illustration:
 
-                When I compile my C++ program, the executable contains instructions for allocating heap memory.
-                When I run the program, those instructions can cause the program's memory usage to increase.
-                However, the executable file size itself does not increase.
+                        WHILE example() IS RUNNING
+
+                            Stack Memory
+                            +--------------------+
+                            | a = 10             |
+                            +--------------------+
+
+
+                        AFTER example() FINISHES
+
+                            Stack Memory
+                            +--------------------+
+                            | Space available    |
+                            | for reuse          |
+                            +--------------------+
+
+                        You do not need to write "delete a;".
+
+        What does "not automatically disappear" mean?
+
+            It means the allocated memory remains(tetap) allocated(teralokasi) until it is explicitly released or
+            managed by an ownership mechanism.
+
+            Example:
+
+                </> c++
+                
+                    void example() {
+                        int* p = new int(20);
+                    }
+
+                    int main() {
+                        example();
+                        return 0;
+                    }
+
+                Here's what happens:
+
+                    Step 1: main() calls example().
+                    Step 2: example() starts running.
+                    Step 3: new int(20) allocates heap memory.
+                    Step 4: The pointer p stores the address of that heap memory.
+                    Step 5: example() finishes running.
+                    Step 6: The local pointer p automatically stops existing, but the heap allocation remains allocated.
+
+                Illustration:
+                
+                    WHILE example() IS RUNNING
+
+                        STACK                      HEAP
+                        +--------------+           +--------------+
+                        | p = 0x5000   |---------->| 20           |
+                        +--------------+           +--------------+
+
+
+                    AFTER example() FINISHES
+
+                        STACK                      HEAP
+                        +--------------+           +--------------+
+                        | p no longer  |           | 20           |
+                        | exists       |           | Still        |
+                        |              |           | allocated    |
+                        +--------------+           +--------------+
+
+                    Because the pointer is lost(hilang), the program can no longer release(melepaskan) that allocation normally.
+                    This is called a memory leak. The pointer variable p is typically stored on the stack because
+                    it is a local variable.
+
+        When i write codes by using a heap request like this:
+
+            int main() {
+
+                int* p = new int(20);
+                delete p;
+
+                return 0;
+            }
+
+            It means it would have a less size of the program when the program is compiled
+            but the program size would be growing when i am running the program?
+
+                You're partially correct! The important thing is that program file size and
+                program memory usage are two different things.
+
+                A more accurate statement is:
+
+                    When I compile my C++ program, the executable contains instructions for allocating heap memory.
+                    When I run the program, those instructions can cause the program's memory usage to increase.
+                    However, the executable file size itself does not increase.
 
 
 What is a definiton of automatically disappear?
