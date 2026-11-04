@@ -517,6 +517,142 @@ Stack and Heap:
 
     Why do we need a heap memory?
 
+        We need heap memory because programs sometimes need to store data whose(yang) size or
+        lifetime(masa hidupnya) cannot be conveniently(dengan mudah) determined(ditentukan) "in advance (sebelumnya)".
+        Stack memory is useful for local variables and function calls, but it has limitations.
+        Heap memory provides more flexibility.
+
+        The reasons we need Heap Memory:
+
+            1. Problem: Stack Memory Has a Limited Size
+
+                Imagine you want to store 1,000,000 integers.
+
+                int main() {
+                    int numbers[1000000];
+                    return 0;
+                }
+
+                If each integer occupies 4 bytes, the array needs approximately 4 MB of memory.
+                On some systems, this may exceed(melampaui) the available stack space and cause a stack overflow.
+                Heap memory is generally better suited for large dynamic allocations.
+
+            2. Solution: Use Heap Memory
+            
+                int main() {
+                    int* numbers = new int[1000000];
+
+                    delete[] numbers;
+                    return 0;
+                }
+
+                Here:
+
+                    1. new int[1000000] requests heap memory for 1,000,000 integers.
+                    2. numbers stores the address of the first integer.
+                    3. The program can access the allocated array.
+                    4. delete[] numbers releases the allocated memory.
+                
+                Illustration:
+
+                    STACK MEMORY                  HEAP MEMORY
+                    +------------------+          +---------------------+
+                    | numbers          |          | Integer 0           |
+                    |                  |          | Integer 1           |
+                    | Address: 0x5000  |--------->| Integer 2           |
+                    +------------------+          | ...                 |
+                                                  | Integer 999999      |
+                                                  +---------------------+
+
+                    The addresses are illustrative.
+
+            3. Problem: We Don't Always Know How Much Memory We Need
+
+                Imagine a program asks the user how many numbers they want to store.
+
+                The user might enter:
+
+                    - 10 numbers
+                    - 100 numbers
+                    - 100,000 numbers
+
+                We cannot know the requested number before the program runs.
+                Heap memory allows us to allocate an amount based on the user's input.
+
+                For example:
+
+                    </> c++
+                    
+                        #include <iostream>
+                        using namespace std;
+
+                        int main() {
+                            int n;
+
+                            cout << "How many numbers? ";
+                            cin >> n;
+
+                            if (n <= 0) {
+                                return 1;
+                            }
+
+                            int* numbers = new int[n];
+
+                            cout << "Memory allocated!" << endl;
+
+                            delete[] numbers;
+                            return 0;
+                        }
+                    
+                    if the user enters 100, the program requests enough heap memory for 100 integers.
+                    If the user enters 1000, the program requests enough for 1,000 integers.
+
+                Important:
+                
+                    The ability to handle runtime sizes is not exclusive to manually allocating heap memory.
+                    Modern C++ commonly uses std::vector, which manages dynamic storage automatically.
+
+            4. Problem: Data Sometimes Needs to Survive After a Function Finishes
+
+                Consider this example:
+
+                    int* createNumber() {
+                        int* p = new int(20);
+                        return p;
+                    }
+
+                    int main() {
+                        int* number = createNumber();
+
+                        // The allocated integer still exists here.
+                        std::cout << *number;
+
+                        delete number;
+                        return 0;
+                    }
+
+                When createNumber() finishes, its local pointer p stops existing.
+                However, the heap allocation containing 20 remains available through the pointer returned to main().
+                This lets the data survive beyond the function that created it.
+
+            5. Do We Always Need to Use new?
+
+                No. Modern C++ usually provides safer ways to use heap memory.
+
+                For example:
+
+                    #include <vector>
+                    using namespace std;
+
+                    int main() {
+                        vector<int> numbers(1000000);
+
+                        return 0;
+                    }
+
+                std::vector normally allocates its elements on the heap and automatically releases that storage
+                when the vector is destroyed. You do not need to manually write delete[].
+
 */
 
 
