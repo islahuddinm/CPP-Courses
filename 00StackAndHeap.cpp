@@ -832,6 +832,443 @@ Stack and Heap:
                     
                 The reference does not allocate heap memory. The new expression does.
 
+    When do i use the heap memory, other than for containers?
+
+        You can use heap memory for individual objects, not just containers or arrays.
+        Heap memory is particularly useful when you need to control an object's lifetime, store large objects, or
+        create different kinds of objects while a program is running.
+
+        1. Example: Creating an enemy in a game
+
+            Imagine you're developing a game using C++.
+            An enemy can appear while the game runs and disappear when the player defeats it.
+
+            </> c++
+
+                #include <iostream>
+                using namespace std;
+
+                struct Enemy {
+                    int health = 100;
+                };
+
+                Enemy* createEnemy() {
+                    return new Enemy;
+                }
+
+                int main() {
+                    Enemy* enemy = createEnemy();
+
+                    cout << enemy->health << endl;
+
+                    // Enemy is defeated
+                    delete enemy;
+
+                    return 0;
+                }
+
+            How it works:
+
+                1. `main()` calls `createEnemy()`.
+                2. `new Enemy` allocates heap memory for an enemy object.
+                3. `createEnemy()` returns the object's address.
+                4. The enemy remains allocated after `createEnemy()` finishes.
+                5. `main()` can continue using the enemy.
+                6. `delete enemy` releases the allocation when it is no longer needed.
+
+            Illustration:
+
+                            STACK                    HEAP
+                              |                        |
+                main()        |                        |
+                    |         |                        |
+                    v         |                        |
+                createEnemy() |                        |
+                    |         |                        |
+                    +-------->|                +-------------+
+                            |                  | Enemy       |
+                            |                  | health=100  |
+                            |                  +-------------+
+                            |                        ^
+                            |                        |
+                            |                        |
+                            |                  enemy pointer
+                            |
+                createEnemy() finishes
+                            |
+                            |                  +-------------+
+                            |                  | Enemy       |
+                            |                  | health=100  |
+                            |                  +-------------+
+                            |
+                main() continues using the enemy
+                            |
+                            v
+                        delete enemy
+                            |
+                            v
+                    Heap allocation released
+        
+            Why is heap useful here?
+
+                Because the enemy's lifetime can be managed independently of the function that created it.
+                However, this simple example could also return an `Enemy` by value without using the heap.
+                Heap allocation becomes more useful as the game's object management becomes more complex.
+
+        2. Other situations where heap memory is useful
+
+            | Situation              | Why heap memory is useful                                                 |
+            | ---------------------- | ------------------------------------------------------------------------- |
+            | Game objects           | Create and destroy objects with flexible lifetimes                        |
+            | GUI windows            | Keep window objects alive until they are closed                           |
+            | Camera image buffers   | Store large amounts of image data                                         |
+            | Different object types | Create objects of different classes dynamically using polymorphism        |
+            | Shared objects         | Allow multiple parts of a program to use an object with managed ownership |
+            | Linked structures      | Create tree nodes or linked objects individually as needed                |
+
+        3. Does this mean you should always use heap memory?
+
+            No.
+
+            Consider:
+
+                int main() {
+                    int health = 100;
+                    return 0;
+                }
+                ```
+
+            A normal local variable is enough. Heap memory would introduce unnecessary complexity.
+            In modern C++, you should also usually avoid directly managing `new` and `delete`.
+            For individually allocated objects, `std::unique_ptr` and `std::make_unique` are generally safer.
+
+        4. When should you choose heap memory?
+
+            | Question                                                                  | Recommendation                 |
+            | ------------------------------------------------------------------------- | ------------------------------ |
+            | Do I just need a small local variable?                                    | Use an ordinary local variable |
+            | Does the data only need to exist inside one function?                     | Usually use automatic storage  |
+            | Do I need to keep an object alive independently of its creating function? | Consider heap memory           |
+            | Is the object too large for the stack?                                    | Consider heap memory           |
+            | Do I need runtime polymorphism with dynamically created objects?          | Heap memory is often useful    |
+
+            The key idea: Heap memory gives a program flexibility over when an object is created,
+            how long its allocation exists, and when that allocation is released.
+
+            It is not necessary merely because a function returns data. In C++, you can often return objects by value
+            without allocating heap memory.
+
+    What happends if i do not use the heap memory for this case?
+
+        You can create the enemy without heap memory, and your program will still work correctly.
+        In fact, for your example, using an ordinary local variable is simpler.
+        However, there is an important difference in how the enemy object is created and how long it exists.
+
+        - Your original code (using heap memory)
+        
+            </> c++
+
+                #include <iostream>
+                using namespace std;
+
+                struct Enemy {
+                    int health = 100;
+                };
+
+                Enemy* createEnemy() {
+                    return new Enemy;
+                }
+
+                int main() {
+                    Enemy* enemy = createEnemy();
+
+                    cout << enemy->health << endl;
+
+                    // Enemy is defeated
+                    delete enemy;
+
+                    return 0;
+                }
+
+            Here, new Enemy dynamically allocates an enemy object on the heap.
+            The allocation remains valid after createEnemy() finishes, until you release it using delete.
+
+        - Without heap memory
+
+            We can rewrite the program:
+
+                #include <iostream>
+                using namespace std;
+
+                struct Enemy {
+                    int health = 100;
+                };
+
+                Enemy createEnemy() {
+                    Enemy e;
+                    return e;
+                }
+
+                int main() {
+                    Enemy enemy = createEnemy();
+
+                    cout << enemy.health << endl;
+
+                    return 0;
+                }
+
+            Output:
+
+                100
+
+            What happens step by step?
+            
+                Step 1: main() calls createEnemy().
+
+                Step 2: createEnemy() creates a local object named e.
+                    "Enemy e;"
+
+                Step 3: return e; returns the enemy object by value.
+
+                Step 4: createEnemy() finishes. Its local variable's lifetime ends,
+                    but the returned value initializes enemy in main().
+
+                Step 5: main() can use enemy.
+                    "cout << enemy.health;"
+
+                Step 6: When enemy reaches the end of its lifetime, it is automatically destroyed. You do not need delete.
+                
+                Modern C++ compilers can often construct the returned object directly
+                in its destination, avoiding an unnecessary copy.
+
+    What if you return a pointer to a local object instead?
+
+        This is where you need to be careful.
+
+        Incorrect example:
+            Enemy* createEnemy() {
+                Enemy e;
+                return &e;  // WRONG!
+            }
+
+        Here:
+
+            1. e is a local variable.
+            2. &e obtains its memory address.
+            3. The function returns that address.
+            4. The function finishes, so e is destroyed.
+            5. The returned pointer now refers to an object that no longer exists.
+
+        Illustration:
+        
+            WHILE createEnemy() IS RUNNING
+
+                Stack
+                +-----------------------+
+                | e                     |
+                | health = 100          |
+                +-----------------------+
+                        ^
+                        |
+                    return &e
+
+
+            AFTER createEnemy() FINISHES
+
+                Stack
+                +-----------------------+
+                | e no longer exists    |
+                | Space can be reused   |
+                +-----------------------+
+
+                Returned pointer -> Invalid
+
+        Using that pointer to access the destroyed object causes undefined behavior.
+        This is different from returning an object by value, which is safe.
+
+    How about size of program between code using heap memory & Without heap memory?
+
+        The size of a program using heap memory can be different from a program using only stack memory.
+
+        But first, we need to distinguish two things:
+
+            1. Executable file size — The size of your compiled program (.exe) stored on SSD/HDD.
+            2. Runtime memory usage — How much memory your program uses while running.
+
+        Let's compare your two C++ programs:
+
+            1. Program using heap memory
+
+                </> c++
+                
+                    struct Enemy {
+                        int health = 100;
+                    };
+
+                    Enemy* createEnemy() {
+                        return new Enemy;
+                    }
+
+                    int main() {
+                        Enemy* enemy = createEnemy();
+
+                        delete enemy;
+                        return 0;
+                    }
+
+                Assume you're using a 64-bit computer where an integer occupies 4 bytes and a pointer occupies 8 bytes.
+
+                At runtime, without compiler optimizations:
+
+                    STACK MEMORY
+                    +-----------------------+
+                    | enemy pointer         |
+                    | Approximately 8 bytes |
+                    +-----------------------+
+                            |
+                            v
+                    HEAP MEMORY
+                    +-----------------------+
+                    | Enemy                 |
+                    | health = 100          |
+                    | Approximately 4 bytes |
+                    +-----------------------+
+
+
+                The heap allocation may use additional memory for allocator bookkeeping and alignment.
+
+            2. Program without heap memory
+
+                </> c++
+
+                    struct Enemy {
+                        int health = 100;
+                    };
+
+                    Enemy createEnemy() {
+                        Enemy e;
+                        return e;
+                    }
+
+                    int main() {
+                        Enemy enemy = createEnemy();
+
+                        return 0;
+                    }
+
+                At runtime, conceptually:
+
+                    STACK MEMORY
+                    +-----------------------+
+                    | Enemy                 |
+                    | health = 100          |
+                    | Approximately 4 bytes |
+                    +-----------------------+
+
+                The actual stack usage depends on how the compiler generates the program.
+                It might even optimize away the object.
+
+            3. Size comparison
+
+                | Feature                   | Using heap              | Without heap               |
+                | ------------------------- | ----------------------- | -------------------------- |
+                | `Enemy` object size       | 4 bytes                 | 4 bytes                    |
+                | Pointer variable          | Typically 8 bytes       | Not required               |
+                | Dynamic allocation        | Yes                     | No                         |
+                | Memory allocator overhead | Usually yes             | No heap allocator overhead |
+                | Executable file size      | May be larger           | May be smaller             |
+                | Runtime overhead          | Generally higher        | Generally lower            |
+                | Manual `delete`           | Required with raw `new` | Not required               |
+
+            4. Does using heap memory make the compiled program smaller?
+
+                Not necessarily!
+
+                Consider these two statements:
+
+                    </> c++
+
+                        Enemy enemy;             // Automatic storage
+
+                    </> c++
+
+                        Enemy* enemy = new Enemy; // Dynamic allocation
+
+                During compilation:
+
+                    - The first generally requires simple instructions to create and access a local object.
+                    - The second may require additional instructions to request heap memory, handle the returned pointer,
+                    and eventually release the allocation.
+
+                Therefore, a program using heap memory can have a larger executable file than one using automatic storage.
+                However, compiler optimizations may eliminate unnecessary allocations. Your two examples may even compile
+                into nearly identical machine code because the objects are not used.
+
+            5. Can heap memory reduce the compiled program's file size?
+
+                Sometimes, the arrangement of data and code can affect executable size,
+                but heap allocation does not inherently reduce executable size.
+
+                For example, imagine you need 1,000,000 integers:
+
+                    </> c++
+
+                        int numbers[1000000];
+
+                    Versus:
+
+                    </> c++
+
+                        int* numbers = new int[1000000];
+
+                        delete[] numbers;
+
+                    Both need approximately 4 MB of storage for the integers when their arrays exist.
+
+                The important difference is:
+
+                    - The local array usually uses stack storage.
+                    - The dynamically allocated array uses heap storage.
+
+                Neither(tidak ada satu pun) version necessarily(tentu) stores 4 MB of integer data inside the executable file.
+
+            6. Compile-time size vs. runtime size
+
+                Illustration:
+
+                        C++ SOURCE CODE
+                                |
+                                v
+                            COMPILER
+                                |
+                                v
+                        EXECUTABLE FILE
+                            (program.exe)
+                                |
+                                v
+                            RUN PROGRAM
+                                |
+                                v
+                        VIRTUAL MEMORY
+                                |
+                        +-------+-------+
+                        |               |
+                        v               v
+                        STACK            HEAP
+                        |               |
+                    Local data       Dynamic data
+
+                The compiled executable stays the same size on disk while the program runs,
+                even if the heap allocation grows.
+
+            Conclusion:
+
+                For your `Enemy` example, using an ordinary local object is generally more memory-efficient and
+                simpler than allocating it with `new`.
+
+                The main advantage of heap memory is not reducing the executable file size.
+                It is allowing dynamic allocation of data whose size, ownership, or lifetime needs to be more flexible.
+
     Stack memory is allocated at compile time based on the size of code while
     heap memory is allocated at runtime based on request, right?
 
