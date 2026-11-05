@@ -686,6 +686,152 @@ Stack and Heap:
                 std::vector normally allocates its elements on the heap and automatically releases that storage
                 when the vector is destroyed. You do not need to manually write delete[].
 
+    Pass by pointer & pass by reference are they using dynamic memory allocation?
+
+        No. Pass by pointer and pass by reference do not automatically use dynamic memory allocation (heap memory).
+        Both are ways to allow a function to access an existing variable without copying its value.
+
+        Let's compare them:
+
+            1. Pass by Pointer
+
+                </> c++
+
+                    #include <iostream>
+                    using namespace std;
+
+                    void change(int* p) {
+                        *p = 50;
+                    }
+
+                    int main() {
+                        int a = 20;
+
+                        change(&a);
+
+                        cout << a;  // Output: 50
+                        return 0;
+                    }
+
+                What happens?
+
+                    1. int a = 20; creates a local variable, typically stored on the stack.
+                    2. &a obtains the memory address of a.
+                    3. change(&a) passes that address to the function.
+                    4. int* p receives the address.
+                    5. *p = 50; changes the value stored at that address.
+
+                Illustration:
+
+                    MAIN FUNCTION                 CHANGE FUNCTION
+
+                    STACK MEMORY                 STACK / REGISTER
+                    +----------------+           +----------------+
+                    | a = 20         |<----------| p              |
+                    | Address: 0x100 |           | Value: 0x100   |
+                    +----------------+           +----------------+
+
+                    After *p = 50:
+
+                    a = 50
+
+                No heap allocation is required.
+
+            2. Pass by Reference
+
+                </> c++
+                
+                    #include <iostream>
+                    using namespace std;
+
+                    void change(int& ref) {
+                        ref = 50;
+                    }
+
+                    int main() {
+                        int a = 20;
+
+                        change(a);
+
+                        cout << a;  // Output: 50
+                        return 0;
+                    }
+
+                What happens?
+
+                    1. int a = 20; creates a local variable.
+                    2. change(a) passes a by reference.
+                    3. int& ref becomes another name for the existing variable a.
+                    4. ref = 50; changes a directly.
+
+                Illustration:
+                
+                    STACK MEMORY
+                    +----------------------+
+                    | Variable: a          |
+                    | Value: 20            |
+                    +----------------------+
+                            ^
+                            |
+                    ref refers to a
+                            |
+                            v
+                        ref = 50
+
+                    Result: a = 50
+
+                Again, no heap allocation is required.
+
+            3. When Does Dynamic Memory Allocation Happen?
+
+                Dynamic memory allocation occurs when you explicitly request it, such as by using new, or
+                when a library or container requests it internally.
+
+                For example:
+
+                    int main() {
+                        int* p = new int(20);
+
+                        delete p;
+                        return 0;
+                    }
+
+                Here, new int(20) requests heap memory.
+
+            4. Can Pointers and References Access Heap Memory?
+
+                Yes! Both pointers and references can access data stored on the heap.
+
+                </> c++
+                
+                    #include <iostream>
+                    using namespace std;
+
+                    void change(int& ref) {
+                        ref = 50;
+                    }
+
+                    int main() {
+                        int* p = new int(20);
+
+                        change(*p);
+
+                        cout << *p;  // Output: 50
+
+                        delete p;
+                        return 0;
+                    }
+
+                In this example:
+
+                    - new int(20) dynamically allocates an integer on the heap.
+                    - p stores its address.
+                    - change(*p) passes that heap-allocated integer by reference.
+                    - ref = 50 changes its value.
+                    - delete p releases the heap allocation.
+                    
+                The reference does not allocate heap memory. The new expression does.
+
     Stack memory is allocated at compile time based on the size of code while
     heap memory is allocated at runtime based on request, right?
 
