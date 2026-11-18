@@ -307,6 +307,123 @@ Stack and Heap:
                 - Not automatically disappear: The allocation stays allocated until something releases it.
                 - Function finishes: The function completes execution and control returns to its caller.
 
+            How if:
+
+                </> c++
+
+                    int example() {
+                        int a = 10;
+                        return a;
+                    }
+
+                    int main() {
+                        example();
+
+                    int b;
+
+                    b = example();
+
+                    example();
+
+                        return 0;
+                    }
+
+                What happends for this chase, it call the example functions 2 times and store in the b variable,
+                does the memory stack of a variable in example() removed after early example() called?
+
+                    You actually call example() three times, not two.
+
+                    What happens during each function call?
+
+                        +-----------------------------+  +-----------------------------+  +-----------------------------+
+                        | STEP 1 OF 9                 |  | STEP 2 OF 9                 |  | STEP 3 OF 9                 |
+                        | Before the first call       |  | First call: example()       |  | First call finishes         |
+                        |                             |  |                             |  |                             |
+                        | +-----------+-------------+ |  | +-----------+-------------+ |  | +-----------+-------------+ |
+                        | | example() | main()      | |  | | example() | main()      | |  | | example() | main()      | |
+                        | |           |             | |  | |           |             | |  | |           |             | |
+                        | | No active | b not yet   | |  | | a = 10    | b not yet   | |  | | No active | b not yet   | |
+                        | | frame     | declared    | |  | |           | declared    | |  | | frame     | declared    | |
+                        | +-----------+-------------+ |  | +-----------+-------------+ |  | +-----------+-------------+ |
+                        |                             |  |                             |  |                             |
+                        | Returned value: -           |  | Returned value: -           |  | Returned: 10 (discarded)    |
+                        +-----------------------------+  +-----------------------------+  +-----------------------------+
+
+
+                        +-----------------------------+  +-----------------------------+  +-----------------------------+
+                        | STEP 4 OF 9                 |  | STEP 5 OF 9                 |  | STEP 6 OF 9                 |
+                        | Declare int b               |  | Second call: example()      |  | Second call finishes        |
+                        |                             |  |                             |  |                             |
+                        | +-----------+-------------+ |  | +-----------+-------------+ |  | +-----------+-------------+ |
+                        | | example() | main()      | |  | | example() | main()      | |  | | example() | main()      | |
+                        | |           |             | |  | |           |             | |  | |           |             | |
+                        | | No active | b is        | |  | | a = 10    | b is        | |  | | No active | b = 10      | |
+                        | | frame     | uninitialized||  | |           | uninitialized||  | | frame     |             | |
+                        | +-----------+-------------+ |  | +-----------+-------------+ |  | +-----------+-------------+ |
+                        |                             |  |                             |  |                             |
+                        | Returned value: -           |  | Returned value: -           |  | Returned: 10 (assigned)     |
+                        +-----------------------------+  +-----------------------------+  +-----------------------------+
+
+
+                        +-----------------------------+  +-----------------------------+  +-----------------------------+
+                        | STEP 7 OF 9                 |  | STEP 8 OF 9                 |  | STEP 9 OF 9                 |
+                        | Third call: example()       |  | Third call finishes         |  | main() finishes             |
+                        |                             |  |                             |  |                             |
+                        | +-----------+-------------+ |  | +-----------+-------------+ |  | +-----------+-------------+ |
+                        | | example() | main()      | |  | | example() | main()      | |  | | example() | main()      | |
+                        | |           |             | |  | |           |             | |  | |           |             | |
+                        | | a = 10    | b = 10      | |  | | No active | b = 10      | |  | | No active | b no longer | |
+                        | |           |             | |  | | frame     |             | |  | | frame     | exists      | |
+                        | +-----------+-------------+ |  | +-----------+-------------+ |  | +-----------+-------------+ |
+                        |                             |  |                             |  |                             |
+                        | Returned value: -           |  | Returned: 10 (discarded)    |  | main() returns 0            |
+                        +-----------------------------+  +-----------------------------+  +-----------------------------+
+
+                    The concept of stack memory is that when a value is called, it occupies a portion of memory; once the value is no longer needed,
+                    that memory is released and becomes available again.
+
+                    So, Stack memory is a region of memory used to store information for active function calls, including local variables.
+                    When a function finishes, its stack frame is automatically released, making that memory available for reuse.
+
+                    Example in C++
+
+                        </> c++
+
+                            void example() {
+                                int a = 10;
+                            }
+
+                            int main() {
+                                example();
+                                example();
+
+                                return 0;
+                            }
+
+                        Here's what happens:
+
+                            1. main() starts executing.
+                            2. The first example() call starts, and a = 10 is created.
+                            3. The first example() call finishes. The lifetime of a ends, and its stack space can be reused.
+                            4. The second example() call starts, creating a new a = 10. It may reuse the same stack space.
+                            5. The second example() call finishes, and its stack space becomes available again.
+
+                        Important distinction: No longer needed vs. lifetime ends
+
+                            Consider:
+                            
+                                int main() {
+                                    int a = 10;
+
+                                    // We never use a again.
+
+                                    int b = 20;
+
+                                    return 0;
+                                }
+
+                            Even though we don't use a again, its lifetime normally continues until the end of its scope (the closing }).
+
         When i write codes by using a heap request like this:
 
             int main() {
