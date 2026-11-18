@@ -423,6 +423,10 @@ Stack and Heap:
                                 }
 
                             Even though we don't use a again, its lifetime normally continues until the end of its scope (the closing }).
+                            The stack memory of a variable is not released until the function finish. so, a and b variables occupy different stack memories.
+
+                            Yes! Your understanding is correct in the usual stack-memory model. If both a and b are stored on the stack,
+                            they normally occupy different memory locations because both variables exist at the same time.
 
         When i write codes by using a heap request like this:
 
